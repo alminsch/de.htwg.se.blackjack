@@ -3,9 +3,6 @@ package de.htwg.se.blackjack.entities;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by BSB on 19.05.2015.
- */
 public class CardsInGame {
     private ArrayList<Card> stapel;
     private Random randomGenerator;
