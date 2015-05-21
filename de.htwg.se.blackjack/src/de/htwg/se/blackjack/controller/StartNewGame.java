@@ -7,9 +7,10 @@ import java.util.ArrayList;
 public class StartNewGame {
     ArrayList<Card> kartenstapel;
     public StartNewGame() {
-        //kartenstapel = CardsInGame.stapel;
+        //kartenstapel = CardsInGame.stapel;/dsfkndlfk
+    
     }
-
+    
 
     //Spieleranzahl
     //Kartencontrolle
