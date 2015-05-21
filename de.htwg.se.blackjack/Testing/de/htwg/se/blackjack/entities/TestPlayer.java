@@ -1,5 +1,11 @@
 package de.htwg.se.blackjack.entities;
 
-public class TestPlayer {
+import junit.framework.TestCase;
+
+public class TestPlayer extends TestCase {
+	
+	public void TestPlayerHit() {
+		
+	}
 
 }
