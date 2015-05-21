@@ -25,4 +25,11 @@ public class TestCard extends TestCase {
 		
 		assertEquals(Suit.Clubs,d.getSuit());
 	}
+	
+	public void testtoString() {
+		Card d = new Card(Value.Two,Suit.Clubs);
+		
+		assertEquals("Clubs Two",d.toString());
+	}
+	
 }
