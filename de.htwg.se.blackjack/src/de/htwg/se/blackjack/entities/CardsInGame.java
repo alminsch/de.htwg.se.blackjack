@@ -1,25 +1,21 @@
 package de.htwg.se.blackjack.entities;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.Random;
 
 public class CardsInGame {
-    private ArrayList<Card> stapel;
+    private ArrayList<Cards> stapel;
     private Random randomGenerator;
 
     public CardsInGame() {
-        stapel = new ArrayList<Card>();
-        for (Value v : Value.values()) {
-        	for(Suit s : Suit.values()) {
-        		stapel.add(new Card(v,s));
-        	}
-        }
+        stapel = new ArrayList<Cards>(EnumSet.allOf(Cards.class));
     }
 
-    public Card getCard() {
+    public Cards getCard() {
         randomGenerator = new Random();
         int index = randomGenerator.nextInt(stapel.size());
-        Card randcard = stapel.get(index);
+        Cards randcard = stapel.get(index);
         stapel.remove(index);
         return randcard;
     }
