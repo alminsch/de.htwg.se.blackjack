@@ -13,7 +13,8 @@ public class Player {
 	public Player(CardsInGame c) {
 		this.playerhand = new ArrayList<Card>();
 		this.handvalue[0] = 0;
-		this.handvalue[1] = 0;s.stapel = c;
+		this.handvalue[1] = 0;
+		this.stapel = c;
 	}
 
 	public int[] getHandValue() {
