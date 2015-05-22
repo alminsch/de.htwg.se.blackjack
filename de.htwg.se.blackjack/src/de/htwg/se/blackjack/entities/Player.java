@@ -89,5 +89,9 @@ public class Player {
 			this.handvalue[1] = this.handvalue[1] + 10;
 			break;
 		}
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/alminsch/de.htwg.se.blackjack.git
 	}
 }
