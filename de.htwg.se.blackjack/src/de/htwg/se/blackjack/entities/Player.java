@@ -13,8 +13,7 @@ public class Player {
 	public Player(CardsInGame c) {
 		this.playerhand = new ArrayList<Card>();
 		this.handvalue[0] = 0;
-		this.handvalue[1] = 0;
-		this.stapel = c;
+		this.handvalue[1] = 0;s.stapel = c;
 	}
 
 	public int[] getHandValue() {
@@ -89,9 +88,5 @@ public class Player {
 			this.handvalue[1] = this.handvalue[1] + 10;
 			break;
 		}
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/alminsch/de.htwg.se.blackjack.git
 	}
 }
