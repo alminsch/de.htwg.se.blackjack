@@ -1,28 +1,13 @@
 package de.htwg.se.blackjack.entities;
 
+import org.junit.Test;
 import junit.framework.TestCase;
 
 
 public class TestCard extends TestCase {
 	
-	
-	public void testConstructor() {
-		
-		Card d = new Card(Value.Two,Suit.Clubs);
-		
-		assertEquals(Suit.Clubs,d.getSuit());
-		assertEquals(Value.Two,d.getValue());
-	}
-	
-	public void testgetValue() {
-		Card d = new Card(Value.Two,Suit.Clubs);
-		
-		assertEquals(Value.Two,d.getValue());
-	}
-	
-	public void testgetSuit() {
-		Card d = new Card(Value.Two,Suit.Clubs);
-		
-		assertEquals(Suit.Clubs,d.getSuit());
+	@Test
+	public void testgetCardValue() {
+		assertEquals(Card.HERZZWEI.getCardValue(), 2);
 	}
 }

@@ -1,7 +1,7 @@
 package de.htwg.se.blackjack.entities;
 
 
-public enum Cards {
+public enum Card {
 
     HERZZWEI(2), HERZDREI(3), HERZVIER(4), HERZFUENF(5), HERZSECHS(6), HERZSIEBEN(7), HERZACHT(8),
     HERZNEUN(9), HERZZEHN(10), HERZBUBE(10), HERZDAME(10), HERZKOENIG(10), HERZASS(11),
@@ -14,11 +14,11 @@ public enum Cards {
 
     private final int cardValue;
 
-    private Cards(int cardValue) {
+    private Card(int cardValue) {
         this.cardValue = cardValue;
     }
-    public int getCardValue(){
+    
+    public int getCardValue() {
         return cardValue;
     }
-
 }

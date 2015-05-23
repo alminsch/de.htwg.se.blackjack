@@ -5,19 +5,22 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class CardsInGame {
-    private ArrayList<Cards> stapel;
+    private ArrayList<Card> stapel;
     private Random randomGenerator;
 
     public CardsInGame() {
-        stapel = new ArrayList<Cards>(EnumSet.allOf(Cards.class));
+        stapel = new ArrayList<Card>(EnumSet.allOf(Card.class));
+    }
+    
+    public boolean containscard(Card c) {
+    	return stapel.contains(c);
     }
 
-    public Cards getCard() {
+    public Card getCard() {
         randomGenerator = new Random();
         int index = randomGenerator.nextInt(stapel.size());
-        Cards randcard = stapel.get(index);
+        Card randcard = stapel.get(index);
         stapel.remove(index);
         return randcard;
     }
-    
 }
