@@ -1,4 +1,4 @@
-package de.htwg.se.blackjack.entities;
+package de.htwg.blackjack.entities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +39,6 @@ public class Player {
 		} else {
 			this.handvalue[0] = this.handvalue[0] + c.getCardValue();
 			this.handvalue[1] = this.handvalue[1] + c.getCardValue();
-		}		
+		}
 	}
 }

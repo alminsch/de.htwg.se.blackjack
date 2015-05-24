@@ -8,11 +8,13 @@ import java.util.EnumSet;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.htwg.blackjack.entities.Card;
+import de.htwg.blackjack.entities.CardsInGame;
+
 
 public class TestCardsInGame {
 	
 	private CardsInGame cig;
-	
 	
 	@Before
 	public void setUp()  {

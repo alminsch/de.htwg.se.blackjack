@@ -1,4 +1,4 @@
-package de.htwg.se.blackjack.entities;
+package de.htwg.blackjack.entities;
 
 
 public enum Card {

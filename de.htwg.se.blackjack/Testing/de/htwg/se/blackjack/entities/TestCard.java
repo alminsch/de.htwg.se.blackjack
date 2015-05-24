@@ -1,13 +1,22 @@
 package de.htwg.se.blackjack.entities;
 
+import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
-import junit.framework.TestCase;
 
+import de.htwg.blackjack.entities.Card;
 
-public class TestCard extends TestCase {
+public class TestCard{
+	Card card;
+	
+	@Before
+	public void setUp() {
+		card = Card.HERZACHT;
+	}
 	
 	@Test
-	public void testgetCardValue() {
-		assertEquals(Card.HERZZWEI.getCardValue(), 2);
+	public void testGetCardValue() {
+		assertEquals(8, card.getCardValue());
 	}
 }
