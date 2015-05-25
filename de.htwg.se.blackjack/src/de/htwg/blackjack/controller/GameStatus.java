@@ -16,14 +16,21 @@ public class GameStatus {
 		return false;	
 	}
 	
-	public boolean bust() {
-		if(valueplayer < valuedealer) {
+	public boolean dealerbusted() {
+		if(valuedealer > 21) {
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean win() {
+	public boolean playerbusted() {
+		if(valueplayer > 21) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean playerwin() {
 		if(valueplayer > valuedealer) {
 			return true;
 		}
