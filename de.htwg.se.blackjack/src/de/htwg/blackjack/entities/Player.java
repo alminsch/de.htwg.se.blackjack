@@ -15,6 +15,7 @@ public class Player {
 		this.handvalue[0] = 0;
 		this.handvalue[1] = 0;
 		this.stapel = c;
+		this.budget = 1000;
 	}
 	
 	public int[] getHandValue() {
