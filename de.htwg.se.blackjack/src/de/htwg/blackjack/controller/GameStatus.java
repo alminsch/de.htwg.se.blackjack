@@ -35,6 +35,5 @@ public class GameStatus {
 			return true;
 		}
 		return false;
-		//test
 	}
 }
