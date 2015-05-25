@@ -9,6 +9,7 @@ public class Player {
 	private int[] handvalue = new int[2];
 	private CardsInGame stapel;
 	private int budget;
+	private boolean stand;
 	
 	public Player(CardsInGame c) {
 		this.playerhand = new ArrayList<Card>();
