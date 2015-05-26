@@ -20,13 +20,23 @@ public abstract class AbstractParticipant implements IParticipant {
 		this.stapel = c;
 		this.stand = false;
 	}
+
 	public int[] getHandValue() {
 		return this.handvalue;
 	}
-	
+
+	public boolean getstand() {
+		return stand;
+	}
+
+	public void setstand(boolean stand) {
+		this.stand = stand;
+	}
+
 	public List<Card> getCardsInHand() {
 		return this.cardsinhand;
 	}
+
 	public void Hit() {
 		Card c  = stapel.getCard();
 		cardsinhand.add(c);
