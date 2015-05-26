@@ -4,6 +4,7 @@ public class GameStatus {
 	
 	private int valueplayer;
 	private int valuedealer;
+	
 	public GameStatus(int dealer, int player) {
 		this.valuedealer = dealer;
 		this.valueplayer = player;
