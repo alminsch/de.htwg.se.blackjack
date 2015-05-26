@@ -1,12 +1,10 @@
 package de.htwg.blackjack.controller;
 
-import de.htwg.blackjack.entities.*;
 import de.htwg.blackjack.entities.impl.Card;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class StartNewGame {
-    ArrayList<Card> kartenstapel;
+    List<Card> kartenstapel;
     public StartNewGame() {
         //kartenstapel = CardsInGame.stapel;/dsfkndlfk
     
