@@ -7,12 +7,12 @@ import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.CardsInGame;
 
 public abstract class AbstractParticipant implements IParticipant {
-	
+
 	private List<Card> cardsinhand;
 	private int[] handvalue = new int[2];
 	private CardsInGame stapel;
 	private boolean stand;
-	
+
 	public AbstractParticipant(CardsInGame c) {
 		this.cardsinhand = new ArrayList<Card>();
 		this.handvalue[0] = 0;
@@ -38,9 +38,9 @@ public abstract class AbstractParticipant implements IParticipant {
 	}
 
 	public void Hit() {
-		Card c  = stapel.getCard();
+		Card c = stapel.getCard();
 		cardsinhand.add(c);
-		if(c.name().contains("ASS")) {
+		if (c.name().contains("ASS")) {
 			if ((this.handvalue[1] + 11) > 21) {
 				this.handvalue[0] = this.handvalue[0] + 1;
 				this.handvalue[1] = this.handvalue[0] + 11;

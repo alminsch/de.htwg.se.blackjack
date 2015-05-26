@@ -1,7 +1,7 @@
 package de.htwg.blackjack.controller;
 
 public class GameStatus {
-	
+
 	private int valueplayer;
 	private int valuedealer;
 
@@ -11,28 +11,28 @@ public class GameStatus {
 	}
 
 	public boolean tie() {
-		if(valueplayer == valuedealer) {
+		if (valueplayer == valuedealer) {
 			return true;
 		}
-		return false;	
+		return false;
 	}
 
 	public boolean dealerbusted() {
-		if(valuedealer > 21) {
+		if (valuedealer > 21) {
 			return true;
 		}
 		return false;
 	}
 
 	public boolean playerbusted() {
-		if(valueplayer > 21) {
+		if (valueplayer > 21) {
 			return true;
 		}
 		return false;
 	}
 
 	public boolean playerwin() {
-		if(valueplayer > valuedealer) {
+		if (valueplayer > valuedealer) {
 			return true;
 		}
 		return false;

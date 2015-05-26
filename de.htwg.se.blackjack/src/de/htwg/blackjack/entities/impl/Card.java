@@ -19,6 +19,6 @@ public enum Card {
     }
     
     public int getCardValue() {
-        return cardValue;
-    }
+		return cardValue;
+	}
 }

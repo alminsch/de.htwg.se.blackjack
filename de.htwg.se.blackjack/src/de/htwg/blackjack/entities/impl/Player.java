@@ -6,7 +6,7 @@ import de.htwg.blackjack.controller.PlayerAction;
 import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Player extends AbstractParticipant {
-	
+
 	private int budget;
 	private String playername;
 	private List<PlayerAction> possibleplayeractions;
