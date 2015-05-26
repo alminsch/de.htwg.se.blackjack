@@ -6,10 +6,10 @@ import de.htwg.blackjack.entities.impl.Card;
 
 public interface IParticipant {
 
-	int[] getHandValue();
+    int[] getHandValue();
 
-	List<Card> getCardsInHand();
+    List<Card> getCardsInHand();
 
-	void Hit();
+    void Hit();
 
 }

@@ -4,7 +4,7 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Dealer extends AbstractParticipant {
 
-	public Dealer(CardsInGame c) {
-		super(c);
-	}
+    public Dealer(CardsInGame c) {
+        super(c);
+    }
 }
