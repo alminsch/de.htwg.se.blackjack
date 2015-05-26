@@ -8,10 +8,12 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 public class Player extends AbstractParticipant {
 	
 	private int budget;
+	private String playername;
 	private List<PlayerAction> possibleplayeractions;
 	
-	public Player(CardsInGame c) {
+	public Player(CardsInGame c, String playername) {
 		super(c);
+		this.playername = playername;
 	}
 	
 	private void addplayeraction(PlayerAction action) {
