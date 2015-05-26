@@ -3,6 +3,9 @@ package de.htwg.blackjack.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.htwg.blackjack.entities.impl.Card;
+import de.htwg.blackjack.entities.impl.CardsInGame;
+
 public abstract class AbstractParticipant implements IParticipant {
 	
 	private List<Card> cardsinhand;

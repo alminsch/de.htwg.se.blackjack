@@ -1,8 +1,9 @@
-package de.htwg.blackjack.entities;
+package de.htwg.blackjack.entities.impl;
 
 import java.util.List;
 
 import de.htwg.blackjack.controller.Actions;
+import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Player extends AbstractParticipant {
 	

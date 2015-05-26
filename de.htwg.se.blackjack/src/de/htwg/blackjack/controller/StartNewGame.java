@@ -1,6 +1,7 @@
 package de.htwg.blackjack.controller;
 
 import de.htwg.blackjack.entities.*;
+import de.htwg.blackjack.entities.impl.Card;
 
 import java.util.ArrayList;
 

@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.blackjack.entities.Card;
+import de.htwg.blackjack.entities.impl.Card;
 
 public class TestCard{
 	Card c;
