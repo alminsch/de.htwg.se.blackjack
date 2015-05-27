@@ -1,4 +1,4 @@
-package de.htwg.blackjack.entities;
+package de.htwg.blackjack.entities.impl;
 
 import junit.framework.TestCase;
 
