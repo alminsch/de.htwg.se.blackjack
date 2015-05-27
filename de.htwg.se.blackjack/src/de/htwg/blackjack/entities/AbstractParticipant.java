@@ -9,12 +9,13 @@ import de.htwg.blackjack.entities.impl.CardsInGame;
 public abstract class AbstractParticipant implements IParticipant {
 
     private List<Card> cardsinhand;
-    private int[] handvalue = new int[2];
+    private int[] handvalue;
     private CardsInGame stapel;
     private boolean stand;
 
     public AbstractParticipant(CardsInGame c) {
         this.cardsinhand = new ArrayList<Card>();
+        this.handvalue = new int[2];
         this.handvalue[0] = 0;
         this.handvalue[1] = 0;
         this.stapel = c;
