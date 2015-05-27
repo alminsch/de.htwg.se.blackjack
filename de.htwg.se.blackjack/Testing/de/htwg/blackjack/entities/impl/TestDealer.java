@@ -3,18 +3,16 @@ package de.htwg.blackjack.entities.impl;
 import static org.junit.Assert.*;
 
 import java.util.EnumSet;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class TestDealer {
-	Dealer dealer;
-	CardsInGame cig;
-
+	CardsInGame stapel;
 	@Before
-	public void setUp() {
-		cig = new CardsInGame();
-		dealer = new Dealer(cig);
+	public void setUp() throws Exception {
+		stapel = new CardsInGame();
+		new Dealer(stapel);
 	}
 }

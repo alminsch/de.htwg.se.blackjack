@@ -1,8 +1,8 @@
 package de.htwg.blackjack.entities.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import de.htwg.blackjack.controller.PlayerAction;
 import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Player extends AbstractParticipant {
@@ -14,6 +14,8 @@ public class Player extends AbstractParticipant {
     public Player(CardsInGame c, String playername) {
         super(c);
         this.playername = playername;
+        this.budget = 1500;
+        this.possibleplayeractions = new ArrayList<PlayerAction>();
     }
 
     public String getplayername() {
