@@ -9,28 +9,28 @@ public class Player extends AbstractParticipant {
 
     private int budget;
     private String playername;
-    private List<PlayerAction> possibleplayeractions;
+    private List<PossibleAction> possibleplayeractions;
 
     public Player(CardsInGame c, String playername) {
         super(c);
         this.playername = playername;
         this.budget = 1500;
-        this.possibleplayeractions = new ArrayList<PlayerAction>();
+        this.possibleplayeractions = new ArrayList<PossibleAction>();
     }
 
     public String getplayername() {
         return this.playername;
     }
 
-    public void addplayeraction(PlayerAction action) {
+    public void addplayeraction(PossibleAction action) {
         this.possibleplayeractions.add(action);
     }
 
-    public void deleteplayeraction(PlayerAction action) {
+    public void deleteplayeraction(PossibleAction action) {
         this.possibleplayeractions.remove(action);
     }
 
-    public List<PlayerAction> getpossibleplayeractions() {
+    public List<PossibleAction> getpossibleplayeractions() {
         return this.possibleplayeractions;
     }
 
@@ -44,5 +44,17 @@ public class Player extends AbstractParticipant {
 
     public int getbudget() {
         return this.budget;
+	}
+    
+    public void actioninsurance() {
+    	
+    }
+    
+    public void increasebet() {
+    	
+    }
+    
+    public void decreasebet() {
+    
     }
 }

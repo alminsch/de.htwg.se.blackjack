@@ -22,8 +22,8 @@ public class TestPlayer {
 	@Before
 	public void setUp() {
 		player1 = new Player(stapel, "Hans Wurst");
-		player1.addplayeraction(PlayerAction.STAND);
-		player1.addplayeraction(PlayerAction.HIT);
+		player1.addplayeraction(PossibleAction.STAND);
+		player1.addplayeraction(PossibleAction.HIT);
 	}
 
 	@Test
@@ -33,17 +33,17 @@ public class TestPlayer {
 
 	@Test
     public void Testaddplayeraction() {
-		player1.deleteplayeraction(PlayerAction.HIT);
+		player1.deleteplayeraction(PossibleAction.HIT);
     }
 
 	@Test
     public void deleteplayeraction() {
-		player1.addplayeraction(PlayerAction.STAND);
+		player1.addplayeraction(PossibleAction.STAND);
     }
 
 	@Test
     public void Testgetpossibleplayeractions() {;
-		assertTrue(player1.getpossibleplayeractions().contains(PlayerAction.STAND));
+		assertTrue(player1.getpossibleplayeractions().contains(PossibleAction.STAND));
     }
 
 	@Test

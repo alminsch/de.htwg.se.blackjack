@@ -38,7 +38,7 @@ public abstract class AbstractParticipant implements IParticipant {
         return this.cardsinhand;
     }
 
-    public void Hit() {
+    public void actionhit() {
         Card c = stapel.getCard();
         cardsinhand.add(c);
         if (c.name().contains("ASS")) {
@@ -53,5 +53,9 @@ public abstract class AbstractParticipant implements IParticipant {
             this.handvalue[0] = this.handvalue[0] + c.getCardValue();
             this.handvalue[1] = this.handvalue[1] + c.getCardValue();
         }
+    }
+
+    public void actionstand() {
+    	setstand(true);
     }
 }

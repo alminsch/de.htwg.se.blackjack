@@ -11,7 +11,7 @@ import org.junit.Test;
 public class TestDealer {
 	CardsInGame stapel;
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		stapel = new CardsInGame();
 		new Dealer(stapel);
 	}
