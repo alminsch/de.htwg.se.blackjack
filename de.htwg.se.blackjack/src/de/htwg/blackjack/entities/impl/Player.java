@@ -12,8 +12,8 @@ public class Player extends AbstractParticipant {
     private String playername;
     private List<PossibleAction> possibleplayeractions;
 
-    public Player(CardsInGame c, String playername) {
-        super(c);
+    public Player(String playername) {
+        super();
         this.playername = playername;
         this.budget = 1500;
         this.possibleplayeractions = new ArrayList<PossibleAction>();

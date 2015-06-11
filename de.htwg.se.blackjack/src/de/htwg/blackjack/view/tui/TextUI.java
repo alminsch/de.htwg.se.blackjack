@@ -1,9 +1,15 @@
 package de.htwg.blackjack.view.tui;
 
+import java.util.logging.Logger;
+
 import de.htwg.blackjack.controller.Controller;
 
 public class TextUI {
-	Controller controller;
+	private Controller controller;
+	private static final String NEWLINE = System.getProperty("line.separator");
+    private Logger logger = Logger.getLogger("de.htwg.blackjack.view.tui");
+
+
 	public TextUI(Controller controller) {
         this.controller = controller;
     }
@@ -13,14 +19,29 @@ public class TextUI {
 		case"q":
 			go = false;
 			break;
-		case"s":
+		case"n":
 			//Controller
 			break;
-		case"b":
-			//Controller
+		case"next":
+			break;
+		case"+":
+			controller.increasebet();
+			break;
+		case"-":
+			controller.decreasebet();
+			break;
+		case"s":
+//			controller.
+			break;
 
 		}
 
 		return go;
 	}
+
+	public void printTUI() {
+        logger.info(NEWLINE + controller.getStatus());
+        logger.info(NEWLINE
+                + "Possible commands: q-quit, s-start, n-new, p-newplayer, next, - bet,+ bet");
+    }
 }

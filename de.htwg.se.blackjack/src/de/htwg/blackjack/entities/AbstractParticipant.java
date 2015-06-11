@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.htwg.blackjack.entities.impl.Card;
-import de.htwg.blackjack.entities.impl.CardsInGame;
+import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
 
 public abstract class AbstractParticipant implements IParticipant {
 
     private List<Card> cardsinhand;
     private int[] handvalue;
-    private CardsInGame stapel;
+    private SingletonCardsInGame scig;
     private boolean stand;
 
-    public AbstractParticipant(CardsInGame c) {
+    public AbstractParticipant() {
         this.cardsinhand = new ArrayList<Card>();
         this.handvalue = new int[2];
         this.handvalue[0] = 0;
         this.handvalue[1] = 0;
-        this.stapel = c;
+        this.scig = SingletonCardsInGame.getInstance();
         this.stand = false;
     }
 
@@ -39,7 +39,7 @@ public abstract class AbstractParticipant implements IParticipant {
     }
 
     public void actionhit() {
-        Card c = stapel.getCard();
+        Card c = scig.getCard();
         cardsinhand.add(c);
         if (c.name().contains("ASS")) {
             if ((this.handvalue[1] + 11) > 21) {
