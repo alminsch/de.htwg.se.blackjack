@@ -31,7 +31,7 @@ public class TextUI {
 			controller.decreasebet();
 			break;
 		case"s":
-//			controller.
+			controller.startnewround();
 			break;
 
 		}

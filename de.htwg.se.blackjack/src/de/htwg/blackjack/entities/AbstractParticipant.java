@@ -1,4 +1,4 @@
-package de.htwg.blackjack.entities;
+  package de.htwg.blackjack.entities;
 
 import java.util.ArrayList;
 import java.util.List;
