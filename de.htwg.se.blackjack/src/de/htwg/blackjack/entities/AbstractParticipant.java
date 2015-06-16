@@ -9,7 +9,7 @@ import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
 public abstract class AbstractParticipant implements IParticipant {
 
     private List<Card> cardsinhand;
-    private int[] handvalue;
+    protected int[] handvalue;
     private SingletonCardsInGame scig;
     private boolean stand;
 

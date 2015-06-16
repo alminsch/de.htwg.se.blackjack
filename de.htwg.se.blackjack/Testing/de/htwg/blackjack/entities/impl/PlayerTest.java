@@ -10,18 +10,13 @@ import org.junit.Test;
 import de.htwg.blackjack.entities.AbstractParticipant;
 import junit.framework.TestCase;
 
-public class TestPlayer {
+public class PlayerTest {
 
-	private List<Card> cardsinhand;
-    private int[] handvalue;
-    private CardsInGame stapel;
-    private boolean stand;
-    private String playername;
     Player player1;
 
 	@Before
 	public void setUp() {
-		player1 = new Player(stapel, "Hans Wurst");
+		player1 = new Player("Hans Wurst");
 		player1.addplayeraction(PossibleAction.STAND);
 		player1.addplayeraction(PossibleAction.HIT);
 	}

@@ -9,7 +9,7 @@ import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.CardsInGame;
 
 
-public class TestCardsInGame {
+public class SingeltonCardsInGameTest {
 	
 	private CardsInGame cig;
 	Card card;

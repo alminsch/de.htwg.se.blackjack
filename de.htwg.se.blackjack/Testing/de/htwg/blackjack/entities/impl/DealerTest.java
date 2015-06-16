@@ -8,11 +8,9 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestDealer {
-	CardsInGame stapel;
+public class DealerTest {
 	@Before
 	public void setUp() {
-		stapel = new CardsInGame();
-		new Dealer(stapel);
+		new Dealer();
 	}
 }

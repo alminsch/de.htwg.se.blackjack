@@ -2,7 +2,7 @@ package de.htwg.blackjack;
 
 import java.util.Scanner;
 
-import de.htwg.blackjack.controller.Controller;
+import de.htwg.blackjack.controller.impl.Controller;
 import de.htwg.blackjack.view.tui.TextUI;
 
 public class Blackjack {

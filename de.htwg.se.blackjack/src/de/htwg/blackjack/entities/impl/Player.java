@@ -11,12 +11,19 @@ public class Player extends AbstractParticipant {
     private int bet;
     private String playername;
     private List<PossibleAction> possibleplayeractions;
+    private boolean setbet;
 
     public Player(String playername) {
         super();
         this.playername = playername;
         this.budget = 1500;
         this.possibleplayeractions = new ArrayList<PossibleAction>();
+        this.setbet = false;
+    }
+
+
+    public boolean getsetbet() {
+    	return this.setbet;
     }
 
     public String getplayername() {
@@ -49,6 +56,7 @@ public class Player extends AbstractParticipant {
 
     public void setbet(int bet) {
     	this.bet = bet;
+    	this.setbet = true;
     }
 
     public int getbet() {
