@@ -20,7 +20,8 @@ public class Blackjack {
     }
 
     private Blackjack() {
-
+    	controller = new Controller();
+    	tui = new TextUI(controller);
     }
 
     public static void main(final String[] args) {

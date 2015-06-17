@@ -6,17 +6,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.htwg.blackjack.entities.impl.Card;
-import de.htwg.blackjack.entities.impl.CardsInGame;
+import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
 
 
 public class SingeltonCardsInGameTest {
 	
-	private CardsInGame cig;
+	private SingletonCardsInGame cig;
 	Card card;
 	
 	@Before
 	public void setUp()  {
-		cig = new CardsInGame();
+		cig = new SingletonCardsInGame();
 	}
 	
 	@Test
