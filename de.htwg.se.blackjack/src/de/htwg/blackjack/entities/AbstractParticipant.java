@@ -13,6 +13,7 @@ public abstract class AbstractParticipant implements IParticipant {
     private SingletonCardsInGame scig;
     private boolean stand;
 
+
     public AbstractParticipant() {
         this.cardsinhand = new ArrayList<Card>();
         this.handvalue = new int[2];

@@ -6,21 +6,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.htwg.blackjack.entities.impl.Card;
-import de.htwg.blackjack.entities.impl.CardsInGame;
 
 
 public class SingeltonCardsInGameTest {
-	
-	private CardsInGame cig;
+
+	private SingletonCardsInGame cig;
 	Card card;
-	
+
 	@Before
 	public void setUp()  {
-		cig = new CardsInGame();
+		cig = SingletonCardsInGame.getInstance();
+		cig.resetStapel();
 	}
-	
+
 	@Test
 	public void testGetCard() {
-		assertFalse(cig.containscard(cig.getCard()));
+		card = cig.getCard();
+		assertFalse(cig.containscard(card));
 	}
 }

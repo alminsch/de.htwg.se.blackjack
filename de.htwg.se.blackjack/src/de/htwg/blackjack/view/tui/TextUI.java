@@ -1,12 +1,12 @@
 package de.htwg.blackjack.view.tui;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import de.htwg.blackjack.util.observer.Event;
 import de.htwg.blackjack.util.observer.IObserver;
 import de.htwg.blackjack.controller.IController;
-//import com.google.inject.Inject;
+import com.google.inject.Inject;
 
 public class TextUI implements IObserver{
 
@@ -15,7 +15,7 @@ public class TextUI implements IObserver{
     private Logger logger = Logger.getLogger("de.htwg.blackjack.view.tui");
     private static Scanner scanner;
 
-    //@Inject
+    @Inject
     public TextUI(IController controller) {
         this.controller = controller;
         controller.addObserver(this);
@@ -46,6 +46,12 @@ public class TextUI implements IObserver{
 		case"s":
 			controller.stand();
 			break;
+		case"i":
+			controller.insurance();
+			break;
+		case"d":
+			controller.doublebet();
+			break;
 		case"+":
 			controller.increasebet();
 			break;
@@ -62,7 +68,8 @@ public class TextUI implements IObserver{
 
 	public void printTUI() {
         logger.info(NEWLINE + controller.getStatus());
+        logger.info(NEWLINE + controller.getCards());
         logger.info(NEWLINE
-                + "Possible commands: q-quit, s-start, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet");
+                + "Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet");
     }
 }

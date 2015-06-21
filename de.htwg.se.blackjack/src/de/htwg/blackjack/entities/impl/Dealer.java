@@ -12,4 +12,14 @@ public class Dealer extends AbstractParticipant {
 		this.handvalue[0] = 0;
 		this.handvalue[1] = 0;
 	}
+	public String toString() {
+		String newLine = System.getProperty("line.separator");
+	    String result = newLine;
+	    result = "Dealer Handkarten:";
+		for(Card c : getCardsInHand()) {
+			result = result + c.toString() + " ";
+		}
+    	return result;
+    }
+
 }

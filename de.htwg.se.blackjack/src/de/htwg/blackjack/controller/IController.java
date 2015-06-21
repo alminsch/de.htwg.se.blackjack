@@ -1,5 +1,6 @@
 package de.htwg.blackjack.controller;
 
+import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.util.observer.IObservable;
 
 public interface IController extends IObservable {
@@ -19,5 +20,23 @@ public interface IController extends IObservable {
 	void playerhit();
 
 	void stand();
+
+	void insurance();
+
+	void doublebet();
+
+	void createnewgame();
+
+	void playerbets();
+
+	void allgettwocards();
+
+	void spielzug();
+
+	void auswertung();
+
+	boolean deletePlayer(Player player);
+
+	String getCards();
 
 }

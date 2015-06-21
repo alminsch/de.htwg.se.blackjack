@@ -1,3 +1,4 @@
+
 package de.htwg.blackjack.entities.impl;
 
 import java.util.ArrayList;
@@ -8,10 +9,9 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 public class Player extends AbstractParticipant {
 
     private int budget;
-    private int bet;
-    private String playername;
     private List<PossibleAction> possibleplayeractions;
     private boolean setbet;
+    private String playername;
 
     public Player(String playername) {
         super();
@@ -24,10 +24,6 @@ public class Player extends AbstractParticipant {
 
     public boolean getsetbet() {
     	return this.setbet;
-    }
-
-    public String getplayername() {
-        return this.playername;
     }
 
     public void addplayeraction(PossibleAction action) {
@@ -54,16 +50,21 @@ public class Player extends AbstractParticipant {
         return this.budget;
 	}
 
-    public void setbet(int bet) {
-    	this.bet = bet;
-    	this.setbet = true;
-    }
-
-    public int getbet() {
-    	return this.bet;
-    }
-
     public void actioninsurance() {
 
+    }
+    public String getPlayerName() {
+    	return this.playername;
+    }
+    @Override
+    public String toString() {
+		String newLine = System.getProperty("line.separator");
+	    String result = newLine;
+	    result = playername + " Handkarten:";
+		for(Card c : getCardsInHand()) {
+			result = result + c.toString() + " ";
+		}
+		result = result + "Wert:" + this.getHandValue()[0];
+    	return result + newLine;
     }
 }
