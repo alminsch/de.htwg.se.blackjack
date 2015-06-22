@@ -15,6 +15,7 @@ import de.htwg.blackjack.util.observer.Observable;
 @Singleton
 public class Controller extends Observable implements IController {
 
+
 	private Queue<Player> playerlist;
 	private Queue<Player> tmpplayerlist;
 	private int displaybet;
