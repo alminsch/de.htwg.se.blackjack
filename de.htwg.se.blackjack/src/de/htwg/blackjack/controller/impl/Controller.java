@@ -23,7 +23,6 @@ public class Controller extends Observable implements IController {
     private SingletonCardsInGame scig;
     private Dealer dealer;
     private boolean showCards = false;
-    private int playerbet;
 
     @Inject
 	public Controller() {
@@ -39,7 +38,17 @@ public class Controller extends Observable implements IController {
 		notifyObservers();
 	}
 
+	public void checkplayerbudget() {
+		for(Player player : playerlist) {
+			if(player.getbudget() <= 0) {
+				deletePlayer(player);
+			}
+		}
+	}
+
 	public void startnewround() {
+		checkplayerbudget();
+
 		this.tmpplayerlist = new ArrayDeque<Player>(playerlist);
 		if(!playerlist.isEmpty()) {
 			scig.resetStapel();
@@ -66,8 +75,8 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void setbetforround() {
-		this.playerbet = this.displaybet;
-		statusLine  = "Ihre Wette für diese Runde beträgt " + displaybet;
+		player.playerbet = this.displaybet;
+		statusLine  = "Ihre Wette für diese Runde beträgt " + player.playerbet;
 		displaybet = 100;
 		notifyObservers();
 		playerbets();
@@ -95,6 +104,7 @@ public class Controller extends Observable implements IController {
 		}
 		return false;
 	}
+
 	public void allgettwocards() {
 		for(Player player : playerlist) {
 			player.actionhit();
@@ -126,48 +136,59 @@ public class Controller extends Observable implements IController {
 		while(dealer.getHandValue()[0] < 17) {
 			dealer.actionhit();
 		}
-		finaldealervalue = dealer.getHandValue()[0];
+		if(dealer.getHandValue()[1] <= 21) {
+			finaldealervalue= dealer.getHandValue()[1];
+		} else{
+			finaldealervalue = dealer.getHandValue()[0];
+		}
 
+
+		sb.append(dealer.toString(finaldealervalue) + "\n");
 		if (finaldealervalue > 21) {
-			dealer.setHandValueNull();
+			finaldealervalue = 0;
 		}
 
 		for(Player player : playerlist) {
+
 			int finalplayervalue;
 			if(player.getHandValue()[1] <= 21) {
 				finalplayervalue = player.getHandValue()[1];
 			} else {
 				finalplayervalue = player.getHandValue()[0];
 			}
-			if(finalplayervalue > 21) {
-				player.deletefrombudget(playerbet);
-				sb.append(player.getPlayerName() + ": Busted    neues Budget:" + player.getbudget() + "\n");
-				continue;
-			}
-			if (finalplayervalue > finaldealervalue) {
-				player.addtobudget(playerbet);
-				sb.append(player.getPlayerName() + ": Gewonnen    neues Budget:" + player.getbudget() + "\n");
-				continue;
-	        }
 			if (finalplayervalue == finaldealervalue) {
 				sb.append(player.getPlayerName() + ": Unentschieden    neues Budget:" + player.getbudget()  + "\n");
 				continue;
+			} else if(finalplayervalue > 21) {
+				player.deletefrombudget(player.playerbet);
+				sb.append(player.getPlayerName() + ": Busted    neues Budget:" + player.getbudget() + "\n");
+				continue;
+			} else if (finalplayervalue > finaldealervalue) {
+				player.addtobudget(player.playerbet);
+				sb.append(player.getPlayerName() + ": Gewonnen    neues Budget:" + player.getbudget() + "\n");
+				continue;
+			} else if (finalplayervalue < finaldealervalue) {
+				player.deletefrombudget(player.playerbet);
+				sb.append(player.getPlayerName() + ": Verloren    neues Budget:" + player.getbudget() + "\n");
+				continue;
 			}
 		}
-		statusLine = "Auswertung: " + sb.toString() ;
+		statusLine = "Auswertung:\n" + sb.toString() ;
 
 		notifyObservers();
 	}
 
 	public String getCards() {
 		if(showCards == true) {
-			return player.toString() + dealer.toString();
+			return player.toString() + dealer.toString(0);
 		} else {
 			return " ";
 		}
 	}
 
 	public void stand() {
+		statusLine = "STAND";
+		notifyObservers();
 		spielzug();
 	}
 
@@ -180,7 +201,7 @@ public class Controller extends Observable implements IController {
 			notifyObservers();
 			spielzug();
 		} else {
-			statusLine = "Hit";
+			statusLine = "HIT";
 			notifyObservers();
 		}
 	}
@@ -206,8 +227,10 @@ public class Controller extends Observable implements IController {
         return statusLine;
     }
 
-	//todo:
 	private void resetHandCards() {
-
+		dealer.resetCardsInHand();
+		for(Player player : playerlist) {
+			player.resetCardsInHand();
+		}
 	}
 }

@@ -10,20 +10,21 @@ public class Player extends AbstractParticipant {
 
     private int budget;
     private List<PossibleAction> possibleplayeractions;
-    private boolean setbet;
     private String playername;
+    public int playerbet;
 
     public Player(String playername) {
         super();
         this.playername = playername;
         this.budget = 1500;
         this.possibleplayeractions = new ArrayList<PossibleAction>();
-        this.setbet = false;
+    }
+    public void setplayerbet(int bet) {
+    	this.playerbet = bet;
     }
 
-
-    public boolean getsetbet() {
-    	return this.setbet;
+    public int getplayerbet() {
+    	return this.playerbet;
     }
 
     public void addplayeraction(PossibleAction action) {
@@ -56,6 +57,7 @@ public class Player extends AbstractParticipant {
     public String getPlayerName() {
     	return this.playername;
     }
+
     @Override
     public String toString() {
 		String newLine = System.getProperty("line.separator");
