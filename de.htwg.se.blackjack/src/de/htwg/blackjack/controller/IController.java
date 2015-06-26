@@ -39,4 +39,6 @@ public interface IController extends IObservable {
 
 	String getCards();
 
+	void exit();
+
 }

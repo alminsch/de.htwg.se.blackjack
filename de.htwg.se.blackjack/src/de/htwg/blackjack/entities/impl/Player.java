@@ -12,13 +12,28 @@ public class Player extends AbstractParticipant {
     private List<PossibleAction> possibleplayeractions;
     private String playername;
     public int playerbet;
+    boolean insurance;
 
     public Player(String playername) {
         super();
         this.playername = playername;
         this.budget = 1500;
         this.possibleplayeractions = new ArrayList<PossibleAction>();
+        this.insurance = false;
     }
+
+    public void setinsurancetrue() {
+    	insurance = true;
+    }
+
+    public void setinsurancefalse() {
+    	insurance = false;
+    }
+
+    public boolean getinsurance() {
+    	return insurance;
+    }
+
     public void setplayerbet(int bet) {
     	this.playerbet = bet;
     }

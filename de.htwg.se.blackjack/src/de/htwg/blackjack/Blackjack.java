@@ -1,12 +1,17 @@
 package de.htwg.blackjack;
 
 import java.util.Scanner;
+
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import org.apache.log4j.PropertyConfigurator;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.view.gui.BlackjackFrame;
 import de.htwg.blackjack.view.tui.TextUI;
 
 public class Blackjack {
@@ -34,8 +39,8 @@ public class Blackjack {
         // Guice
         controller = injector.getInstance(IController.class);
 
-        //@SuppressWarnings("unused")
-        //BlackjackFrame gui = injector.getInstance(BlackjackFrame.class);
+        @SuppressWarnings("unused")
+        BlackjackFrame gui = injector.getInstance(BlackjackFrame.class);
         tui = injector.getInstance(TextUI.class);
 
         //tui.printTUI();
@@ -44,8 +49,9 @@ public class Blackjack {
         controller.createnewgame();
     }
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
     	Blackjack.getInstance();
+		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
     	// reads input on the tui continuesly until user quits
     	boolean go = true;

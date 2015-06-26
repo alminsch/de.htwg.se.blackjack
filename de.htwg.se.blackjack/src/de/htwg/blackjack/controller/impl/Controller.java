@@ -24,6 +24,7 @@ public class Controller extends Observable implements IController {
     private SingletonCardsInGame scig;
     private Dealer dealer;
     private boolean showCards = false;
+    private boolean dealerinsurance = false;
 
     @Inject
 	public Controller() {
@@ -54,8 +55,8 @@ public class Controller extends Observable implements IController {
 		if(!playerlist.isEmpty()) {
 			scig.resetStapel();
 			resetHandCards();
+			dealerinsurance = false;
 			playerbets();
-
 		} else {
 			statusLine = "Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann";
 			notifyObservers();
@@ -110,10 +111,15 @@ public class Controller extends Observable implements IController {
 		for(Player player : playerlist) {
 			player.actionhit();
 			player.actionhit();
+			if(player.getHandValue()[0] >= 9 && player.getHandValue()[0] <= 11) {
+				//double möglich
+			}
 		}
 		dealer.actionhit();
 		dealer.actionhit();
-
+		if(dealer.getHandValue()[1] == 21) {
+			dealerinsurance = true;
+		}
 		this.tmpplayerlist =  new ArrayDeque<Player>(playerlist); //reset tmpplayerlist for spielzug
 		spielzug();
 	}
@@ -134,9 +140,10 @@ public class Controller extends Observable implements IController {
 		StringBuilder sb = new StringBuilder();
 		int finaldealervalue;
 
-		while(dealer.getHandValue()[0] < 17) {
+		while(dealer.getHandValue()[0] < 17 && dealer.getHandValue()[1] != 21) {
 			dealer.actionhit();
 		}
+
 		if(dealer.getHandValue()[1] <= 21) {
 			finaldealervalue= dealer.getHandValue()[1];
 		} else{
@@ -150,6 +157,7 @@ public class Controller extends Observable implements IController {
 		}
 
 		for(Player player : playerlist) {
+			checkinsurance();
 
 			int finalplayervalue;
 			if(player.getHandValue()[1] <= 21) {
@@ -157,6 +165,7 @@ public class Controller extends Observable implements IController {
 			} else {
 				finalplayervalue = player.getHandValue()[0];
 			}
+
 			if (finalplayervalue == finaldealervalue) {
 				sb.append(player.getPlayerName() + ": Unentschieden    neues Budget:" + player.getbudget()  + "\n");
 				continue;
@@ -177,6 +186,14 @@ public class Controller extends Observable implements IController {
 		statusLine = "Auswertung:\n" + sb.toString() ;
 
 		notifyObservers();
+	}
+
+	private void checkinsurance() {
+		if (player.getinsurance() == true && dealerinsurance == true) {
+			player.addtobudget(player.playerbet);
+		} else if(player.getinsurance() == true && dealerinsurance == false) {
+			player.deletefrombudget(player.playerbet/2);
+		}
 	}
 
 	public String getCards() {
@@ -208,6 +225,9 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void insurance() {
+		if(dealer.getCardsInHand().get(0).name().contains("ASS")) {
+			player.setinsurancetrue();
+		}
 	}
 
 	public void doublebet() {
@@ -234,4 +254,8 @@ public class Controller extends Observable implements IController {
 			player.resetCardsInHand();
 		}
 	}
+
+	public void exit() {
+        System.exit(0);
+    }
 }

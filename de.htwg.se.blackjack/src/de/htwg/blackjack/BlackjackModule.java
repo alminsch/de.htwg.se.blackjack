@@ -11,7 +11,6 @@ public class BlackjackModule extends AbstractModule {
 
         bind(IController.class).to(
                 de.htwg.blackjack.controller.impl.Controller.class);
-
     }
 
 }
