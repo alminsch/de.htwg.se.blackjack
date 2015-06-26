@@ -17,7 +17,6 @@ public class ObservableTest {
 		public void update(Event e) {
 			ping=true;
 		}
-
 	}
 
 	@Before

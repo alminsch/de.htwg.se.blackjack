@@ -1,5 +1,5 @@
 package de.htwg.blackjack.util.observer;
 
-public class Event {
+public abstract class Event {
 
 }
