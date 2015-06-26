@@ -66,9 +66,6 @@ public class Player extends AbstractParticipant {
         return this.budget;
 	}
 
-    public void actioninsurance() {
-
-    }
     public String getPlayerName() {
     	return this.playername;
     }
@@ -77,11 +74,11 @@ public class Player extends AbstractParticipant {
     public String toString() {
 		String newLine = System.getProperty("line.separator");
 	    String result = newLine;
-	    result = playername + " Handkarten:";
+	    result = playername + " Handkarten: ";
 		for(Card c : getCardsInHand()) {
 			result = result + c.toString() + " ";
 		}
 		result = result + "Wert:" + this.getHandValue()[0];
-    	return result + newLine;
+    	return result;// + newLine;
     }
 }

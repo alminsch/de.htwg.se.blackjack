@@ -38,7 +38,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		JMenuBar menuBar;
 
 		JMenu fileMenu;
-        JMenuItem newMenuItem, quitMenuItem, newPlayerItem;
+        JMenuItem newMenuItem, quitMenuItem;
+
+        JMenu npMenu;
+        JMenuItem newPlayerItem;
 
   		setTitle("Blackjack");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,6 +54,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
         //fileMenu
         fileMenu = new JMenu("File");
         fileMenu.setMnemonic(KeyEvent.VK_F);
+
+        npMenu = new JMenu("Neuer Spieler");
+        npMenu.setMnemonic(KeyEvent.VK_F);
 
         //newMenuItem
         newMenuItem = new JMenuItem("Neues Spiel");
@@ -90,8 +96,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
 //        newPlayerItem.setMnemonic(KeyEvent.VK_P);
 //        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
 //                InputEvent.CTRL_DOWN_MASK));
-        fileMenu.add(newPlayerItem);
+        npMenu.add(newPlayerItem);
         menuBar.add(fileMenu);
+        menuBar.add(npMenu);
 
         np = new NewPlayer(this);
         statusPanel = new StatusPanel();

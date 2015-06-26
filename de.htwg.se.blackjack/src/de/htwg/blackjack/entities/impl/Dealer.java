@@ -12,7 +12,7 @@ public class Dealer extends AbstractParticipant {
 
 		String newLine = System.getProperty("line.separator");
 	    String result = newLine;
-	    result = "Dealer Handkarten:";
+	    result = "Dealer Handkarten: ";
 
 	    if(sel == 0) {
 			result = result + getCardsInHand().get(0).toString();

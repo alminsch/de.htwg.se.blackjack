@@ -8,8 +8,8 @@ import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
 
 public abstract class AbstractParticipant implements IParticipant {
 
-    private List<Card> cardsinhand;
-    protected int[] handvalue;
+    public List<Card> cardsinhand;
+    public int[] handvalue;
     private SingletonCardsInGame scig;
 
 
@@ -34,8 +34,12 @@ public abstract class AbstractParticipant implements IParticipant {
         return this.cardsinhand;
     }
 
-    public void actionhit() {
+    public Card actionhit() {
         Card c = scig.getCard();
+        return hitsetvalue(c);
+    }
+
+    public Card hitsetvalue(Card c) {
         cardsinhand.add(c);
         if (c.name().contains("ASS")) {
             if ((this.handvalue[1] + 11) > 21) {
@@ -49,5 +53,6 @@ public abstract class AbstractParticipant implements IParticipant {
             this.handvalue[0] = this.handvalue[0] + c.getCardValue();
             this.handvalue[1] = this.handvalue[1] + c.getCardValue();
         }
+        return c;
     }
 }

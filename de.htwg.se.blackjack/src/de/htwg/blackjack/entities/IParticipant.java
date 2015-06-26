@@ -10,6 +10,6 @@ public interface IParticipant {
 
     List<Card> getCardsInHand();
 
-    void actionhit();
+    Card actionhit();
 
 }
