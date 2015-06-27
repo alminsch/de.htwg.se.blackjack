@@ -10,10 +10,10 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 @SuppressWarnings("serial")
-class BackGroundPane extends JPanel {
+class BackGroundPanel extends JPanel {
     Image img = null;
 
-    BackGroundPane(String imagefile) {
+    BackGroundPanel(String imagefile) {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e1) {
