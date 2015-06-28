@@ -1,35 +1,25 @@
 package de.htwg.blackjack.view.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Insets;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import de.htwg.blackjack.controller.IController;
-import de.htwg.blackjack.util.observer.Event;
+import de.htwg.blackjack.entities.impl.GameStatus;
+import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.util.observer.IObserver;
 
 import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -45,8 +35,14 @@ import com.google.inject.Inject;
 public class BlackjackFrame extends JFrame implements IObserver {
 
 	private IController controller;
-	private Container pane;
 	private StatusPanel statusPanel;
+	private PlayerBetInfoPanel pBetInfoPanel;
+	private DealerPanel dealerPanel;
+	private JPanel contentPane;
+
+	private PlayerSlot playerslot[];
+
+	private int slotcount = 0;
 
 	//JButtons
 	private JButton bHit;
@@ -69,6 +65,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
 
 	NewPlayer np;
+	PlayerBetInfoPanel bip;
 	private BufferedImage img;
 
 	@Inject
@@ -83,8 +80,8 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
 		this.controller = controller;
 		controller.addObserver(this);
+
 		np = new NewPlayer(this);
-		statusPanel = new StatusPanel();
 
 
   		this.setTitle("Blackjack");
@@ -92,7 +89,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
 		//contentPane
 		initImage();
-		JPanel contentPane = new JPanel() {
+		contentPane = new JPanel() {
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
@@ -186,51 +183,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		contentPane.add(bSetBet);
 
 
-		//JPanel bets
-
-		JTextField tBet;
-		JLabel lBet;
-		JTextField tTotal;
-		JLabel lTotal;
-
-        JPanel pbets = new JPanel(new GridLayout(2, 2));
-
-        lBet = new JLabel("  Bet");
-        lBet.setFont(new Font("Arial", Font.BOLD, 18));
-        pbets.add(lBet);
-        tBet = new JTextField("", 13);
-        tBet.setEditable(false);
-        pbets.add(tBet);
-
-        lTotal = new JLabel("  Total");
-        lTotal.setFont(new Font("Arial", Font.BOLD, 18));
-
-        pbets.add(lTotal);
-        tTotal = new JTextField("", 13);
-        tTotal.setEditable(false);
-        pbets.add(tTotal);
-        pbets.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-
-        //JPanel header
-        JPanel pheader = new JPanel();
-        JLabel header = new JLabel("Spieler Wetten ");
-        header.setFont(new Font("Arial", Font.BOLD, 20));
-        header.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        pheader.add(header);
-        pheader.setBorder(BorderFactory.createLineBorder(Color.gray));
-
-        //JPanel bets add all Panels
-        JPanel pallbets = new JPanel();
-        pallbets.setLayout(new BoxLayout(pallbets, BoxLayout.Y_AXIS));
-
-        pallbets.setBorder(BorderFactory.createLineBorder(Color.black));
-        pallbets.add(pheader);
-        pallbets.add(pbets);
-        pallbets.setBounds(1280, 750, 200, 150);
-
-		contentPane.add(pallbets);
-
-
         menuBar = new JMenuBar();
         //fileMenu
         fileMenu = new JMenu("Datei");
@@ -273,17 +225,48 @@ public class BlackjackFrame extends JFrame implements IObserver {
             	}
             }
         });
-//        newPlayerItem.setMnemonic(KeyEvent.VK_P);
-//        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
-//                InputEvent.CTRL_DOWN_MASK));
+        newPlayerItem.setMnemonic(KeyEvent.VK_P);
+        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
+                InputEvent.CTRL_DOWN_MASK));
         npMenu.add(newPlayerItem);
         menuBar.add(fileMenu);
         menuBar.add(npMenu);
 
-        this.setJMenuBar(menuBar);
+        //PlayerBetInfoPanel
+        pBetInfoPanel = new PlayerBetInfoPanel(controller);
+        Dimension size = pBetInfoPanel.getPreferredSize();
+        pBetInfoPanel.setBounds(1280, 750, size.width, size.height);
+        contentPane.add(pBetInfoPanel);
 
-        this.setContentPane(contentPane);
+        //StatusPanel
+		statusPanel = new StatusPanel();
+		statusPanel.setBounds(0, 0, 1495, 100);
+        contentPane.add(statusPanel);
 
+        //DealerPanel
+        dealerPanel = new DealerPanel(controller);
+        dealerPanel.setBounds(700, 100, 500, 500);
+        contentPane.add(dealerPanel);
+
+
+        int x[] = new int[3];
+        int y[] = new int[3];
+        x[0] = 490;
+        x[1] = 680;
+        x[2] = 870;
+        y[0] = 600;
+        y[1] = 600;
+        y[2] = 600;
+
+        playerslot = new PlayerSlot[3];
+        for(int i = 0; i < playerslot.length; i++) {
+        	playerslot[i] = new PlayerSlot(controller);
+        	playerslot[i].setBounds(x[i], y[i], 500, 500);
+        	contentPane.add(playerslot[i]);
+        }
+
+		this.setJMenuBar(menuBar);
+		this.setContentPane(contentPane);
 	}
 
 	void initImage() {
@@ -303,11 +286,21 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	}
 
 	@Override
-	public void update(Event e) {
-		statusPanel.setText(controller.getStatus());
-//        if (e instanceof SizeChangedEvent) {
-        constructPane(controller);
-//        }
-        repaint();
+	public void update(GameStatus status) {
+		if(status == GameStatus.NEW_PLAYER) {
+			List<Player> l = controller.getPlayerList();
+			Player player = l.get(l.size()-1);
+			playerslot[slotcount].setPlayer(player);
+			slotcount++;
+		}
+		if(status == GameStatus.AUSWERTUNG) {
+			statusPanel.setText("");
+			constructPane(controller);
+			repaint();
+		} else {
+			statusPanel.setText(controller.getStatus());
+	        constructPane(controller);
+	        repaint();
+		}
 	}
 }

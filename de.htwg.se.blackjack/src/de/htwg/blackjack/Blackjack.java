@@ -3,7 +3,6 @@ package de.htwg.blackjack;
 import java.util.Scanner;
 
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 import org.apache.log4j.PropertyConfigurator;
 

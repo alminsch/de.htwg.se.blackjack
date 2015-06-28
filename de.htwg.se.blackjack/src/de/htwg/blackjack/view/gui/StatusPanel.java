@@ -1,6 +1,7 @@
 package de.htwg.blackjack.view.gui;
 
 import java.awt.FlowLayout;
+import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -13,10 +14,14 @@ public class StatusPanel extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public StatusPanel() {
-        setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+    	this.setOpaque(false);
 
-        setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
-        add(statusLabel);
+    	statusLabel.setFont(new Font("Arial", Font.ITALIC, 22));
+    	statusLabel.setHorizontalAlignment(JLabel.CENTER);
+    	statusLabel.setVerticalAlignment(JLabel.CENTER);
+
+    	this.setBorder(BorderFactory.createEmptyBorder());
+        this.add(statusLabel);
     }
 
     public final void setText(final String text) {

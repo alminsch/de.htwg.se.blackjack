@@ -20,6 +20,7 @@ public class Player extends AbstractParticipant {
         this.budget = 1500;
         this.possibleplayeractions = new ArrayList<PossibleAction>();
         this.insurance = false;
+        this.playerbet = 0;
     }
 
     public void setinsurancetrue() {

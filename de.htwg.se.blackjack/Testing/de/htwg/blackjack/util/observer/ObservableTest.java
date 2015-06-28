@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.htwg.blackjack.entities.impl.GameStatus;
+
 
 public class ObservableTest {
 	private boolean ping=false;
@@ -14,7 +16,7 @@ public class ObservableTest {
 
 	class TestObserver implements IObserver {
 		//@Override
-		public void update(Event e) {
+		public void update(GameStatus e) {
 			ping=true;
 		}
 	}

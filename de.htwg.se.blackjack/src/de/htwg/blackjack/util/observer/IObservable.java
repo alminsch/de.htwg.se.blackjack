@@ -1,5 +1,6 @@
 package de.htwg.blackjack.util.observer;
 
+import de.htwg.blackjack.entities.impl.GameStatus;
 
 public interface IObservable {
 
@@ -11,5 +12,5 @@ public interface IObservable {
 
     void notifyObservers();
 
-    void notifyObservers(Event e);
+    void notifyObservers(GameStatus e);
 }

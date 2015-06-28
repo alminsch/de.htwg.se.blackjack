@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class NewPlayer extends JDialog implements ActionListener {
+
 	JTextField NameTextField = new JTextField(10);
 
 	JButton npButton = new JButton("Spieler erstellen");
@@ -22,6 +23,7 @@ public class NewPlayer extends JDialog implements ActionListener {
 	private String name;
 
 	public NewPlayer(JFrame f) {
+
 		setModal(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setPreferredSize(new Dimension(500, 300));

@@ -1,8 +1,9 @@
 package de.htwg.blackjack.util.observer;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+
+import de.htwg.blackjack.entities.impl.GameStatus;
 
 public class Observable implements IObservable {
 
@@ -29,10 +30,9 @@ public class Observable implements IObservable {
     }
 
     @Override
-    public void notifyObservers(Event e) {
-        for (Iterator<IObserver> iter = subscribers.iterator(); iter.hasNext();) {
-            IObserver observer = iter.next();
-            observer.update(e);
+    public void notifyObservers(GameStatus e) {
+        for (IObserver current: subscribers) {
+            current.update(e);
         }
     }
 }
