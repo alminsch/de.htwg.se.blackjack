@@ -1,11 +1,14 @@
 package de.htwg.blackjack.view.tui;
 
 import java.util.Scanner;
+
 import org.apache.log4j.Logger;
 
-import de.htwg.blackjack.util.observer.Event;
+
 import de.htwg.blackjack.util.observer.IObserver;
 import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.entities.impl.GameStatus;
+
 import com.google.inject.Inject;
 
 public class TextUI implements IObserver{
@@ -22,7 +25,7 @@ public class TextUI implements IObserver{
     }
 
 
-	public void update(Event e) {
+	public void update(GameStatus e) {
         printTUI();
     }
 
