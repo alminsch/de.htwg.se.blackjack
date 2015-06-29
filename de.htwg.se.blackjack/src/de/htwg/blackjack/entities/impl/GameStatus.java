@@ -5,5 +5,6 @@ public enum GameStatus {
 	DURING_BET,
 	DURING_TURN,
 	AUSWERTUNG,
-	NEW_PLAYER;
+	NEW_PLAYER,
+	READY_TO_START;
 }

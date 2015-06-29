@@ -1,5 +1,6 @@
 package de.htwg.blackjack.view.gui;
 
+import java.awt.Font;
 import java.awt.Image;
 import java.util.List;
 
@@ -15,15 +16,21 @@ import de.htwg.blackjack.util.observer.IObserver;
 public class DealerPanel extends JLayeredPane implements IObserver{
 
 	IController controller;
+	JLabel dealervalue;
+
 	public DealerPanel(IController controller) {
 
 		this.controller = controller;
 		controller.addObserver(this);
+		dealervalue = new JLabel();
+		dealervalue.setBounds(110, 150, 200, 50);
+		dealervalue.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		this.add(dealervalue);
 	}
 
 	public void printdealercards() {
 		List<Card> dealerCards = controller.getDealerCards();
-		int x = 0;
+		int x = 50;
 		int idx = 1;
 		for(Card c : dealerCards) {
 			ImageIcon icon = new ImageIcon("BlackjackImages/" + c.toString() +".png");
@@ -34,6 +41,8 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 			x = x+25;
 			idx++;
 		}
+		int cvalue = controller.getDealerValue();
+		dealervalue.setText("Wert: "+ cvalue);
 	}
 
 	public void update(GameStatus status) {

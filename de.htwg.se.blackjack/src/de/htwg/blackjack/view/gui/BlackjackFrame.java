@@ -1,6 +1,7 @@
 package de.htwg.blackjack.view.gui;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,15 +21,14 @@ import de.htwg.blackjack.util.observer.IObserver;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
-import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 import com.google.inject.Inject;
 
@@ -244,8 +244,13 @@ public class BlackjackFrame extends JFrame implements IObserver {
         contentPane.add(statusPanel);
 
         //DealerPanel
+        JLabel dealername = new JLabel("Dealer");
+		dealername.setBounds(700, 50, 100, 50);
+		dealername.setFont(new Font("Arial", Font.CENTER_BASELINE, 30));
+		contentPane.add(dealername);
+
         dealerPanel = new DealerPanel(controller);
-        dealerPanel.setBounds(700, 100, 500, 500);
+        dealerPanel.setBounds(600, 100, 500, 500);
         contentPane.add(dealerPanel);
 
 
@@ -285,6 +290,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		repaint();
 	}
 
+
 	@Override
 	public void update(GameStatus status) {
 		if(status == GameStatus.NEW_PLAYER) {
@@ -294,9 +300,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			slotcount++;
 		}
 		if(status == GameStatus.AUSWERTUNG) {
-			statusPanel.setText("");
+			statusPanel.setText("Auswertung");
 			constructPane(controller);
 			repaint();
+
 		} else {
 			statusPanel.setText(controller.getStatus());
 	        constructPane(controller);
