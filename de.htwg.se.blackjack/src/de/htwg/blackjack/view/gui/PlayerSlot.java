@@ -1,5 +1,6 @@
 package de.htwg.blackjack.view.gui;
 
+import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
@@ -16,12 +17,29 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 
 	private static final long serialVersionUID = 1L;
 	private Player player;
+	private JLabel playervalue;
+	private JLabel playername;
+	private JLabel budget;
 	public PlayerSlot(IController controller) {
 		controller.addObserver(this);
 	}
 
-	public void setPlayer(Player player) {
+	public void setPlayer(Player player, int i) {
 		this.player = player;
+		playervalue = new JLabel();
+		playervalue.setBounds(150,100, 200, 50);
+		playervalue.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		this.add(playervalue);
+		playername = new JLabel();
+		playername.setBounds(150,150,200,50);
+		playername.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		playername.setText("Spieler " +i+ ": " + player.getPlayerName());
+		this.add(playername);
+		budget = new JLabel();
+		budget.setBounds(150,180,200,50);
+		budget.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		budget.setText("Budget: " + player.getbudget());
+		this.add(budget);
 	}
 
 	private void printPlayerCards() {
@@ -33,15 +51,24 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 			Image img = icon.getImage().getScaledInstance(icon.getIconHeight()-130, icon.getIconWidth()-20,Image.SCALE_FAST);
 			JLabel p = new JLabel(new ImageIcon(img));
 			p.setBounds(0, y, 140, 160);
-			this.add(p, new Integer(idx));
+			this.add(p,idx);
 		    y = y+30;
 			idx++;
 		}
+		int cvalue = 0;
+		for(Card c : player.cardsinhand) {
+			cvalue = cvalue + c.getCardValue();
+		}		
+		playervalue.setText("Wert: "+ cvalue);
+		budget.setText("Budget: " + player.getbudget());
 	}
 
 
 	public void update(GameStatus e) {
 		if(player != null)
 			printPlayerCards();
+	}
+	
+	public void reset() {
 	}
 }

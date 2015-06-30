@@ -48,4 +48,12 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 	public void update(GameStatus status) {
 		printdealercards();
 	}
+	
+	public void reset() {
+		this.removeAll();
+		/*dealervalue = new JLabel();
+		dealervalue.setBounds(110, 150, 200, 50);
+		dealervalue.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		this.add(dealervalue);*/
+	}
 }

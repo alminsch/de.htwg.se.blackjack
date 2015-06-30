@@ -44,7 +44,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
 	private int slotcount = 0;
 
-	//JButtons
+	// JButtons
 	private JButton bHit;
 	private JButton bStand;
 	private JButton bInsurance;
@@ -52,9 +52,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
 	private JButton bPlus;
 	private JButton bMinus;
-	private JButton	bSetBet;
+	private JButton bSetBet;
 
-	//JMenuBar
+	// JMenuBar
 	private JMenuBar menuBar;
 
 	private JMenu fileMenu;
@@ -63,7 +63,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	private JMenu npMenu;
 	private JMenuItem newPlayerItem;
 
-
 	NewPlayer np;
 	PlayerBetInfoPanel bip;
 	private BufferedImage img;
@@ -71,7 +70,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	@Inject
 	public BlackjackFrame(final IController controller) {
 
-		//setLookAndFeel
+		// setLookAndFeel
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
@@ -83,22 +82,21 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
 		np = new NewPlayer(this);
 
-
-  		this.setTitle("Blackjack");
+		this.setTitle("Blackjack");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		//contentPane
+		// contentPane
 		initImage();
 		contentPane = new JPanel() {
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
-		        g.drawImage(img,0,0,this.getWidth(),this.getHeight(),this);
+				g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
 			}
 		};
 		contentPane.setLayout(null);
 
-		//Button Hit
+		// Button Hit
 		bHit = new JButton("Hit");
 		bHit.setBounds(20, 860, 100, 50);
 		bHit.setBorder(BorderFactory.createEmptyBorder());
@@ -107,22 +105,22 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.playerhit();
 			}
-        });
+		});
 		contentPane.add(bHit);
 
-		//Button Stand
-        bStand = new JButton("Stand");
-        bStand.setBounds(130, 860, 100, 50);
-        bStand.setBorder(BorderFactory.createEmptyBorder());
-        bStand.addActionListener(new ActionListener() {
+		// Button Stand
+		bStand = new JButton("Stand");
+		bStand.setBounds(130, 860, 100, 50);
+		bStand.setBorder(BorderFactory.createEmptyBorder());
+		bStand.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				controller.stand();
 			}
-        });
+		});
 		contentPane.add(bStand);
 
-		//Button Insurance
+		// Button Insurance
 		bInsurance = new JButton("Insurance");
 		bInsurance.setBounds(240, 860, 100, 50);
 		bInsurance.setBorder(BorderFactory.createEmptyBorder());
@@ -131,10 +129,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.insurance();
 			}
-        });
+		});
 		contentPane.add(bInsurance);
 
-		//Button Double
+		// Button Double
 		bDouble = new JButton("Double");
 		bDouble.setBounds(350, 860, 100, 50);
 		bDouble.setBorder(BorderFactory.createEmptyBorder());
@@ -143,10 +141,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.doublebet();
 			}
-        });
+		});
 		contentPane.add(bDouble);
 
-		//Button Plus
+		// Button Plus
 		bPlus = new JButton("+ 100");
 		bPlus.setBounds(1200, 750, 70, 50);
 		bPlus.setBorder(BorderFactory.createEmptyBorder());
@@ -155,10 +153,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.increasebet();
 			}
-        });
+		});
 		contentPane.add(bPlus);
 
-		//Button Minus
+		// Button Minus
 		bMinus = new JButton("- 100");
 		bMinus.setBounds(1200, 800, 70, 50);
 		bMinus.setBorder(BorderFactory.createEmptyBorder());
@@ -167,10 +165,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.decreasebet();
 			}
-        });
+		});
 		contentPane.add(bMinus);
 
-		//Button SetBet
+		// Button SetBet
 		bSetBet = new JButton("Set Bet");
 		bSetBet.setBounds(1200, 850, 70, 50);
 		bSetBet.setBorder(BorderFactory.createEmptyBorder());
@@ -179,96 +177,94 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.setbetforround();
 			}
-        });
+		});
 		contentPane.add(bSetBet);
 
+		menuBar = new JMenuBar();
+		// fileMenu
+		fileMenu = new JMenu("Datei");
+		fileMenu.setMnemonic(KeyEvent.VK_D);
 
-        menuBar = new JMenuBar();
-        //fileMenu
-        fileMenu = new JMenu("Datei");
-        fileMenu.setMnemonic(KeyEvent.VK_D);
+		npMenu = new JMenu("Neuer Spieler");
 
-        npMenu = new JMenu("Neuer Spieler");
-
-        //newMenuItem
-        newMenuItem = new JMenuItem("Neues Spiel");
-        newMenuItem.addActionListener(new ActionListener() {
+		// newMenuItem
+		newMenuItem = new JMenuItem("Neues Spiel");
+		newMenuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				controller.startnewround();
 			}
-        });
-        newMenuItem.setMnemonic(KeyEvent.VK_N);
-        newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
-                InputEvent.CTRL_DOWN_MASK));
-        fileMenu.add(newMenuItem);
+		});
+		newMenuItem.setMnemonic(KeyEvent.VK_N);
+		newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
+				InputEvent.CTRL_DOWN_MASK));
+		fileMenu.add(newMenuItem);
 
-        //quitMenuItem
-        quitMenuItem = new JMenuItem("Beenden");
-        quitMenuItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                controller.exit();
-            }
-        });
-        quitMenuItem.setMnemonic(KeyEvent.VK_Q);
-        quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
-                InputEvent.CTRL_DOWN_MASK));
-        fileMenu.add(quitMenuItem);
-        fileMenu.add(new JSeparator());
-        //newPlayerItem
-        newPlayerItem = new JMenuItem("Neuer Spieler");
-        newPlayerItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-            	np.shownewplayerDialog();
-            	if(np.getName() != "") {
-            		controller.addnewPlayer(np.getName());
-            	}
-            }
-        });
-        newPlayerItem.setMnemonic(KeyEvent.VK_P);
-        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
-                InputEvent.CTRL_DOWN_MASK));
-        npMenu.add(newPlayerItem);
-        menuBar.add(fileMenu);
-        menuBar.add(npMenu);
+		// quitMenuItem
+		quitMenuItem = new JMenuItem("Beenden");
+		quitMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				controller.exit();
+			}
+		});
+		quitMenuItem.setMnemonic(KeyEvent.VK_Q);
+		quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
+				InputEvent.CTRL_DOWN_MASK));
+		fileMenu.add(quitMenuItem);
+		fileMenu.add(new JSeparator());
+		// newPlayerItem
+		newPlayerItem = new JMenuItem("Neuer Spieler");
+		newPlayerItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				np.shownewplayerDialog();
+				if (np.getName() != "") {
+					controller.addnewPlayer(np.getName());
+				}
+			}
+		});
+		newPlayerItem.setMnemonic(KeyEvent.VK_P);
+		newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
+				InputEvent.CTRL_DOWN_MASK));
+		npMenu.add(newPlayerItem);
+		menuBar.add(fileMenu);
+		menuBar.add(npMenu);
 
-        //PlayerBetInfoPanel
-        pBetInfoPanel = new PlayerBetInfoPanel(controller);
-        Dimension size = pBetInfoPanel.getPreferredSize();
-        pBetInfoPanel.setBounds(1280, 750, size.width, size.height);
-        contentPane.add(pBetInfoPanel);
+		// PlayerBetInfoPanel
+		pBetInfoPanel = new PlayerBetInfoPanel(controller);
+		Dimension size = pBetInfoPanel.getPreferredSize();
+		pBetInfoPanel.setBounds(1280, 750, size.width, size.height);
+		contentPane.add(pBetInfoPanel);
 
-        //StatusPanel
+		// StatusPanel
 		statusPanel = new StatusPanel();
 		statusPanel.setBounds(0, 0, 1495, 100);
-        contentPane.add(statusPanel);
+		contentPane.add(statusPanel);
 
-        //DealerPanel
-        JLabel dealername = new JLabel("Dealer");
+		// DealerPanel
+		JLabel dealername = new JLabel("Dealer");
 		dealername.setBounds(700, 50, 100, 50);
 		dealername.setFont(new Font("Arial", Font.CENTER_BASELINE, 30));
 		contentPane.add(dealername);
 
-        dealerPanel = new DealerPanel(controller);
-        dealerPanel.setBounds(600, 100, 500, 500);
-        contentPane.add(dealerPanel);
+		dealerPanel = new DealerPanel(controller);
+		dealerPanel.setBounds(600, 100, 500, 500);
+		contentPane.add(dealerPanel);
 
+		int x[] = new int[3];
+		int y[] = new int[3];
+		x[0] = 200;
+		x[1] = 600;
+		x[2] = 1000;
+		y[0] = 500;
+		y[1] = 500;
+		y[2] = 500;
 
-        int x[] = new int[3];
-        int y[] = new int[3];
-        x[0] = 490;
-        x[1] = 680;
-        x[2] = 870;
-        y[0] = 600;
-        y[1] = 600;
-        y[2] = 600;
-
-        playerslot = new PlayerSlot[3];
-        for(int i = 0; i < playerslot.length; i++) {
-        	playerslot[i] = new PlayerSlot(controller);
-        	playerslot[i].setBounds(x[i], y[i], 500, 500);
-        	contentPane.add(playerslot[i]);
-        }
+		playerslot = new PlayerSlot[3];
+		for (int i = 0; i < playerslot.length; i++) {
+			playerslot[i] = new PlayerSlot(controller);
+			playerslot[i].setBounds(x[i], y[i], 500, 500);
+			contentPane.add(playerslot[i]);
+		}
 
 		this.setJMenuBar(menuBar);
 		this.setContentPane(contentPane);
@@ -283,31 +279,31 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	}
 
 	public final void constructPane(IController controller) {
-
 		this.setSize(1500, 1000);
 		this.setResizable(false);
 		this.setVisible(true);
-		repaint();
 	}
-
 
 	@Override
 	public void update(GameStatus status) {
-		if(status == GameStatus.NEW_PLAYER) {
+		if (status == GameStatus.NEW_PLAYER) {
 			List<Player> l = controller.getPlayerList();
-			Player player = l.get(l.size()-1);
-			playerslot[slotcount].setPlayer(player);
+			Player player = l.get(l.size() - 1);
+			playerslot[slotcount].setPlayer(player, slotcount + 1);
 			slotcount++;
 		}
-		if(status == GameStatus.AUSWERTUNG) {
+		if (status == GameStatus.AUSWERTUNG) {
 			statusPanel.setText("Auswertung");
+			dealerPanel.reset();
 			constructPane(controller);
-			repaint();
+			for (int i = 0; i < playerslot.length; i++) {
+				playerslot[i].reset();
+			}
 
 		} else {
 			statusPanel.setText(controller.getStatus());
-	        constructPane(controller);
-	        repaint();
+			constructPane(controller);
+			repaint();
 		}
 	}
 }
