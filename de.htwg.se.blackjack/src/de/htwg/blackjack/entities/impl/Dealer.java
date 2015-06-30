@@ -8,8 +8,21 @@ public class Dealer extends AbstractParticipant {
         super();
     }
 
-	public void setHandValueNull() {
-		this.handvalue[0] = 0;
-		this.handvalue[1] = 0;
-	}
+	public String toString(int sel) {
+
+		String newLine = System.getProperty("line.separator");
+	    String result = newLine;
+	    result = "Dealer Handkarten: ";
+
+	    if(sel == 0) {
+			result = result + getCardsInHand().get(0).toString();
+			return result;
+		}
+
+		for(Card c : getCardsInHand()) {
+			result = result + c.toString() + " ";
+		}
+    	return result + "Wert:" + sel;
+    }
+
 }

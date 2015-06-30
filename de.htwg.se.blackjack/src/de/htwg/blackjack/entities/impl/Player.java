@@ -1,3 +1,4 @@
+
 package de.htwg.blackjack.entities.impl;
 
 import java.util.ArrayList;
@@ -8,26 +9,38 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 public class Player extends AbstractParticipant {
 
     private int budget;
-    private int bet;
-    private String playername;
     private List<PossibleAction> possibleplayeractions;
-    private boolean setbet;
+    private String playername;
+    public int playerbet;
+    boolean insurance;
 
     public Player(String playername) {
         super();
         this.playername = playername;
         this.budget = 1500;
         this.possibleplayeractions = new ArrayList<PossibleAction>();
-        this.setbet = false;
+        this.insurance = false;
+        this.playerbet = 0;
     }
 
-
-    public boolean getsetbet() {
-    	return this.setbet;
+    public void setinsurancetrue() {
+    	insurance = true;
     }
 
-    public String getplayername() {
-        return this.playername;
+    public void setinsurancefalse() {
+    	insurance = false;
+    }
+
+    public boolean getinsurance() {
+    	return insurance;
+    }
+
+    public void setplayerbet(int bet) {
+    	this.playerbet = bet;
+    }
+
+    public int getplayerbet() {
+    	return this.playerbet;
     }
 
     public void addplayeraction(PossibleAction action) {
@@ -54,16 +67,19 @@ public class Player extends AbstractParticipant {
         return this.budget;
 	}
 
-    public void setbet(int bet) {
-    	this.bet = bet;
-    	this.setbet = true;
+    public String getPlayerName() {
+    	return this.playername;
     }
 
-    public int getbet() {
-    	return this.bet;
-    }
-
-    public void actioninsurance() {
-
+    @Override
+    public String toString() {
+		String newLine = System.getProperty("line.separator");
+	    String result = newLine;
+	    result = playername + " Handkarten: ";
+		for(Card c : getCardsInHand()) {
+			result = result + c.toString() + " ";
+		}
+		result = result + "Wert:" + this.getHandValue()[0];
+    	return result;// + newLine;
     }
 }

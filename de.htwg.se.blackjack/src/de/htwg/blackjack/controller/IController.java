@@ -1,5 +1,9 @@
 package de.htwg.blackjack.controller;
 
+import java.util.List;
+
+import de.htwg.blackjack.entities.impl.Card;
+import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.util.observer.IObservable;
 
 public interface IController extends IObservable {
@@ -19,5 +23,36 @@ public interface IController extends IObservable {
 	void playerhit();
 
 	void stand();
+
+	void insurance();
+
+	void doublebet();
+
+	void createnewgame();
+
+	void playerbets();
+
+	void allgettwocards();
+
+	void spielzug();
+
+	void auswertung();
+
+	boolean deletePlayer(String name);
+
+	String getCards();
+
+	void exit();
+
+	int getTotalPlayerBet();
+
+	int getDisplayBet();
+
+	List<Card> getDealerCards();
+
+	List<Player> getPlayerList();
+
+	int getDealerValue();
+
 
 }

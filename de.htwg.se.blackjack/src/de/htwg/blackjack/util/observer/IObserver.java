@@ -1,6 +1,7 @@
 package de.htwg.blackjack.util.observer;
 
-public interface IObserver {
-    void update(Event e);
+import de.htwg.blackjack.entities.impl.GameStatus;
 
+public interface IObserver {
+    void update(GameStatus e);
 }

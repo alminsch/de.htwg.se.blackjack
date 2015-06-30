@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class SingletonCardsInGame {
 	private static SingletonCardsInGame scig = new SingletonCardsInGame();
-    List<Card> stapel;
+    List<Card> stapel = new ArrayList<Card>(EnumSet.allOf(Card.class));
     private Random randomGenerator;
 
     public SingletonCardsInGame() {}
