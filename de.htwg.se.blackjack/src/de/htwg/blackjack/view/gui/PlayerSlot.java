@@ -23,7 +23,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 	private JLabel budget;
 	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
 	private IController controller;
-	
+
 	public PlayerSlot(IController controller) {
 		controller.addObserver(this);
 		this.controller = controller;
@@ -62,9 +62,8 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 		    y = y+30;
 			idx--;
 		}
-		StringBuilder sb = new StringBuilder();
-		sb.append(player.handvalue[0] + " / " + player.handvalue[1]);	
-		playervalue.setText("Wert: "+ sb.toString());
+		String s = player.handvalue[0] + " / " + player.handvalue[1];
+		playervalue.setText("Wert: "+ s);
 		budget.setText("Budget: " + player.getbudget());
 	}
 
@@ -79,7 +78,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 			this.remove(c);
 		}
 	}
-	
+
 	public void remove() {
 		this.removeAll();
 	}
