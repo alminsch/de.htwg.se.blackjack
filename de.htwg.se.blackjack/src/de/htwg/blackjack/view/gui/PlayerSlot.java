@@ -75,4 +75,8 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 			this.remove(c);
 		}
 	}
+	
+	public void remove() {
+		this.removeAll();
+	}
 }

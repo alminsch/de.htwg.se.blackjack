@@ -44,7 +44,7 @@ public abstract class AbstractParticipant implements IParticipant {
         if (c.name().contains("ASS")) {
             if ((this.handvalue[1] + 11) > 21) {
                 this.handvalue[0] = this.handvalue[0] + 1;
-                this.handvalue[1] = this.handvalue[0] + 11;
+                this.handvalue[1] = this.handvalue[0] + 11 -1;
             } else {
                 this.handvalue[0] = this.handvalue[0] + 1;
                 this.handvalue[1] = this.handvalue[1] + 11;

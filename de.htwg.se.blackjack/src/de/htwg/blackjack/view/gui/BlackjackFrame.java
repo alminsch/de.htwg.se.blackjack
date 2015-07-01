@@ -299,7 +299,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		if (status == GameStatus.AUSWERTUNG) {
 			statusPanel.setText("Auswertung");
 			constructPane(controller);
-
 		} else {
 			statusPanel.setText(controller.getStatus());
 			constructPane(controller);

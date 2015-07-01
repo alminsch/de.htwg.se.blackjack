@@ -145,7 +145,7 @@ public class Controller extends Observable implements IController {
 		StringBuilder sb = new StringBuilder();
 		int finaldealervalue;
 
-		while(dealer.getHandValue()[0] < 17 && dealer.getHandValue()[1] != 21) {
+		while(dealer.getHandValue()[0] < 17 && dealer.getHandValue()[1] < 17) {
 			dealer.actionhit();
 		}
 
