@@ -9,7 +9,6 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 public class Player extends AbstractParticipant {
 
     private int budget;
-    private List<PossibleAction> possibleplayeractions;
     private String playername;
     public int playerbet;
     boolean insurance;
@@ -18,7 +17,6 @@ public class Player extends AbstractParticipant {
         super();
         this.playername = playername;
         this.budget = 1500;
-        this.possibleplayeractions = new ArrayList<PossibleAction>();
         this.insurance = false;
         this.playerbet = 0;
     }
@@ -41,18 +39,6 @@ public class Player extends AbstractParticipant {
 
     public int getplayerbet() {
     	return this.playerbet;
-    }
-
-    public void addplayeraction(PossibleAction action) {
-        this.possibleplayeractions.add(action);
-    }
-
-    public void deleteplayeraction(PossibleAction action) {
-        this.possibleplayeractions.remove(action);
-    }
-
-    public List<PossibleAction> getpossibleplayeractions() {
-        return this.possibleplayeractions;
     }
 
     public void addtobudget(int money) {
