@@ -1,5 +1,6 @@
 package de.htwg.blackjack.view.gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,15 +25,16 @@ public class NewPlayer extends JDialog implements ActionListener {
 
 	public NewPlayer(JFrame f) {
 
-		setModal(true);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setPreferredSize(new Dimension(400, 200));
+		this.setModal(true);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setPreferredSize(new Dimension(400, 200));
+		this.setTitle("Neuer Spieler");
 
 		JPanel panel1 = new JPanel();
 
 		panel1.add(new JLabel("Name"));
 		panel1.add(NameTextField);
-		panel1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+		panel1.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 
 		JPanel panel2 = new JPanel();
 		panel2.add(npButton);
@@ -42,7 +44,7 @@ public class NewPlayer extends JDialog implements ActionListener {
 
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-		panel.setBorder(BorderFactory.createTitledBorder("Neuer Spieler erstellen"));
+		panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		panel.add(panel1);
 		panel.add(panel2);
 
