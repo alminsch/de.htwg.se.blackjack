@@ -40,6 +40,13 @@ public class ControllerTest {
 		Controller d = new Controller();
 		d.createnewgame();
 		d.startnewround();
+		d.playerbets();
+		d.setGameStatus(GameStatus.DURING_BET);
+		d.addnewPlayer("Test");
+		d.setGameStatus(GameStatus.DURING_TURN);
+		d.addnewPlayer("Test");
+		d.setGameStatus(GameStatus.NP_NOPERMISSION);
+		d.addnewPlayer("Test");
 	}
 
 	@Test
@@ -58,6 +65,9 @@ public class ControllerTest {
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
+		d.increasebet();
+		d.decreasebet();
+		d.decreasebet();
 		d.setGameStatus(GameStatus.AUSWERTUNG);
 		d.setbetforround();
 	}
