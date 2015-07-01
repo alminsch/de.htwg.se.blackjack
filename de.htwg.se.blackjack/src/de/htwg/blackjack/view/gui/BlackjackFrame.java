@@ -47,7 +47,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	// JButtons
 	private JButton bHit;
 	private JButton bStand;
-	private JButton bInsurance;
 	private JButton bDouble;
 
 	private JButton bPlus;
@@ -119,18 +118,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			}
 		});
 		contentPane.add(bStand);
-
-		// Button Insurance
-		bInsurance = new JButton("Insurance");
-		bInsurance.setBounds(240, 860, 100, 50);
-		bInsurance.setBorder(BorderFactory.createEmptyBorder());
-		bInsurance.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				controller.insurance();
-			}
-		});
-		contentPane.add(bInsurance);
 
 		// Button Double
 		bDouble = new JButton("Double");
@@ -204,7 +191,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		quitMenuItem = new JMenuItem("Beenden");
 		quitMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				controller.exit();
+				System.exit(0);
 			}
 		});
 		quitMenuItem.setMnemonic(KeyEvent.VK_Q);

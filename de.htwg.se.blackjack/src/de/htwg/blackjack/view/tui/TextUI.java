@@ -49,9 +49,6 @@ public class TextUI implements IObserver{
 		case"s":
 			controller.stand();
 			break;
-		case"i":
-			controller.insurance();
-			break;
 		case"d":
 			controller.doublebet();
 			break;

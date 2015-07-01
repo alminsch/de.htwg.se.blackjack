@@ -14,8 +14,6 @@ public class PlayerTest {
 	@Before
 	public void setUp() {
 		player1 = new Player("Hans Wurst");
-		player1.addplayeraction(PossibleAction.STAND);
-		player1.addplayeraction(PossibleAction.HIT);
 		player1.cardsinhand.add(Card.HERZACHT);
 		player1.setplayerbet(100);
 	}
@@ -26,32 +24,9 @@ public class PlayerTest {
     }
 
 	@Test
-    public void Testaddplayeraction() {
-		player1.deleteplayeraction(PossibleAction.HIT);
-    }
-
-	@Test
-    public void deleteplayeraction() {
-		player1.addplayeraction(PossibleAction.STAND);
-    }
-
-	@Test
-    public void Testgetpossibleplayeractions() {;
-		assertTrue(player1.getpossibleplayeractions().contains(PossibleAction.STAND));
-    }
-
-	@Test
 	public void Testgetplayerbet() {
 		assertEquals(100, player1.getplayerbet());
 	}
-
-	@Test
-    public void Testaddtobudget() {
-    }
-
-	@Test
-    public void Testdeletefrombudget() {
-    }
 
 	@Test
     public void Testgetbudget() {
@@ -59,9 +34,14 @@ public class PlayerTest {
 		player1.deletefrombudget(10);
 		assertEquals(1500, player1.getbudget());
     }
-
+	
 	@Test
 	public void Testgetinsurance() {
+		assertEquals(false,player1.getinsurance());
+	}
+
+	@Test
+	public void Testsetinsurance() {
 		player1.setinsurancetrue();
 		assertEquals(true, player1.getinsurance());
 		player1.setinsurancefalse();

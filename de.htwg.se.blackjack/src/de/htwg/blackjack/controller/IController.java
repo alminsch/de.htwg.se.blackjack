@@ -26,8 +26,6 @@ public interface IController extends IObservable {
 
 	void stand();
 
-	void insurance();
-
 	void doublebet();
 
 	void createnewgame();
@@ -40,11 +38,9 @@ public interface IController extends IObservable {
 
 	void auswertung();
 
-	boolean deletePlayer(String name);
+	boolean deletePlayer(Player player);
 
 	String getCards();
-
-	void exit();
 
 	int getTotalPlayerBet();
 

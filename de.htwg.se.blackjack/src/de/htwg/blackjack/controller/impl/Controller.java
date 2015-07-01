@@ -26,7 +26,6 @@ public class Controller extends Observable implements IController {
     private Player player;
     private SingletonCardsInGame scig;
     private Dealer dealer;
-    private boolean dealerinsurance = false;
     private GameStatus status;
 
     @Inject
@@ -58,7 +57,6 @@ public class Controller extends Observable implements IController {
 		if(!playerlist.isEmpty()) {
 			scig.resetStapel();
 			resetHandCards();
-			dealerinsurance = false;
 			playerbets();
 		} else {
 			statusLine = "Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann";
@@ -125,9 +123,6 @@ public class Controller extends Observable implements IController {
 			}
 		}
 		dealer.actionhit();
-		if(dealer.getHandValue()[1] == 21) {
-			dealerinsurance = true;
-		}
 		this.tmpplayerlist =  new LinkedList<Player>(playerlist); //reset tmpplayerlist for spielzug
 		spielzug();
 	}
@@ -158,8 +153,6 @@ public class Controller extends Observable implements IController {
 		}
 
 		for(Player p : playerlist) {
-			System.out.println(p.playerbet);
-			checkinsurance();
 			int totalplayerbet = p.playerbet;
 			int finalplayervalue;
 			if(p.getHandValue()[1] <= 21) {
@@ -179,7 +172,7 @@ public class Controller extends Observable implements IController {
 				p.addtobudget(totalplayerbet);
 				sb.append(p.getPlayerName() + ": Gewonnen    neues Budget:" + p.getbudget() + "\n");
 				continue;
-			} else if (finalplayervalue < finaldealervalue) {
+			} else {
 				p.deletefrombudget(totalplayerbet);
 				sb.append(p.getPlayerName() + ": Verloren    neues Budget:" + p.getbudget() + "\n");
 				continue;
@@ -190,22 +183,8 @@ public class Controller extends Observable implements IController {
 		notifyObservers(status = GameStatus.AUSWERTUNG);
 	}
 
-
-
-	private void checkinsurance() {
-		if (player.getinsurance() == true && dealerinsurance == true) {
-			player.addtobudget(getTotalPlayerBet() / 2);
-		} else if(player.getinsurance() == true && dealerinsurance == false) {
-			player.deletefrombudget(getTotalPlayerBet() / 2);
-		}
-	}
-
 	public String getCards() {
-		if(status == GameStatus.DURING_TURN) {
-			return player.toString() + dealer.toString(0);
-		} else {
-			return " ";
-		}
+		return player.toString() + dealer.toString(0);
 	}
 
 	public void stand() {
@@ -231,12 +210,6 @@ public class Controller extends Observable implements IController {
 		}
 	}
 
-	public void insurance() {
-		if(dealer.getCardsInHand().get(0).name().contains("ASS")) {
-			player.setinsurancetrue();
-		}
-	}
-
 	public void doublebet() {
 
 	}
@@ -253,14 +226,7 @@ public class Controller extends Observable implements IController {
 		notifyObservers(GameStatus.NEW_PLAYER);
 	}
 
-	public boolean deletePlayer(String name) {
-		for(Player player : playerlist) {
-			if(name == player.getPlayerName());
-			playerlist.remove(player);
-			return true;
-		}
-		return false;
-	}
+
 	public boolean deletePlayer(Player player) {
 		return playerlist.remove(player);
 	}
@@ -268,6 +234,14 @@ public class Controller extends Observable implements IController {
 	public String getStatus() {
         return statusLine;
     }
+	
+	public GameStatus getGameStatus() {
+		return status;
+	}
+	
+	public void setGameStatus(GameStatus e)  {
+		status = e;
+	}
 
 	private void resetHandCards() {
 		dealer.resetCardsInHand();
@@ -275,11 +249,6 @@ public class Controller extends Observable implements IController {
 			player.resetCardsInHand();
 		}
 	}
-
-	public void exit() {
-        System.exit(0);
-    }
-
 	public int getTotalPlayerBet() {
 		return player.playerbet;
 	}
