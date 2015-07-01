@@ -1,5 +1,6 @@
 package de.htwg.blackjack.view.gui;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.util.LinkedList;
@@ -30,7 +31,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 
 	}
 
-	public void setPlayer(Player player, int i) {
+	public void setPlayer(Player player, int i, Color color) {
 		this.player = player;
 		playervalue = new JLabel();
 		playervalue.setBounds(150,100, 200, 50);
@@ -40,6 +41,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 		playername.setBounds(150,150,200,50);
 		playername.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
 		playername.setText("Spieler " +i+ ": " + player.getPlayerName());
+		playername.setForeground(color);
 		this.add(playername);
 		budget = new JLabel();
 		budget.setBounds(150,180,200,50);
