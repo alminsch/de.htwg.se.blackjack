@@ -60,7 +60,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	private JMenu fileMenu;
 	private JMenuItem newMenuItem, quitMenuItem;
 
-	private JMenu npMenu;
+	private JMenu pMenu;
 	private JMenuItem newPlayerItem;
 
 	NewPlayer np;
@@ -185,7 +185,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		fileMenu = new JMenu("Datei");
 		fileMenu.setMnemonic(KeyEvent.VK_D);
 
-		npMenu = new JMenu("Neuer Spieler");
+		pMenu = new JMenu("Spieler Optionen");
 
 		// newMenuItem
 		newMenuItem = new JMenuItem("Neues Spiel");
@@ -212,6 +212,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 				InputEvent.CTRL_DOWN_MASK));
 		fileMenu.add(quitMenuItem);
 		fileMenu.add(new JSeparator());
+
 		// newPlayerItem
 		newPlayerItem = new JMenuItem("Neuer Spieler");
 		newPlayerItem.addActionListener(new ActionListener() {
@@ -225,9 +226,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		newPlayerItem.setMnemonic(KeyEvent.VK_P);
 		newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
 				InputEvent.CTRL_DOWN_MASK));
-		npMenu.add(newPlayerItem);
+		pMenu.add(newPlayerItem);
 		menuBar.add(fileMenu);
-		menuBar.add(npMenu);
+		menuBar.add(pMenu);
 
 		// PlayerBetInfoPanel
 		pBetInfoPanel = new PlayerBetInfoPanel(controller);
@@ -279,6 +280,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	}
 
 	public final void constructPane(IController controller) {
+		dealerPanel.reset();
 		this.setSize(1500, 1000);
 		this.setResizable(false);
 		this.setVisible(true);

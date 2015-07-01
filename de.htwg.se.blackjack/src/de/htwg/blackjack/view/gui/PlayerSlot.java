@@ -20,8 +20,11 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 	private JLabel playervalue;
 	private JLabel playername;
 	private JLabel budget;
+	private IController controller;
 	public PlayerSlot(IController controller) {
 		controller.addObserver(this);
+		this.controller = controller;
+
 	}
 
 	public void setPlayer(Player player, int i) {
@@ -55,10 +58,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 		    y = y+30;
 			idx--;
 		}
-		int cvalue = 0;
-		for(Card c : player.cardsinhand) {
-			cvalue = cvalue + c.getCardValue();
-		}
+		int cvalue = controller.getCardValue(player);
 		playervalue.setText("Wert: "+ cvalue);
 		budget.setText("Budget: " + player.getbudget());
 	}

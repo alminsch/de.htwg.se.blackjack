@@ -38,13 +38,14 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 			x = x+25;
 			idx++;
 		}
-		int cvalue = controller.getDealerValue();
+		int cvalue = controller.getCardValue(controller.getDealer());
 		dealervalue.setText("Wert: "+ cvalue);
 	}
 
 	public void update(GameStatus status) {
 		printdealercards();
 	}
+
 	private void setdealervalue() {
 		dealervalue = new JLabel();
 		dealervalue.setBounds(110, 150, 200, 50);
