@@ -21,10 +21,12 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
 
 	public DealerPanel(IController controller) {
-
 		this.controller = controller;
 		controller.addObserver(this);
-		setdealervalue();
+		dealervalue = new JLabel();
+		dealervalue.setBounds(110, 150, 200, 50);
+		dealervalue.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		this.add(dealervalue);
 	}
 
 	public void printdealercards() {
@@ -53,13 +55,5 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 		for(JLabel c : cards) {
 			this.remove(c);
 		}
-		setdealervalue();
-	}
-
-	private void setdealervalue() {
-		dealervalue = new JLabel();
-		dealervalue.setBounds(110, 150, 200, 50);
-		dealervalue.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
-		this.add(dealervalue);
 	}
 }
