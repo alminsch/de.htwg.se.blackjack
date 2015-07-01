@@ -218,8 +218,4 @@ public class ControllerTest {
 		c.getPlayerList();
 	}
 	
-	@Test
-	public void testclose() {
-	}
-	
 }
