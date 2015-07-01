@@ -67,7 +67,7 @@ public class NewPlayer extends JDialog implements ActionListener {
 		if (source == npButton) {
 			this.name = NameTextField.getText();
 			if (name.equals("")) {
-				JOptionPane.showMessageDialog(this, "Bitte alle Felder ausfüllen!", "Warnung", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(this, "Bitte Name eingeben", "Warnung", JOptionPane.WARNING_MESSAGE);
 			} else { setVisible(false); }
 		}
 		if (source == quitButton) {
