@@ -14,8 +14,6 @@ public class PlayerTest {
 	@Before
 	public void setUp() {
 		player1 = new Player("Hans Wurst");
-		player1.addplayeraction(PossibleAction.STAND);
-		player1.addplayeraction(PossibleAction.HIT);
 		player1.cardsinhand.add(Card.HERZACHT);
 		player1.setplayerbet(100);
 	}
@@ -23,21 +21,6 @@ public class PlayerTest {
 	@Test
 	public void Testgetplayername() {
 		assertEquals("Hans Wurst", player1.getPlayerName());
-    }
-
-	@Test
-    public void Testaddplayeraction() {
-		player1.deleteplayeraction(PossibleAction.HIT);
-    }
-
-	@Test
-    public void deleteplayeraction() {
-		player1.addplayeraction(PossibleAction.STAND);
-    }
-
-	@Test
-    public void Testgetpossibleplayeractions() {;
-		assertTrue(player1.getpossibleplayeractions().contains(PossibleAction.STAND));
     }
 
 	@Test

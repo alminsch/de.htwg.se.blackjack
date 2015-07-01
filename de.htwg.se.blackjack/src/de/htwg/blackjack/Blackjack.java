@@ -21,6 +21,7 @@ public class Blackjack {
     private IController controller;
     private static Blackjack instance = null;
 
+
     public static Blackjack getInstance() {
         if (instance == null) {
             instance = new Blackjack();
@@ -31,7 +32,7 @@ public class Blackjack {
     private Blackjack() {
     	controller = new Controller();
     	tui = new TextUI(controller);
-    	
+
     	// Set up logging through log4j
         PropertyConfigurator.configure("log4j.properties");
 

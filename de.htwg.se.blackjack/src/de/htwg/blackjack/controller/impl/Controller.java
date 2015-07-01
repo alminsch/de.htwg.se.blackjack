@@ -23,7 +23,7 @@ public class Controller extends Observable implements IController {
 	private Queue<Player> tmpplayerlist;
 	private int displaybet;
     private String statusLine = "Welcome to Blackjack!";
-    private Player player;
+    Player player;
     private SingletonCardsInGame scig;
     private Dealer dealer;
     private boolean dealerinsurance = false;
@@ -44,16 +44,7 @@ public class Controller extends Observable implements IController {
 		notifyObservers(GameStatus.NOT_STARTED);
 	}
 
-	public void checkplayerbudget() {
-		for(Player player : playerlist) {
-			if(player.getbudget() <= 0) {
-				deletePlayer(player);
-			}
-		}
-	}
-
 	public void startnewround() {
-		checkplayerbudget();
 		this.tmpplayerlist = new LinkedList<Player>(playerlist);
 		if(!playerlist.isEmpty()) {
 			scig.resetStapel();
@@ -70,7 +61,8 @@ public class Controller extends Observable implements IController {
 		if(!tmpplayerlist.isEmpty()) {
 			player = tmpplayerlist.poll();
 			statusLine = "Spieler " + player.getPlayerName() + ", bitte Wette abgeben." +
-						" Budget: " + player.getbudget();
+						" Budget: " + player.getbudget() +
+						" \nStartwette beträgt 100";
 			notifyObservers(status = GameStatus.DURING_BET);
 		} else {
 			statusLine = "Alle Wetten wurden abgegeben";
@@ -93,7 +85,7 @@ public class Controller extends Observable implements IController {
 		if(status == GameStatus.DURING_BET) {
 	    	if(player.getbudget() >= this.displaybet + 100) {
 	    		this.displaybet += 100;
-	    		statusLine = "Wette auf " + displaybet + " erhöht";
+	    		statusLine = "Wette:  " + displaybet;
 	    		notifyObservers(GameStatus.DURING_BET);
 	    		return true;
 		    } else {
@@ -108,7 +100,7 @@ public class Controller extends Observable implements IController {
 		if(status == GameStatus.DURING_BET) {
 			if(this.displaybet > 100) {
 				this.displaybet -= 100;
-				statusLine = "Wette auf " + displaybet + " erniedrigt";
+				statusLine = "Wette:  " + displaybet;
 				notifyObservers(GameStatus.DURING_BET);
 				return true;
 			}
@@ -152,13 +144,14 @@ public class Controller extends Observable implements IController {
 
 		finaldealervalue = getCardValue(dealer);
 
-		sb.append(dealer.toString(finaldealervalue) + "\n");
+		sb.append(dealer.toString(finaldealervalue) + "\n\n");
+
 		if (finaldealervalue > 21) {
 			finaldealervalue = 0;
 		}
 
 		for(Player p : playerlist) {
-			System.out.println(p.playerbet);
+			sb.append(p.toString() + "\n");
 			checkinsurance();
 			int totalplayerbet = p.playerbet;
 			int finalplayervalue;
@@ -190,8 +183,6 @@ public class Controller extends Observable implements IController {
 		notifyObservers(status = GameStatus.AUSWERTUNG);
 	}
 
-
-
 	private void checkinsurance() {
 		if (player.getinsurance() == true && dealerinsurance == true) {
 			player.addtobudget(getTotalPlayerBet() / 2);
@@ -201,11 +192,7 @@ public class Controller extends Observable implements IController {
 	}
 
 	public String getCards() {
-		if(status == GameStatus.DURING_TURN) {
-			return player.toString() + dealer.toString(0);
-		} else {
-			return " ";
-		}
+		return player.toString() + "\n" + dealer.toString(0);
 	}
 
 	public void stand() {
@@ -242,32 +229,29 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void addnewPlayer(String s) {
-		if (playerlist.size() == 3) {
-			statusLine = "Maximale Anzahl Spieler erreicht";
-			notifyObservers();
-			return;
+		if(status == GameStatus.AUSWERTUNG || status == GameStatus.NOT_STARTED || status == GameStatus.NEW_PLAYER) {
+			if (playerlist.size() == 3) {
+				statusLine = "Maximale Anzahl Spieler erreicht";
+				notifyObservers();
+				return;
+			}
+			playerlist.add(new Player(s));
+			statusLine = "Neuer Spieler hinzugefügt";
+			notifyObservers(GameStatus.NEW_PLAYER);
+		} else {
+			statusLine = status + "  Spieler können nur zu Beginn einer neuen Runde erstellt werden";
+			notifyObservers(GameStatus.NP_NOPERMISSION);
 		}
-		playerlist.add(new Player(s));
-		statusLine = "Neuer Spieler hinzugefügt";
-		status = GameStatus.READY_TO_START;
-		notifyObservers(GameStatus.NEW_PLAYER);
 	}
 
-	public boolean deletePlayer(String name) {
-		for(Player player : playerlist) {
-			if(name == player.getPlayerName());
-			playerlist.remove(player);
-			return true;
-		}
-		return false;
-	}
-	public boolean deletePlayer(Player player) {
-		return playerlist.remove(player);
-	}
 
 	public String getStatus() {
         return statusLine;
     }
+
+	public GameStatus getGameStatus() {
+		return this.status;
+	}
 
 	private void resetHandCards() {
 		dealer.resetCardsInHand();
