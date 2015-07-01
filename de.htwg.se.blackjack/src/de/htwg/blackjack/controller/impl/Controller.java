@@ -124,7 +124,6 @@ public class Controller extends Observable implements IController {
 			}
 		}
 		dealer.actionhit();
-		dealer.actionhit();
 		if(dealer.getHandValue()[1] == 21) {
 			dealerinsurance = true;
 		}

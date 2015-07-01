@@ -2,6 +2,7 @@ package de.htwg.blackjack.view.gui;
 
 import java.awt.Font;
 import java.awt.Image;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -17,6 +18,7 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 
 	IController controller;
 	JLabel dealervalue;
+	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
 
 	public DealerPanel(IController controller) {
 
@@ -38,6 +40,7 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 			JLabel p = new JLabel(new ImageIcon(img));
 			p.setBounds(x, 0, 140, 160);
 			this.add(p, new Integer(idx));
+			cards.add(p);
 			x = x+25;
 			idx++;
 		}
@@ -50,10 +53,8 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 	}
 	
 	public void reset() {
-		this.removeAll();
-		/*dealervalue = new JLabel();
-		dealervalue.setBounds(110, 150, 200, 50);
-		dealervalue.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
-		this.add(dealervalue);*/
+		for(JLabel c : cards) {
+			this.remove(c);
+		}
 	}
 }

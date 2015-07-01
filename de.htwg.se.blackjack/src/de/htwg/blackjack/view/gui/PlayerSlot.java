@@ -2,6 +2,7 @@ package de.htwg.blackjack.view.gui;
 
 import java.awt.Font;
 import java.awt.Image;
+import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -20,6 +21,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 	private JLabel playervalue;
 	private JLabel playername;
 	private JLabel budget;
+	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
 	public PlayerSlot(IController controller) {
 		controller.addObserver(this);
 	}
@@ -52,14 +54,13 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 			JLabel p = new JLabel(new ImageIcon(img));
 			p.setBounds(0, y, 140, 160);
 			this.add(p,idx);
+			cards.add(p);
 		    y = y+30;
 			idx++;
 		}
-		int cvalue = 0;
-		for(Card c : player.cardsinhand) {
-			cvalue = cvalue + c.getCardValue();
-		}		
-		playervalue.setText("Wert: "+ cvalue);
+		StringBuilder sb = new StringBuilder();
+		sb.append(player.handvalue[0] + " / " + player.handvalue[1]);	
+		playervalue.setText("Wert: "+ sb.toString());
 		budget.setText("Budget: " + player.getbudget());
 	}
 
@@ -70,5 +71,8 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 	}
 	
 	public void reset() {
+		for(JLabel c : cards) {
+			this.remove(c);
+		}
 	}
 }

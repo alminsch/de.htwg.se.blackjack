@@ -279,6 +279,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	}
 
 	public final void constructPane(IController controller) {
+		dealerPanel.reset();
+		for (int i = 0; i < playerslot.length; i++) {
+			playerslot[i].reset();
+		}
 		this.setSize(1500, 1000);
 		this.setResizable(false);
 		this.setVisible(true);
@@ -294,11 +298,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		}
 		if (status == GameStatus.AUSWERTUNG) {
 			statusPanel.setText("Auswertung");
-			dealerPanel.reset();
 			constructPane(controller);
-			for (int i = 0; i < playerslot.length; i++) {
-				playerslot[i].reset();
-			}
 
 		} else {
 			statusPanel.setText(controller.getStatus());
