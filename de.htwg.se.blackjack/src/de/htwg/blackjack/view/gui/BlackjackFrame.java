@@ -1,5 +1,6 @@
 package de.htwg.blackjack.view.gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -10,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -281,11 +283,16 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		if (status == GameStatus.NEW_PLAYER) {
 			List<Player> l = controller.getPlayerList();
 			Player player = l.get(l.size() - 1);
-			playerslot[slotcount].setPlayer(player, slotcount + 1);
+			playerslot[slotcount].setPlayer(player, slotcount + 1, getRandomColor());
 			slotcount++;
 		}
+		if (status == GameStatus.NP_NOPERMISSION) {
+			statusPanel.setText("Spieler können nur zu Beginn einer neuen Runde erstellt werden");
+			constructPane(controller);
+		}
+
 		if (status == GameStatus.AUSWERTUNG) {
-			statusPanel.setText("Auswertung");
+			statusPanel.setText("[STR");
 			constructPane(controller);
 		} else {
 			statusPanel.setText(controller.getStatus());
@@ -293,4 +300,19 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			repaint();
 		}
 	}
+
+	public Color getRandomColor() {
+		int R = (int)(Math.random()*256);
+		int G = (int)(Math.random()*256);
+		int B= (int)(Math.random()*256);
+		Color color = new Color(R, G, B);
+
+		Random random = new Random();
+		final float hue = random.nextFloat();
+		final float saturation = 0.9f;
+		final float luminance = 1.0f;
+		color = Color.getHSBColor(hue, saturation, luminance);
+		return color;
+	}
 }
+

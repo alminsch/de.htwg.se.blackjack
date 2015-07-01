@@ -24,7 +24,6 @@ public class TextUI implements IObserver{
         controller.addObserver(this);
     }
 
-
 	public void update(GameStatus e) {
         printTUI();
     }
@@ -40,7 +39,7 @@ public class TextUI implements IObserver{
 			break;
 		case"np":
 			scanner = new Scanner(System.in);
-			System.out.println("Bitte Spielername angeben");
+			 logger.info("Bitte Spielername angeben");
 			controller.addnewPlayer(scanner.next());
 			break;
 		case"h":
@@ -68,7 +67,9 @@ public class TextUI implements IObserver{
 
 	public void printTUI() {
         logger.info(NEWLINE + controller.getStatus());
-        logger.info(NEWLINE + controller.getCards());
+        if(controller.getGameStatus() == GameStatus.DURING_TURN) {
+        	 logger.info(NEWLINE + controller.getCards());
+        }
         logger.info(NEWLINE
                 + "Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet");
     }

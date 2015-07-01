@@ -6,5 +6,5 @@ public enum GameStatus {
 	DURING_TURN,
 	AUSWERTUNG,
 	NEW_PLAYER,
-	READY_TO_START;
+	NP_NOPERMISSION;
 }

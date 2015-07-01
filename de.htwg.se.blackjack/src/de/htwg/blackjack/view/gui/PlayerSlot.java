@@ -1,5 +1,6 @@
 package de.htwg.blackjack.view.gui;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.util.LinkedList;
@@ -23,14 +24,14 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 	private JLabel budget;
 	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
 	private IController controller;
-	
+
 	public PlayerSlot(IController controller) {
 		controller.addObserver(this);
 		this.controller = controller;
 
 	}
 
-	public void setPlayer(Player player, int i) {
+	public void setPlayer(Player player, int i, Color color) {
 		this.player = player;
 		playervalue = new JLabel();
 		playervalue.setBounds(150,100, 200, 50);
@@ -38,8 +39,9 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 		this.add(playervalue);
 		playername = new JLabel();
 		playername.setBounds(150,150,200,50);
-		playername.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
+		playername.setFont(new Font("Arial", Font.CENTER_BASELINE, 23));
 		playername.setText("Spieler " +i+ ": " + player.getPlayerName());
+		playername.setForeground(color);
 		this.add(playername);
 		budget = new JLabel();
 		budget.setBounds(150,180,200,50);
@@ -62,9 +64,8 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 		    y = y+30;
 			idx--;
 		}
-		StringBuilder sb = new StringBuilder();
-		sb.append(player.handvalue[0] + " / " + player.handvalue[1]);	
-		playervalue.setText("Wert: "+ sb.toString());
+		String s = player.handvalue[0] + " / " + player.handvalue[1];
+		playervalue.setText("Wert: "+ s);
 		budget.setText("Budget: " + player.getbudget());
 	}
 
@@ -79,7 +80,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 			this.remove(c);
 		}
 	}
-	
+
 	public void remove() {
 		this.removeAll();
 	}

@@ -1,7 +1,5 @@
 package de.htwg.blackjack.controller.impl;
 
-import static org.junit.Assert.*;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,7 +9,6 @@ import org.junit.Test;
 
 
 import de.htwg.blackjack.entities.impl.GameStatus;
-//import de.htwg.blackjack.controller.impl.*;
 import de.htwg.blackjack.entities.impl.Player;
 public class ControllerTest {
 	Queue<Player> playerlist = new LinkedList<Player>();

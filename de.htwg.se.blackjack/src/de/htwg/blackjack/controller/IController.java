@@ -5,6 +5,7 @@ import java.util.List;
 import de.htwg.blackjack.entities.AbstractParticipant;
 import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.Dealer;
+import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.util.observer.IObservable;
 
@@ -53,5 +54,7 @@ public interface IController extends IObservable {
 	int getCardValue(AbstractParticipant p);
 
 	Dealer getDealer();
+
+	GameStatus getGameStatus();
 
 }
