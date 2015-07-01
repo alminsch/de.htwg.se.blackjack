@@ -26,7 +26,7 @@ public class NewPlayer extends JDialog implements ActionListener {
 
 		setModal(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setPreferredSize(new Dimension(500, 300));
+		setPreferredSize(new Dimension(400, 200));
 
 		JPanel panel1 = new JPanel();
 

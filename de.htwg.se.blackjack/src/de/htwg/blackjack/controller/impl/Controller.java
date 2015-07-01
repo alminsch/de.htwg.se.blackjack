@@ -8,6 +8,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.entities.AbstractParticipant;
 import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.Dealer;
 import de.htwg.blackjack.entities.impl.GameStatus;
@@ -149,42 +150,42 @@ public class Controller extends Observable implements IController {
 			dealer.actionhit();
 		}
 
-		finaldealervalue = getDealerValue();
+		finaldealervalue = getCardValue(dealer);
 
 		sb.append(dealer.toString(finaldealervalue) + "\n");
 		if (finaldealervalue > 21) {
 			finaldealervalue = 0;
 		}
 
-		for(Player player : playerlist) {
+		for(Player p : playerlist) {
+			System.out.println(p.playerbet);
 			checkinsurance();
-			int totalplayerbet = getTotalPlayerBet();
-			setTotalPlayerbet(0);
+			int totalplayerbet = p.playerbet;
 			int finalplayervalue;
-			if(player.getHandValue()[1] <= 21) {
-				finalplayervalue = player.getHandValue()[1];
+			if(p.getHandValue()[1] <= 21) {
+				finalplayervalue = p.getHandValue()[1];
 			} else {
-				finalplayervalue = player.getHandValue()[0];
+				finalplayervalue = p.getHandValue()[0];
 			}
 
 			if (finalplayervalue == finaldealervalue) {
-				sb.append(player.getPlayerName() + ": Unentschieden    neues Budget:" + player.getbudget()  + "\n");
+				sb.append(p.getPlayerName() + ": Unentschieden    neues Budget:" + p.getbudget()  + "\n");
 				continue;
 			} else if(finalplayervalue > 21) {
-				player.deletefrombudget(totalplayerbet);
-				sb.append(player.getPlayerName() + ": Busted    neues Budget:" + player.getbudget() + "\n");
+				p.deletefrombudget(totalplayerbet);
+				sb.append(p.getPlayerName() + ": Busted    neues Budget:" + p.getbudget() + "\n");
 				continue;
 			} else if (finalplayervalue > finaldealervalue) {
-				player.addtobudget(totalplayerbet);
-				sb.append(player.getPlayerName() + ": Gewonnen    neues Budget:" + player.getbudget() + "\n");
+				p.addtobudget(totalplayerbet);
+				sb.append(p.getPlayerName() + ": Gewonnen    neues Budget:" + p.getbudget() + "\n");
 				continue;
 			} else if (finalplayervalue < finaldealervalue) {
-				player.deletefrombudget(totalplayerbet);
-				sb.append(player.getPlayerName() + ": Verloren    neues Budget:" + player.getbudget() + "\n");
+				p.deletefrombudget(totalplayerbet);
+				sb.append(p.getPlayerName() + ": Verloren    neues Budget:" + p.getbudget() + "\n");
 				continue;
-
 			}
 		}
+
 		statusLine = "Auswertung:\n" + sb.toString() ;
 		notifyObservers(status = GameStatus.AUSWERTUNG);
 	}
@@ -299,11 +300,15 @@ public class Controller extends Observable implements IController {
 		return new LinkedList<Player>(playerlist);
 	}
 
-	public int getDealerValue() {
-		if(dealer.getHandValue()[1] <= 21) {
-			return dealer.getHandValue()[1];
+	public int getCardValue(AbstractParticipant p) {
+		if(p.getHandValue()[1] <= 21) {
+			return p.getHandValue()[1];
 		} else{
-			return dealer.getHandValue()[0];
+			return p.getHandValue()[0];
 		}
+	}
+
+	public Dealer getDealer() {
+		return dealer;
 	}
 }
