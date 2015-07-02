@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -18,8 +16,8 @@ import de.htwg.blackjack.controller.IController;
 public class MenuBar extends JMenuBar {
 
     // JMenuBar
-
-    private JMenu fileMenu;
+	private static final long serialVersionUID = 4033280135064819188L;
+	private JMenu fileMenu;
     private JMenuItem newMenuItem, quitMenuItem;
 
     private JMenu pMenu;
@@ -53,6 +51,7 @@ public class MenuBar extends JMenuBar {
         // quitMenuItem
         quitMenuItem = new JMenuItem("Beenden");
         quitMenuItem.addActionListener(new ActionListener() {
+        	@Override
             public void actionPerformed(ActionEvent event) {
                 System.exit(0);
             }
@@ -66,6 +65,7 @@ public class MenuBar extends JMenuBar {
         // newPlayerItem
         newPlayerItem = new JMenuItem("Neuer Spieler");
         newPlayerItem.addActionListener(new ActionListener() {
+        	@Override
             public void actionPerformed(ActionEvent event) {
                 np.shownewplayerDialog();
                 if (np.getName() != "") {

@@ -63,6 +63,6 @@ public class Player extends AbstractParticipant {
             result = result + c.toString() + " ";
         }
         result = result + "Wert:" + this.getHandValue()[0];
-        return result;// + newLine;
+        return result;
     }
 }
