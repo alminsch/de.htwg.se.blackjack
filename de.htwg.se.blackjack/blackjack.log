@@ -1559,3 +1559,301 @@ sdfdf: Busted    neues Budget:1400
 
 INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
 Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO main de.htwg.blackjack.view.tui - 
+New Blackjack Game created
+INFO main de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Neuer Spieler hinzugefügt
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Neuer Spieler hinzugefügt
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, bitte Wette abgeben. Budget: 1500 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, bitte Wette abgeben. Budget: 1500 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Alle Wetten wurden abgegeben
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: HERZBUBE HERZZWEI Wert:12
+Dealer Handkarten: KAROFUENF
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: HERZBUBE HERZZWEI KARONEUN Wert:21
+Dealer Handkarten: KAROFUENF
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: HERZBUBE HERZZWEI KARONEUN PIKZEHN Wert:31
+Dealer Handkarten: KAROFUENF
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: HERZSECHS KAROSECHS Wert:12
+Dealer Handkarten: KAROFUENF
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: HERZSECHS KAROSECHS KAROACHT Wert:20
+Dealer Handkarten: KAROFUENF
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: HERZSECHS KAROSECHS KAROACHT KREUZZEHN Wert:30
+Dealer Handkarten: KAROFUENF
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Auswertung:
+Dealer Handkarten: KAROFUENF KREUZACHT PIKFUENF Wert:18
+
+hghg Handkarten: HERZBUBE HERZZWEI KARONEUN PIKZEHN Wert:31
+hghg: Busted    neues Budget:1400
+hhh Handkarten: HERZSECHS KAROSECHS KAROACHT KREUZZEHN Wert:30
+hhh: Busted    neues Budget:1400
+
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, bitte Wette abgeben. Budget: 1400 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, bitte Wette abgeben. Budget: 1400 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Alle Wetten wurden abgegeben
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: KAROZEHN PIKZEHN Wert:20
+Dealer Handkarten: HERZSECHS
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: KAROZEHN PIKZEHN KREUZZEHN Wert:30
+Dealer Handkarten: HERZSECHS
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KREUZFUENF KREUZBUBE Wert:15
+Dealer Handkarten: HERZSECHS
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KREUZFUENF KREUZBUBE HERZDAME Wert:25
+Dealer Handkarten: HERZSECHS
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Auswertung:
+Dealer Handkarten: HERZSECHS PIKDREI KREUZASS Wert:20
+
+hghg Handkarten: KAROZEHN PIKZEHN KREUZZEHN Wert:30
+hghg: Busted    neues Budget:1300
+hhh Handkarten: KREUZFUENF KREUZBUBE HERZDAME Wert:25
+hhh: Busted    neues Budget:1300
+
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, bitte Wette abgeben. Budget: 1300 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, bitte Wette abgeben. Budget: 1300 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Alle Wetten wurden abgegeben
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: HERZZEHN KAROZWEI Wert:12
+Dealer Handkarten: HERZZWEI
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: HERZZEHN KAROZWEI KAROSECHS Wert:18
+Dealer Handkarten: HERZZWEI
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: HERZZEHN KAROZWEI KAROSECHS PIKBUBE Wert:28
+Dealer Handkarten: HERZZWEI
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KREUZDAME KREUZSIEBEN Wert:17
+Dealer Handkarten: HERZZWEI
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KREUZDAME KREUZSIEBEN KAROACHT Wert:25
+Dealer Handkarten: HERZZWEI
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Auswertung:
+Dealer Handkarten: HERZZWEI KAROZEHN KREUZVIER HERZBUBE Wert:26
+
+hghg Handkarten: HERZZEHN KAROZWEI KAROSECHS PIKBUBE Wert:28
+hghg: Busted    neues Budget:1200
+hhh Handkarten: KREUZDAME KREUZSIEBEN KAROACHT Wert:25
+hhh: Busted    neues Budget:1200
+
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, bitte Wette abgeben. Budget: 1200 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, bitte Wette abgeben. Budget: 1200 
+Startwette beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Ihre Wette für diese Runde beträgt 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Alle Wetten wurden abgegeben
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hghg, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: PIKNEUN HERZDREI Wert:12
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: PIKNEUN HERZDREI KREUZSECHS Wert:18
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hghg Handkarten: PIKNEUN HERZDREI KREUZSECHS PIKACHT Wert:26
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Spieler hhh, ist an der Reihe
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KAROVIER KREUZZWEI Wert:6
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KAROVIER KREUZZWEI PIKDREI Wert:9
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KAROVIER KREUZZWEI PIKDREI PIKFUENF Wert:14
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+hhh Handkarten: KAROVIER KREUZZWEI PIKDREI PIKFUENF PIKDAME Wert:24
+Dealer Handkarten: KREUZVIER
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Auswertung:
+Dealer Handkarten: KREUZVIER HERZSIEBEN HERZKOENIG Wert:21
+
+hghg Handkarten: PIKNEUN HERZDREI KREUZSECHS PIKACHT Wert:26
+hghg: Busted    neues Budget:1100
+hhh Handkarten: KAROVIER KREUZZWEI PIKDREI PIKFUENF PIKDAME Wert:24
+hhh: Busted    neues Budget:1100
+
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
