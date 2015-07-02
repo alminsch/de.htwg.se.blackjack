@@ -220,7 +220,7 @@ public class Controller extends Observable implements IController {
 			statusLine = "Neuer Spieler hinzugefügt";
 			notifyObservers(GameStatus.NEW_PLAYER);
 		} else {
-			statusLine = status + "  Spieler können nur zu Beginn einer neuen Runde erstellt werden";
+			statusLine = "Spieler können nur zu Beginn einer neuen Runde erstellt werden";
 			notifyObservers(GameStatus.NP_NOPERMISSION);
 		}
 	}
@@ -233,11 +233,11 @@ public class Controller extends Observable implements IController {
 	public String getStatus() {
         return statusLine;
     }
-	
+
 	public GameStatus getGameStatus() {
 		return status;
 	}
-	
+
 	public void setGameStatus(GameStatus e)  {
 		status = e;
 
