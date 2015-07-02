@@ -61,7 +61,11 @@ public class PlayerBetInfoPanel extends JPanel implements IObserver {
 
     @Override
     public void update(GameStatus status) {
-    	if(status != GameStatus.NOT_STARTED)
-    	updateBetInformation();
+    	System.out.println(status);
+    	if(status == GameStatus.DURING_BET || status == GameStatus.DURING_TURN) {
+    		updateBetInformation();
+    	} else {
+    		tBet.setText(Integer.toString(0));
+    	}
     }
 }
