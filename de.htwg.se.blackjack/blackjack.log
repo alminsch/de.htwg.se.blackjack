@@ -1057,3 +1057,7 @@ Spieler dfdf, bitte Wette abgeben. Budget: 1800
 Startwette beträgt 100
 INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
 Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO main de.htwg.blackjack.view.tui - 
+New Blackjack Game created
+INFO main de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
