@@ -6,8 +6,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
@@ -24,12 +22,7 @@ import de.htwg.blackjack.util.observer.IObserver;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
 import com.google.inject.Inject;
@@ -57,14 +50,8 @@ public class BlackjackFrame extends JFrame implements IObserver {
 	private JButton bSetBet;
 
 	// JMenuBar
-	private JMenuBar menuBar;
 
-	private JMenu fileMenu;
-	private JMenuItem newMenuItem, quitMenuItem;
-
-	private JMenu pMenu;
-	private JMenuItem newPlayerItem;
-
+	MenuBar mb;
 	NewPlayer np;
 	PlayerBetInfoPanel bip;
 	private BufferedImage img;
@@ -173,56 +160,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		});
 		contentPane.add(bSetBet);
 
-		menuBar = new JMenuBar();
-		// fileMenu
-		fileMenu = new JMenu("Datei");
-		fileMenu.setMnemonic(KeyEvent.VK_D);
-
-		pMenu = new JMenu("Spieler Optionen");
-
-		// newMenuItem
-		newMenuItem = new JMenuItem("Neues Spiel");
-		newMenuItem.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				controller.startnewround();
-			}
-		});
-		newMenuItem.setMnemonic(KeyEvent.VK_N);
-		newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
-				InputEvent.CTRL_DOWN_MASK));
-		fileMenu.add(newMenuItem);
-
-		// quitMenuItem
-		quitMenuItem = new JMenuItem("Beenden");
-		quitMenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				System.exit(0);
-			}
-		});
-		quitMenuItem.setMnemonic(KeyEvent.VK_Q);
-		quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
-				InputEvent.CTRL_DOWN_MASK));
-		fileMenu.add(quitMenuItem);
-		fileMenu.add(new JSeparator());
-
-		// newPlayerItem
-		newPlayerItem = new JMenuItem("Neuer Spieler");
-		newPlayerItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				np.shownewplayerDialog();
-				if (np.getName() != "") {
-					controller.addnewPlayer(np.getName());
-				}
-			}
-		});
-		newPlayerItem.setMnemonic(KeyEvent.VK_P);
-		newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
-				InputEvent.CTRL_DOWN_MASK));
-		pMenu.add(newPlayerItem);
-		menuBar.add(fileMenu);
-		menuBar.add(pMenu);
-
 		// PlayerBetInfoPanel
 		pBetInfoPanel = new PlayerBetInfoPanel(controller);
 		Dimension size = pBetInfoPanel.getPreferredSize();
@@ -244,6 +181,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		dealerPanel.setBounds(600, 100, 500, 500);
 		contentPane.add(dealerPanel);
 
+		//MenuBar
+		mb = new MenuBar(controller, this);
+		this.setJMenuBar(new MenuBar(controller, this));
 		int x[] = new int[3];
 		int y[] = new int[3];
 		x[0] = 200;
@@ -260,7 +200,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 			contentPane.add(playerslot[i]);
 		}
 
-		this.setJMenuBar(menuBar);
 		this.setContentPane(contentPane);
 	}
 
