@@ -49,7 +49,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 
     private void printPlayerCards() {
 
-        int idx = player.getCardsInHand().size();
+        int idx = player.getCardsInHand().size()-1;
         int y = 0;
         for(Card c : player.getCardsInHand()) {
             ImageIcon icon = new ImageIcon("BlackjackImages/" + c.toString() +".png");
@@ -59,13 +59,12 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
             this.add(p,idx);
             cards.add(p);
             y = y+30;
-            idx--;
+            idx = idx -1;;
         }
         String s = player.getHandValue()[0] + " / " + player.getHandValue()[1];
         playervalue.setText("Wert: "+ s);
         budget.setText("Budget: " + player.getbudget());
     }
-
 
     public void update(GameStatus e) {
         if(player != null)
