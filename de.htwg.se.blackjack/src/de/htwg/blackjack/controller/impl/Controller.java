@@ -249,8 +249,8 @@ public class Controller extends Observable implements IController {
 
 	private void resetHandCards() {
 		dealer.resetCardsInHand();
-		for(Player player : playerlist) {
-			player.resetCardsInHand();
+		for(Player p : playerlist) {
+			p.resetCardsInHand();
 		}
 	}
 	public int getTotalPlayerBet() {
