@@ -25,7 +25,7 @@ public abstract class AbstractParticipant implements IParticipant {
     }
 
     public void resetCardsInHand() {
-    	this.cardsinhand.clear();
+        this.cardsinhand.clear();
         this.handvalue[0] = 0;
         this.handvalue[1] = 0;
     }

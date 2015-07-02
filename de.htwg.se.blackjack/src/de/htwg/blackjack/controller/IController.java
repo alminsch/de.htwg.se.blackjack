@@ -11,50 +11,50 @@ import de.htwg.blackjack.util.observer.IObservable;
 
 public interface IController extends IObservable {
 
-	boolean increasebet();
+    boolean increasebet();
 
-	boolean decreasebet();
+    boolean decreasebet();
 
-	void setbetforround();
+    void setbetforround();
 
-	void startnewround();
+    void startnewround();
 
-	String getStatus();
+    String getStatus();
 
-	void addnewPlayer(String next);
+    void addnewPlayer(String next);
 
-	void playerhit();
+    void playerhit();
 
-	void stand();
+    void stand();
 
-	void doublebet();
+    void doublebet();
 
-	void createnewgame();
+    void createnewgame();
 
-	void playerbets();
+    void playerbets();
 
-	void allgettwocards();
+    void allgettwocards();
 
-	void spielzug();
+    void spielzug();
 
-	void auswertung();
+    void auswertung();
 
-	boolean deletePlayer(Player player);
+    boolean deletePlayer(Player player);
 
-	String getCards();
+    String getCards();
 
-	int getTotalPlayerBet();
+    int getTotalPlayerBet();
 
-	int getDisplayBet();
+    int getDisplayBet();
 
-	List<Card> getDealerCards();
+    List<Card> getDealerCards();
 
-	List<Player> getPlayerList();
+    List<Player> getPlayerList();
 
-	int getCardValue(AbstractParticipant p);
+    int getCardValue(AbstractParticipant p);
 
-	Dealer getDealer();
+    Dealer getDealer();
 
-	GameStatus getGameStatus();
+    GameStatus getGameStatus();
 
 }

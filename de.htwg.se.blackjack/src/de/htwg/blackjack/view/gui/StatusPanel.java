@@ -12,13 +12,13 @@ public class StatusPanel extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public StatusPanel() {
-    	this.setOpaque(false);
+        this.setOpaque(false);
 
-    	statusLabel.setFont(new Font("Arial", Font.ITALIC, 22));
-    	statusLabel.setHorizontalAlignment(JLabel.CENTER);
-    	statusLabel.setVerticalAlignment(JLabel.CENTER);
+        statusLabel.setFont(new Font("Arial", Font.ITALIC, 22));
+        statusLabel.setHorizontalAlignment(JLabel.CENTER);
+        statusLabel.setVerticalAlignment(JLabel.CENTER);
 
-    	this.setBorder(BorderFactory.createEmptyBorder());
+        this.setBorder(BorderFactory.createEmptyBorder());
         this.add(statusLabel);
     }
 

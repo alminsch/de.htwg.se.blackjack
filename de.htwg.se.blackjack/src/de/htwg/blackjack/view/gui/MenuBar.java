@@ -17,69 +17,69 @@ import de.htwg.blackjack.controller.IController;
 
 public class MenuBar extends JMenuBar {
 
-	// JMenuBar
+    // JMenuBar
 
-	private JMenu fileMenu;
-	private JMenuItem newMenuItem, quitMenuItem;
+    private JMenu fileMenu;
+    private JMenuItem newMenuItem, quitMenuItem;
 
-	private JMenu pMenu;
-	private JMenuItem newPlayerItem;
-	IController controller;
-	JFrame blackjackfr;
-	NewPlayer np;
+    private JMenu pMenu;
+    private JMenuItem newPlayerItem;
+    IController controller;
+    JFrame blackjackfr;
+    NewPlayer np;
 
-	public MenuBar(final IController controller, JFrame bl ) {
-		blackjackfr = bl;
-		np = new NewPlayer(bl);
-		// fileMenu
-		fileMenu = new JMenu("Datei");
-		fileMenu.setMnemonic(KeyEvent.VK_D);
+    public MenuBar(final IController controller, JFrame bl ) {
+        blackjackfr = bl;
+        np = new NewPlayer(bl);
+        // fileMenu
+        fileMenu = new JMenu("Datei");
+        fileMenu.setMnemonic(KeyEvent.VK_D);
 
-		pMenu = new JMenu("Spieler Optionen");
+        pMenu = new JMenu("Spieler Optionen");
 
-		// newMenuItem
-		newMenuItem = new JMenuItem("Neues Spiel");
-		newMenuItem.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				controller.startnewround();
-			}
-		});
-		newMenuItem.setMnemonic(KeyEvent.VK_N);
-		newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
-				InputEvent.CTRL_DOWN_MASK));
-		fileMenu.add(newMenuItem);
+        // newMenuItem
+        newMenuItem = new JMenuItem("Neues Spiel");
+        newMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                controller.startnewround();
+            }
+        });
+        newMenuItem.setMnemonic(KeyEvent.VK_N);
+        newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
+                InputEvent.CTRL_DOWN_MASK));
+        fileMenu.add(newMenuItem);
 
-		// quitMenuItem
-		quitMenuItem = new JMenuItem("Beenden");
-		quitMenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				System.exit(0);
-			}
-		});
-		quitMenuItem.setMnemonic(KeyEvent.VK_Q);
-		quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
-				InputEvent.CTRL_DOWN_MASK));
-		fileMenu.add(quitMenuItem);
-		fileMenu.add(new JSeparator());
+        // quitMenuItem
+        quitMenuItem = new JMenuItem("Beenden");
+        quitMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                System.exit(0);
+            }
+        });
+        quitMenuItem.setMnemonic(KeyEvent.VK_Q);
+        quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
+                InputEvent.CTRL_DOWN_MASK));
+        fileMenu.add(quitMenuItem);
+        fileMenu.add(new JSeparator());
 
-		// newPlayerItem
-		newPlayerItem = new JMenuItem("Neuer Spieler");
-		newPlayerItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				np.shownewplayerDialog();
-				if (np.getName() != "") {
-					controller.addnewPlayer(np.getName());
-				}
-			}
-		});
-		newPlayerItem.setMnemonic(KeyEvent.VK_P);
-		newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
-				InputEvent.CTRL_DOWN_MASK));
-		pMenu.add(newPlayerItem);
+        // newPlayerItem
+        newPlayerItem = new JMenuItem("Neuer Spieler");
+        newPlayerItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                np.shownewplayerDialog();
+                if (np.getName() != "") {
+                    controller.addnewPlayer(np.getName());
+                }
+            }
+        });
+        newPlayerItem.setMnemonic(KeyEvent.VK_P);
+        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
+                InputEvent.CTRL_DOWN_MASK));
+        pMenu.add(newPlayerItem);
 
-		this.add(fileMenu);
-		this.add(pMenu);
-	}
+        this.add(fileMenu);
+        this.add(pMenu);
+    }
 
 }

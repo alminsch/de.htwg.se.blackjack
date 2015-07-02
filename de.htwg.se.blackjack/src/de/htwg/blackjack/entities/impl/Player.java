@@ -19,23 +19,23 @@ public class Player extends AbstractParticipant {
     }
 
     public void setinsurancetrue() {
-    	insurance = true;
+        insurance = true;
     }
 
     public void setinsurancefalse() {
-    	insurance = false;
+        insurance = false;
     }
 
     public boolean getinsurance() {
-    	return insurance;
+        return insurance;
     }
 
     public void setplayerbet(int bet) {
-    	this.playerbet = bet;
+        this.playerbet = bet;
     }
 
     public int getplayerbet() {
-    	return this.playerbet;
+        return this.playerbet;
     }
 
     public void addtobudget(int money) {
@@ -48,21 +48,21 @@ public class Player extends AbstractParticipant {
 
     public int getbudget() {
         return this.budget;
-	}
+    }
 
     public String getPlayerName() {
-    	return this.playername;
+        return this.playername;
     }
 
     @Override
     public String toString() {
-		String newLine = System.getProperty("line.separator");
-	    String result = newLine;
-	    result = playername + " Handkarten: ";
-		for(Card c : getCardsInHand()) {
-			result = result + c.toString() + " ";
-		}
-		result = result + "Wert:" + this.getHandValue()[0];
-    	return result;// + newLine;
+        String newLine = System.getProperty("line.separator");
+        String result = newLine;
+        result = playername + " Handkarten: ";
+        for(Card c : getCardsInHand()) {
+            result = result + c.toString() + " ";
+        }
+        result = result + "Wert:" + this.getHandValue()[0];
+        return result;// + newLine;
     }
 }

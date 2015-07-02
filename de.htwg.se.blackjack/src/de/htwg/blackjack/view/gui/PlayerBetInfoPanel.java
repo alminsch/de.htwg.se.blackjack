@@ -14,22 +14,22 @@ import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.util.observer.IObserver;
 
 public class PlayerBetInfoPanel extends JPanel implements IObserver {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private IController controller;
-	private JTextField tBet;
-	private JTextField tTotal;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private IController controller;
+    private JTextField tBet;
+    private JTextField tTotal;
 
-	public PlayerBetInfoPanel(IController controller) {
-		this.controller = controller;
-		controller.addObserver(this);
+    public PlayerBetInfoPanel(IController controller) {
+        this.controller = controller;
+        controller.addObserver(this);
 
-		this.setBorder(BorderFactory.createTitledBorder("Spieler Wetten"));
+        this.setBorder(BorderFactory.createTitledBorder("Spieler Wetten"));
 
-		JLabel lBet;
-		JLabel lTotal;
+        JLabel lBet;
+        JLabel lTotal;
 
         JPanel pbets = new JPanel(new GridLayout(2, 2));
 
@@ -51,22 +51,22 @@ public class PlayerBetInfoPanel extends JPanel implements IObserver {
 
 
         this.add(pbets);
-	}
+    }
 
-	private void updateBetInformation() {
-		tTotal.setText(Integer.toString(controller.getTotalPlayerBet()));
-		tBet.setText(Integer.toString(controller.getDisplayBet()));
-	}
+    private void updateBetInformation() {
+        tTotal.setText(Integer.toString(controller.getTotalPlayerBet()));
+        tBet.setText(Integer.toString(controller.getDisplayBet()));
+    }
 
-	public void actionPerformed(ActionEvent e) {
-		updateBetInformation();
-	}
+    public void actionPerformed(ActionEvent e) {
+        updateBetInformation();
+    }
 
 
-	@Override
-	public void update(GameStatus status) {
-		if(status == GameStatus.DURING_BET) {
-			updateBetInformation();
-		}
-	}
+    @Override
+    public void update(GameStatus status) {
+        if(status == GameStatus.DURING_BET) {
+            updateBetInformation();
+        }
+    }
 }

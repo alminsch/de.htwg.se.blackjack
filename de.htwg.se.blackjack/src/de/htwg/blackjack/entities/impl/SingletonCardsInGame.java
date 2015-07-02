@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class SingletonCardsInGame {
-	private static SingletonCardsInGame scig = new SingletonCardsInGame();
+    private static SingletonCardsInGame scig = new SingletonCardsInGame();
     List<Card> stapel = new ArrayList<Card>(EnumSet.allOf(Card.class));
     private Random randomGenerator;
 
@@ -16,11 +16,11 @@ public class SingletonCardsInGame {
         return stapel.contains(c);
     }
     public static SingletonCardsInGame getInstance() {
-    	return scig;
+        return scig;
     }
 
     public void resetStapel() {
-    	stapel = new ArrayList<Card>(EnumSet.allOf(Card.class));
+        stapel = new ArrayList<Card>(EnumSet.allOf(Card.class));
     }
 
     public Card getCard() {

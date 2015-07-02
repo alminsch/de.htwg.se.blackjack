@@ -7,24 +7,24 @@ import de.htwg.blackjack.entities.impl.GameStatus;
 
 public class Observable implements IObservable {
 
-	private List<IObserver> subscribers = new ArrayList<IObserver>(2);
+    private List<IObserver> subscribers = new ArrayList<IObserver>(2);
 
-	@Override
+    @Override
     public void addObserver(IObserver s) {
         subscribers.add(s);
     }
 
-	@Override
+    @Override
     public void removeObserver(IObserver s) {
         subscribers.remove(s);
     }
 
-	@Override
+    @Override
     public void removeAllObservers() {
         subscribers.clear();
     }
 
-	@Override
+    @Override
     public void notifyObservers() {
         notifyObservers(null);
     }
