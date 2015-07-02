@@ -10,7 +10,8 @@ public class SingletonCardsInGame {
     List<Card> stapel = new ArrayList<Card>(EnumSet.allOf(Card.class));
     private Random randomGenerator;
 
-    public SingletonCardsInGame() {}
+    public SingletonCardsInGame() {
+    }
 
     public boolean containscard(Card c) {
         return stapel.contains(c);
