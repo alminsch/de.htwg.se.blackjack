@@ -17,6 +17,8 @@ import javax.swing.JTextField;
 
 public class NewPlayer extends JDialog implements ActionListener {
 
+	private static final long serialVersionUID = 5557823589405227981L;
+
 	JTextField NameTextField = new JTextField(10);
 
 	JButton npButton = new JButton("Spieler erstellen");

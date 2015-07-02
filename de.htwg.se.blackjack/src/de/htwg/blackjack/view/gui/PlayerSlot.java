@@ -23,12 +23,9 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
 	private JLabel playername;
 	private JLabel budget;
 	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
-	private IController controller;
 
 	public PlayerSlot(IController controller) {
 		controller.addObserver(this);
-		this.controller = controller;
-
 	}
 
 	public void setPlayer(Player player, int i, Color color) {

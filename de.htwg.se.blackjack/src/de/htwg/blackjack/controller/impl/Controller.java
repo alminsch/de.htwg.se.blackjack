@@ -225,6 +225,7 @@ public class Controller extends Observable implements IController {
 		}
 	}
 
+
 	public boolean deletePlayer(Player player) {
 		return playerlist.remove(player);
 	}

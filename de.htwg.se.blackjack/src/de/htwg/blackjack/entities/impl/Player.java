@@ -1,9 +1,6 @@
 
 package de.htwg.blackjack.entities.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Player extends AbstractParticipant {

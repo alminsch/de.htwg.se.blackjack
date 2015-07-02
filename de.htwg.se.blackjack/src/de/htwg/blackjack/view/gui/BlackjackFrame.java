@@ -36,6 +36,7 @@ import com.google.inject.Inject;
 
 public class BlackjackFrame extends JFrame implements IObserver {
 
+	private static final long serialVersionUID = 5021430814412159276L;
 	private IController controller;
 	private StatusPanel statusPanel;
 	private PlayerBetInfoPanel pBetInfoPanel;
@@ -89,6 +90,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		// contentPane
 		initImage();
 		contentPane = new JPanel() {
+
+			private static final long serialVersionUID = -3044889237354849022L;
+
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);

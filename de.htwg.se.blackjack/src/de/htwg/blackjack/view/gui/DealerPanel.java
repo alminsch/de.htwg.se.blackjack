@@ -16,6 +16,7 @@ import de.htwg.blackjack.util.observer.IObserver;
 
 public class DealerPanel extends JLayeredPane implements IObserver{
 
+	private static final long serialVersionUID = 4729119025243629501L;
 	IController controller;
 	JLabel dealervalue;
 	private LinkedList<JLabel> cards = new LinkedList<JLabel>();
@@ -50,7 +51,7 @@ public class DealerPanel extends JLayeredPane implements IObserver{
 	public void update(GameStatus status) {
 		printdealercards();
 	}
-	
+
 	public void reset() {
 		for(JLabel c : cards) {
 			this.remove(c);
