@@ -14,9 +14,6 @@ import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.util.observer.IObserver;
 
 public class PlayerBetInfoPanel extends JPanel implements IObserver {
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     private IController controller;
     private JTextField tBet;
@@ -65,8 +62,6 @@ public class PlayerBetInfoPanel extends JPanel implements IObserver {
 
     @Override
     public void update(GameStatus status) {
-        if(status == GameStatus.DURING_BET) {
-            updateBetInformation();
-        }
+    	updateBetInformation();
     }
 }
