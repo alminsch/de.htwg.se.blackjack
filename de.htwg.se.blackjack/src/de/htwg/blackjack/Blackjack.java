@@ -22,12 +22,7 @@ public class Blackjack {
     private static Blackjack instance = null;
 
 
-    public static Blackjack getInstance() {
-        if (instance == null) {
-            instance = new Blackjack();
-        }
-        return instance;
-    }
+
 
     private Blackjack() {
     	controller = new Controller();
@@ -52,6 +47,12 @@ public class Blackjack {
         // Create an initial game
         controller.createnewgame();
     }
+	public static Blackjack getInstance() {
+		if (instance == null) {
+			instance = new Blackjack();
+		}
+		return instance;
+	}
 
     public static void main(final String[] args) throws Exception {
     	Blackjack.getInstance();
