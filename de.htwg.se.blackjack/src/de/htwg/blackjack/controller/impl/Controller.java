@@ -96,13 +96,11 @@ public class Controller extends Observable implements IController {
     }
 
 	public boolean decreasebet() {
-		if(status == GameStatus.DURING_BET) {
-			if(this.displaybet > 100) {
-				this.displaybet -= 100;
-				statusLine = "Wette:  " + displaybet;
-				notifyObservers(GameStatus.DURING_BET);
-				return true;
-			}
+		if(status == GameStatus.DURING_BET && this.displaybet > 100) {
+			this.displaybet -= 100;
+			statusLine = "Wette:  " + displaybet;
+			notifyObservers(GameStatus.DURING_BET);
+			return true;
 		}
 		return false;
 	}
