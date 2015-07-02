@@ -106,10 +106,10 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void allgettwocards() {
-		for(Player player : playerlist) {
-			player.actionhit();
-			player.actionhit();
-			if(player.getHandValue()[0] >= 9 && player.getHandValue()[0] <= 11) {
+		for(Player p : playerlist) {
+			p.actionhit();
+			p.actionhit();
+			if(p.getHandValue()[0] >= 9 && p.getHandValue()[0] <= 11) {
 				//double möglich
 			}
 		}
@@ -197,11 +197,13 @@ public class Controller extends Observable implements IController {
 			int handvalue = player.getHandValue()[0];
 			if(handvalue > 21) {
 				statusLine = player.getPlayerName() + "  BUSTED!";
-				notifyObservers(status = GameStatus.DURING_TURN);
+				status = GameStatus.DURING_TURN;
+				notifyObservers(GameStatus.DURING_TURN);
 				spielzug();
 			} else {
 				statusLine = player.getPlayerName() + "  HIT";
-				notifyObservers(status = GameStatus.DURING_TURN);
+				status = GameStatus.DURING_TURN;
+				notifyObservers(GameStatus.DURING_TURN);
 			}
 		}
 	}
