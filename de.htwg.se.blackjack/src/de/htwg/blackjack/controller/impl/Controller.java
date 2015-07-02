@@ -61,7 +61,8 @@ public class Controller extends Observable implements IController {
 			statusLine = "Spieler " + player.getPlayerName() + ", bitte Wette abgeben." +
 						" Budget: " + player.getbudget() +
 						" \nStartwette beträgt 100";
-			notifyObservers(status = GameStatus.DURING_BET);
+			status = GameStatus.DURING_BET;
+			notifyObservers(GameStatus.DURING_BET);
 		} else {
 			statusLine = "Alle Wetten wurden abgegeben";
 			notifyObservers();
@@ -123,7 +124,8 @@ public class Controller extends Observable implements IController {
 		if(!tmpplayerlist.isEmpty()) {
 			player = tmpplayerlist.poll();
 			statusLine = "Spieler " + player.getPlayerName() + ", ist an der Reihe";
-			notifyObservers(status = GameStatus.DURING_TURN);
+			status = GameStatus.DURING_TURN;
+			notifyObservers(GameStatus.DURING_TURN);
 		} else {
 			auswertung();
 		}
@@ -174,8 +176,9 @@ public class Controller extends Observable implements IController {
 			}
 		}
 
-		statusLine = "Auswertung:\n" + sb.toString() ;
-		notifyObservers(status = GameStatus.AUSWERTUNG);
+		statusLine = "Auswertung:\n" + sb.toString();
+		status = GameStatus.AUSWERTUNG;
+		notifyObservers(GameStatus.AUSWERTUNG);
 	}
 	public String getCards() {
 		return player.toString() + "\n" + dealer.toString(0);
@@ -206,7 +209,7 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void doublebet() {
-
+		//not implemented
 	}
 
 	public void addnewPlayer(String s) {
