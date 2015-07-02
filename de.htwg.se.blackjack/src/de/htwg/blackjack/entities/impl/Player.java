@@ -7,7 +7,7 @@ public class Player extends AbstractParticipant {
 
     private int budget;
     private String playername;
-    public int playerbet;
+    private int playerbet;
     boolean insurance;
 
     public Player(String playername) {

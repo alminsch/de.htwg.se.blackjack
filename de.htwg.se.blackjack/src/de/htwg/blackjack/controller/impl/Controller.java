@@ -148,7 +148,7 @@ public class Controller extends Observable implements IController {
         for(Player p : playerlist) {
             sb.append(p.toString() + "\n");
 
-            int totalplayerbet = p.playerbet;
+            int totalplayerbet = p.getplayerbet();
             int finalplayervalue;
             if(p.getHandValue()[1] <= 21) {
                 finalplayervalue = p.getHandValue()[1];
@@ -254,11 +254,11 @@ public class Controller extends Observable implements IController {
         }
     }
     public int getTotalPlayerBet() {
-        return player.playerbet;
+        return player.getplayerbet();
     }
 
     public void setTotalPlayerbet(int bet) {
-        player.playerbet = bet;
+        player.setplayerbet(bet);
     }
 
     public int getDisplayBet() {

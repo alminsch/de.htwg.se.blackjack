@@ -34,6 +34,10 @@ public abstract class AbstractParticipant implements IParticipant {
         return this.cardsinhand;
     }
 
+    public void addtoCards(Card c) {
+    	cardsinhand.add(c);
+    }
+
     public Card actionhit() {
         Card c = scig.getCard();
         return hitsetvalue(c);
