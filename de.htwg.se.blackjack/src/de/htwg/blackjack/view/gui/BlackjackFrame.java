@@ -46,7 +46,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
     // JButtons
     private JButton bHit;
     private JButton bStand;
-    private JButton bDouble;
+    //private JButton bDouble;
 
     private JButton bPlus;
     private JButton bMinus;
@@ -116,7 +116,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
         contentPane.add(bStand);
 
         // Button Double
-        bDouble = new JButton("Double");
+        /*bDouble = new JButton("Double");
         bDouble.setBounds(350, 860, 100, 50);
         bDouble.setBorder(BorderFactory.createEmptyBorder());
         bDouble.addActionListener(new ActionListener() {
@@ -125,7 +125,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
                 controller.doublebet();
             }
         });
-        contentPane.add(bDouble);
+        contentPane.add(bDouble);*/
 
         // Button Plus
         bPlus = new JButton("+ 100");
