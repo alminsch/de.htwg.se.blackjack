@@ -249,10 +249,10 @@ public class BlackjackFrame extends JFrame implements IObserver {
     }
 
     public Color getRandomColor() {
-        int R = (int)(Math.random()*256);
-        int G = (int)(Math.random()*256);
-        int B= (int)(Math.random()*256);
-        Color color = new Color(R, G, B);
+        int r = (int)(Math.random()*256);
+        int g = (int)(Math.random()*256);
+        int b= (int)(Math.random()*256);
+        Color color = new Color(r, g, b);
 
         Random random = new Random();
         final float hue = random.nextFloat();
