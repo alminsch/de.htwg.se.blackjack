@@ -25,10 +25,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import org.apache.log4j.Logger;
+
 import com.google.inject.Inject;
 
-public class BlackjackFrame extends JFrame implements IObserver {
 
+public class BlackjackFrame extends JFrame implements IObserver {
+	private Logger logger = Logger.getLogger("de.htwg.blackjack.view.gui");
 	private static final long serialVersionUID = 5021430814412159276L;
 	private IController controller;
 	private StatusPanel statusPanel;
@@ -63,7 +66,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Error:", e);
 		}
 
 		this.controller = controller;
@@ -207,7 +210,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 		try {
 			img = ImageIO.read(new File("BlackJackImages/BJTisch.png"));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Error:", e);
 		}
 	}
 
