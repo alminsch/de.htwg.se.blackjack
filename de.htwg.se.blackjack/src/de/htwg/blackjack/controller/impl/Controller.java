@@ -119,7 +119,6 @@ public class Controller extends Observable implements IController {
     }
 
     public void spielzug() {
-    	System.out.println(tmpplayerlist);
         if(!tmpplayerlist.isEmpty()) {
             player = tmpplayerlist.poll();
             statusLine = "Spieler " + player.getPlayerName() + ", ist an der Reihe";

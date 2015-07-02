@@ -238,7 +238,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
         }
 
         if (status == GameStatus.AUSWERTUNG) {
-            statusPanel.setText("[STR");
+            statusPanel.setText("[STRG-N] für neue Runde");
             constructPane(controller);
         } else {
             statusPanel.setText(controller.getStatus());
