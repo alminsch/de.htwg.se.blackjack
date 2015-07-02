@@ -39,7 +39,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
     private DealerPanel dealerPanel;
     private JPanel contentPane;
 
-    private PlayerSlot playerslot[];
+    private PlayerSlot[] playerslot;
 
     private int slotcount = 0;
 
@@ -187,8 +187,9 @@ public class BlackjackFrame extends JFrame implements IObserver {
         //MenuBar
         mb = new MenuBar(controller, this);
         this.setJMenuBar(new MenuBar(controller, this));
-        int x[] = new int[3];
-        int y[] = new int[3];
+
+        int[] x = new int[3];
+        int[] y = new int[3];
         x[0] = 200;
         x[1] = 600;
         x[2] = 1000;
