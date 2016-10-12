@@ -70,4 +70,15 @@ public class TextUI implements IObserver{
         logger.info(NEWLINE
                 + "Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet");
     }
+    
+    public String getTUI() {
+    	StringBuilder sb = new StringBuilder();
+    	sb.append(NEWLINE + controller.getStatus());
+    	if(controller.getGameStatus() == GameStatus.DURING_TURN) {
+    		sb.append(NEWLINE + controller.getCards());
+    	}
+    	sb.append(NEWLINE + "Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet");
+    	return (sb.toString());
+    }
+    
 }

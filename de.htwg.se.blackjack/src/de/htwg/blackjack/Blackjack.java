@@ -65,4 +65,8 @@ public class Blackjack {
             go = tui.userinputselection(scanner.next());
         }
     }
+    
+    public static TextUI getTUI() {
+    	return tui;
+    }
 }
