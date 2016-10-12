@@ -52,7 +52,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
         int idx = player.getCardsInHand().size()-1;
         int y = 0;
         for(Card c : player.getCardsInHand()) {
-            ImageIcon icon = new ImageIcon("BlackjackImages/" + c.toString() +".png");
+        	ImageIcon icon = new ImageIcon(PlayerSlot.class.getResource("/BlackjackImages/" + c.toString() +".png"));
             Image img = icon.getImage().getScaledInstance(icon.getIconHeight()-130, icon.getIconWidth()-20,Image.SCALE_FAST);
             JLabel p = new JLabel(new ImageIcon(img));
             p.setBounds(0, y, 140, 160);

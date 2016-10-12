@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -12,15 +13,10 @@ import java.util.List;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
-
-import de.htwg.blackjack.controller.IController;
-import de.htwg.blackjack.entities.impl.GameStatus;
-import de.htwg.blackjack.entities.impl.Player;
-import de.htwg.blackjack.util.observer.IObserver;
-
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -28,6 +24,11 @@ import javax.swing.UIManager;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
+
+import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.entities.impl.GameStatus;
+import de.htwg.blackjack.entities.impl.Player;
+import de.htwg.blackjack.util.observer.IObserver;
 
 
 public class BlackjackFrame extends JFrame implements IObserver {
@@ -209,7 +210,7 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
     void initImage() {
         try {
-            img = ImageIO.read(new File("BlackJackImages/BJTisch.png"));
+            img = ImageIO.read(BlackjackFrame.class.getResource("/BlackjackImages/BJTisch.png"));
         } catch (Exception e) {
             logger.error("Error:", e);
         }

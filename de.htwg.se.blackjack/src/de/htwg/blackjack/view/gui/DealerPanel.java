@@ -35,7 +35,7 @@ public class DealerPanel extends JLayeredPane implements IObserver{
         int x = 50;
         int idx = 1;
         for(Card c : dealerCards) {
-            ImageIcon icon = new ImageIcon("BlackjackImages/" + c.toString() +".png");
+            ImageIcon icon = new ImageIcon(DealerPanel.class.getResource("/BlackjackImages/" + c.toString() +".png"));
             Image img = icon.getImage().getScaledInstance(icon.getIconHeight()-130, icon.getIconWidth()-20,Image.SCALE_FAST);
             JLabel p = new JLabel(new ImageIcon(img));
             p.setBounds(x, 0, 140, 160);
