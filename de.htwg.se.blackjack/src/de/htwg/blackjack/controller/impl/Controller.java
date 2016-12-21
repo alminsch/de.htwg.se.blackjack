@@ -50,7 +50,7 @@ public class Controller extends Observable implements IController {
             resetHandCards();
             playerbets();
         } else {
-            statusLine = "Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann";
+            statusLine = "Es mï¿½ssen Spieler erstellt werden, bevor das Spiel gestartet werden kann";
             notifyObservers();
         }
     }
@@ -60,7 +60,7 @@ public class Controller extends Observable implements IController {
             player = tmpplayerlist.poll();
             statusLine = "Spieler " + player.getPlayerName() + ", bitte Wette abgeben." +
                         " Budget: " + player.getbudget() +
-                        " \nStartwette beträgt 100";
+                        " \nStartwette betrï¿½gt 100";
             status = GameStatus.DURING_BET;
             notifyObservers(GameStatus.DURING_BET);
         } else {
@@ -73,7 +73,7 @@ public class Controller extends Observable implements IController {
     public void setbetforround() {
         if(status == GameStatus.DURING_BET) {
             setTotalPlayerbet(this.displaybet);
-            statusLine  = "Ihre Wette für diese Runde beträgt " + getTotalPlayerBet();
+            statusLine  = "Ihre Wette fï¿½r diese Runde betrï¿½gt " + getTotalPlayerBet();
             displaybet = 100;
             notifyObservers(GameStatus.DURING_BET);
             playerbets();
@@ -88,7 +88,7 @@ public class Controller extends Observable implements IController {
                 notifyObservers(GameStatus.DURING_BET);
                 return true;
             } else {
-                statusLine = "Ihr Budget reicht nicht aus, um die Wette weiter zu erhöhen";
+                statusLine = "Ihr Budget reicht nicht aus, um die Wette weiter zu erhï¿½hen";
                 notifyObservers(GameStatus.DURING_BET);
             }
         }
@@ -110,7 +110,7 @@ public class Controller extends Observable implements IController {
             p.actionhit();
             p.actionhit();
             if(p.getHandValue()[0] >= 9 && p.getHandValue()[0] <= 11) {
-                //double möglich
+                //double mï¿½glich
             }
         }
         dealer.actionhit();
@@ -220,10 +220,10 @@ public class Controller extends Observable implements IController {
                 return;
             }
             playerlist.add(new Player(s));
-            statusLine = "Neuer Spieler hinzugefügt";
+            statusLine = "Neuer Spieler hinzugefï¿½gt";
             notifyObservers(GameStatus.NEW_PLAYER);
         } else {
-            statusLine = "Spieler können nur zu Beginn einer neuen Runde erstellt werden";
+            statusLine = "Spieler kï¿½nnen nur zu Beginn einer neuen Runde erstellt werden";
             notifyObservers(GameStatus.NP_NOPERMISSION);
         }
     }
@@ -254,7 +254,12 @@ public class Controller extends Observable implements IController {
         }
     }
     public int getTotalPlayerBet() {
-        return player.getplayerbet();
+    	if(player != null) {
+    		return player.getplayerbet();
+    	}
+    	else {
+    		return 0;
+    	}
     }
 
     public void setTotalPlayerbet(int bet) {
