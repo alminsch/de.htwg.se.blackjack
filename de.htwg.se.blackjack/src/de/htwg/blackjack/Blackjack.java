@@ -21,9 +21,6 @@ public class Blackjack {
     private IController controller;
     private static Blackjack instance = null;
 
-
-
-
     private Blackjack() {
     	controller = new Controller();
     	tui = new TextUI(controller);
@@ -68,5 +65,9 @@ public class Blackjack {
     
     public static TextUI getTUI() {
     	return tui;
+    }
+    
+    public IController getController() {
+    	return controller;
     }
 }
