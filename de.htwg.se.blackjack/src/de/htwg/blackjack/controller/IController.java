@@ -56,5 +56,7 @@ public interface IController extends IObservable {
     Dealer getDealer();
 
     GameStatus getGameStatus();
+    
+    String json();
 
 }
