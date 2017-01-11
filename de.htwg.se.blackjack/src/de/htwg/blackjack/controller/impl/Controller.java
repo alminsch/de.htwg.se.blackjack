@@ -1,7 +1,11 @@
 package de.htwg.blackjack.controller.impl;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 
 import com.google.inject.Inject;
@@ -15,6 +19,9 @@ import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
 import de.htwg.blackjack.util.observer.Observable;
+import com.google.gson.*;
+
+
 
 @Singleton
 public class Controller extends Observable implements IController {
@@ -288,5 +295,64 @@ public class Controller extends Observable implements IController {
 
     public Dealer getDealer() {
         return dealer;
+    }
+    
+    public String json() {
+    	List<Map> array = new ArrayList<Map>();
+
+		Map<String, Object> players = new HashMap<String, Object>();
+		Map<String, Object> cards = new HashMap<String, Object>();
+		Map<String, Object> dealer = new HashMap<String, Object>();
+		Map<String, Object> statusLine = new HashMap<String, Object>();
+		Map<String, Object> betDisplay = new HashMap<String, Object>();
+		
+
+		List<List> playerlist = new ArrayList<List>();
+		List<String> playerName = new ArrayList<String>();
+		List<String> cardValue = new ArrayList<String>();
+		List<String> budget = new ArrayList<String>();
+		
+		List<List> cardArray = new ArrayList<List>();
+		List<List> dealerlist = new ArrayList<List>();
+	
+		for(Player p : getPlayerList()) {
+			playerName.add(p.getPlayerName());
+			cardValue.add(p.getHandValue()[0] + "/" + p.getHandValue()[1]);
+			budget.add(Integer.toString(p.getbudget()));
+			
+			cardArray.add(p.getCardsInHand());
+		}
+		
+		// player
+		playerlist.add(playerName);
+		playerlist.add(cardValue);
+		playerlist.add(budget);
+		players.put("players", playerlist);
+		
+		// cards
+		cards.put("cards", cardArray);
+		
+		// dealer
+		dealerlist.add(getDealerCards());
+		dealerlist.add(Arrays.asList(getDealer().getHandValue()[0] + "/" + getDealer().getHandValue()[1]));
+		dealer.put("dealer", dealerlist);
+		
+		// statusLine
+		statusLine.put("statusline", getStatus());
+		
+		// Bet
+		betDisplay.put("bet", Arrays.asList(getDisplayBet(), getTotalPlayerBet()));
+		
+		array.add(players);
+		array.add(cards);
+		array.add(dealer);
+		array.add(statusLine);
+		array.add(betDisplay);
+		
+		Gson gson = new Gson();
+
+		String json = gson.toJson(array);
+		
+		return json;
     }
 }
