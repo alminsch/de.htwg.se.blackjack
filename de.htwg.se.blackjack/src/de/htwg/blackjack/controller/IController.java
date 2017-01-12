@@ -49,6 +49,8 @@ public interface IController extends IObservable {
 
     List<Card> getDealerCards();
 
+    List<Player> getPlayingPlayerList();
+    
     List<Player> getPlayerList();
 
     int getCardValue(AbstractParticipant p);

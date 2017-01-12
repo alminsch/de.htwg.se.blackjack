@@ -21,7 +21,7 @@ public class ControllerTest {
 		c = new Controller();
 		c.addnewPlayer("Alex");
 		c.addnewPlayer("Benny");
-		c.getPlayerList().get(0).deletefrombudget(1500);
+		c.getPlayingPlayerList().get(0).deletefrombudget(1500);
 		c.createnewgame();
 		c.startnewround();
 		c.increasebet();
@@ -45,15 +45,13 @@ public class ControllerTest {
 		d.addnewPlayer("Test");
 		d.setGameStatus(GameStatus.DURING_TURN);
 		d.addnewPlayer("Test");
-		d.setGameStatus(GameStatus.NP_NOPERMISSION);
-		d.addnewPlayer("Test");
 	}
 
 	@Test
 	public void teststartnewround() {
 		Controller d = new Controller();
 		d.addnewPlayer("Alex");
-		d.getPlayerList().get(0).deletefrombudget(1400);
+		d.getPlayingPlayerList().get(0).deletefrombudget(1400);
 		d.createnewgame();
 		d.startnewround();
 		d.increasebet();
@@ -80,8 +78,8 @@ public class ControllerTest {
 		d.startnewround();
 		d.getDealer().getHandValue()[0] = 18;
 		d.getDealer().getHandValue()[1] = 18;
-		d.getPlayerList().get(0).getHandValue()[0] = 18;
-		d.getPlayerList().get(0).getHandValue()[1] = 18;
+		d.getPlayingPlayerList().get(0).getHandValue()[0] = 18;
+		d.getPlayingPlayerList().get(0).getHandValue()[1] = 18;
 		d.auswertung();
 		d.setGameStatus(GameStatus.DURING_TURN);
 		d.stand();
@@ -97,8 +95,8 @@ public class ControllerTest {
 		d.startnewround();
 		d.getDealer().getHandValue()[0] = 16;
 		d.getDealer().getHandValue()[1] = 18;
-		d.getPlayerList().get(0).getHandValue()[0] = 19;
-		d.getPlayerList().get(0).getHandValue()[1] = 19;
+		d.getPlayingPlayerList().get(0).getHandValue()[0] = 19;
+		d.getPlayingPlayerList().get(0).getHandValue()[1] = 19;
 		d.auswertung();
 	}
 
@@ -110,8 +108,8 @@ public class ControllerTest {
 		d.startnewround();
 		d.getDealer().getHandValue()[0] = 18;
 		d.getDealer().getHandValue()[1] = 16;
-		d.getPlayerList().get(0).getHandValue()[0] = 15;
-		d.getPlayerList().get(0).getHandValue()[1] = 15;
+		d.getPlayingPlayerList().get(0).getHandValue()[0] = 15;
+		d.getPlayingPlayerList().get(0).getHandValue()[1] = 15;
 		d.auswertung();
 	}
 
@@ -121,8 +119,8 @@ public class ControllerTest {
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
-		d.getPlayerList().get(0).getHandValue()[0] = 1;
-		d.getPlayerList().get(0).getHandValue()[1] = 1;
+		d.getPlayingPlayerList().get(0).getHandValue()[0] = 1;
+		d.getPlayingPlayerList().get(0).getHandValue()[1] = 1;
 		d.setGameStatus(GameStatus.DURING_TURN);
 		d.playerhit();
 	}
@@ -133,8 +131,8 @@ public class ControllerTest {
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
-		d.getPlayerList().get(0).getHandValue()[0] = 20;
-		d.getPlayerList().get(0).getHandValue()[1] = 20;
+		d.getPlayingPlayerList().get(0).getHandValue()[0] = 20;
+		d.getPlayingPlayerList().get(0).getHandValue()[1] = 20;
 		d.setGameStatus(GameStatus.DURING_TURN);
 		d.playerhit();
 	}
@@ -214,8 +212,8 @@ public class ControllerTest {
 
 
 	@Test
-	public void testgetPlayerList() {
-		c.getPlayerList();
+	public void testgetPlayerPlayingList() {
+		c.getPlayingPlayerList();
 	}
 
 }

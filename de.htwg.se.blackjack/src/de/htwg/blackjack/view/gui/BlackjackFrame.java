@@ -234,10 +234,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
             playerslot[slotcount].setPlayer(player, slotcount + 1, getRandomColor());
             slotcount++;
         }
-        if (status == GameStatus.NP_NOPERMISSION) {
-            statusPanel.setText("Spieler können nur zu Beginn einer neuen Runde erstellt werden");
-            constructPane(controller);
-        }
 
         if (status == GameStatus.AUSWERTUNG) {
             statusPanel.setText("[STRG-N] für neue Runde");
