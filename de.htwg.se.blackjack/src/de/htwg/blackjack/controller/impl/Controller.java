@@ -52,6 +52,17 @@ public class Controller extends Observable implements IController {
         statusLine = "New Blackjack Game created";
         notifyObservers(GameStatus.NOT_STARTED);
     }
+    
+    public void resetgame() {
+        cardStack = SingletonCardsInGame.getInstance();
+        cardStack.resetStapel();
+        playerListPlaying = new LinkedList<Player>();
+        playerList = new LinkedList<Player>();
+        dealer = new Dealer();
+        displaybet = 100;
+        status = GameStatus.NOT_STARTED;
+        statusLine = "New Blackjack Game created";
+    }
 
     public void startnewround() {
     	playerListPlaying = new LinkedList<Player>(playerList);
@@ -221,7 +232,7 @@ public class Controller extends Observable implements IController {
     }
 
 	public void addnewPlayer(String name) {
-		if (playerList.size() > 3) {
+		if (playerList.size() >= 3) {
 			statusLine = "Maximale Anzahl Spieler erreicht!";
 			notifyObservers();
 			return;
@@ -242,8 +253,11 @@ public class Controller extends Observable implements IController {
     public void removePlayer(String playername) {
     	for(Player p : playerList) {
     		if (p.getPlayerName().equals(playername)) {
+    			System.out.println("removing player"+p.getPlayerName());
     			playerList.remove(p);
-    			betPlayerList.remove(p);
+    			if(betPlayerList != null) {
+    				betPlayerList.remove(p);
+    			}
     			playerListPlaying.remove(p);
     		}
     	}
@@ -383,8 +397,10 @@ public class Controller extends Observable implements IController {
     	String com = command.split(":")[0];
 		if(!com.equals("null")) {
 			if(com.equals("h") || com.equals("s") || com.equals("+") || com.equals("-") || com.equals("sb")) {
-				if(playername.equals(player.getPlayerName())) {
-					Blackjack.getInstance().getTUI().userinputselection(com);
+				if(status != GameStatus.NOT_STARTED) {
+					if(playername.equals(player.getPlayerName())) {
+						Blackjack.getInstance().getTUI().userinputselection(com);
+					}
 				}
 			} else {
 				Blackjack.getInstance().getTUI().userinputselection(com);

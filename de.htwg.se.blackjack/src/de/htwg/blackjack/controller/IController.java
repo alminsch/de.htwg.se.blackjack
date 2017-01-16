@@ -30,6 +30,8 @@ public interface IController extends IObservable {
     void doublebet();
 
     void createnewgame();
+    
+    void resetgame();
 
     void playerbets();
 
