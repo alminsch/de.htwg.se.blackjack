@@ -40,6 +40,8 @@ public interface IController extends IObservable {
     void auswertung();
 
     boolean deletePlayer(Player player);
+    
+    void removePlayer(String playername);
 
     String getCards();
 
@@ -49,6 +51,8 @@ public interface IController extends IObservable {
 
     List<Card> getDealerCards();
 
+    List<Player> getPlayingPlayerList();
+    
     List<Player> getPlayerList();
 
     int getCardValue(AbstractParticipant p);
@@ -58,5 +62,7 @@ public interface IController extends IObservable {
     GameStatus getGameStatus();
     
     String json();
+    
+    String getJson(String command);
 
 }

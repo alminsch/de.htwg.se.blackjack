@@ -35,8 +35,8 @@ public class Blackjack {
         // Guice
         controller = injector.getInstance(IController.class);
 
-        @SuppressWarnings("unused")
-        BlackjackFrame gui = injector.getInstance(BlackjackFrame.class);
+        //@SuppressWarnings("unused")
+        //BlackjackFrame gui = injector.getInstance(BlackjackFrame.class);
         tui = injector.getInstance(TextUI.class);
 
         //tui.printTUI();
@@ -63,7 +63,7 @@ public class Blackjack {
         }
     }
     
-    public static TextUI getTUI() {
+    public TextUI getTUI() {
     	return tui;
     }
     
