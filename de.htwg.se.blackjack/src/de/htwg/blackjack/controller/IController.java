@@ -30,6 +30,8 @@ public interface IController extends IObservable {
     void doublebet();
 
     void createnewgame();
+    
+    void resetgame();
 
     void playerbets();
 
@@ -40,6 +42,8 @@ public interface IController extends IObservable {
     void auswertung();
 
     boolean deletePlayer(Player player);
+    
+    void removePlayer(String playername);
 
     String getCards();
 
@@ -60,5 +64,7 @@ public interface IController extends IObservable {
     GameStatus getGameStatus();
     
     String json();
+    
+    String getJson(String command);
 
 }
