@@ -31,7 +31,7 @@ public class Controller extends Observable implements IController {
     private Queue<Player> playerList;
     private Queue<Player> betPlayerList;
     private int displaybet;
-    private String statusLine = "Welcome to Blackjack!";
+    private String statusLine = "Willkommen zu Blackjack!";
     Player player;
     private SingletonCardsInGame cardStack;
     private Dealer dealer;
@@ -49,7 +49,7 @@ public class Controller extends Observable implements IController {
     }
 
     public void createnewgame() {
-        statusLine = "New Blackjack Game created";
+        statusLine = "Neues Spiel erstellt";
         notifyObservers(GameStatus.NOT_STARTED);
     }
     
@@ -61,7 +61,7 @@ public class Controller extends Observable implements IController {
         dealer = new Dealer();
         displaybet = 100;
         status = GameStatus.NOT_STARTED;
-        statusLine = "New Blackjack Game created";
+        statusLine = "Neues Spiel erstellt";
     }
 
     public void startnewround() {
@@ -74,7 +74,7 @@ public class Controller extends Observable implements IController {
             resetPlayerBets();
             playerbets();
         } else {
-            statusLine = "Es m�ssen Spieler beitreten, bevor das Spiel gestartet werden kann";
+            statusLine = "Es müssen Spieler beitreten, bevor das Spiel gestartet werden kann";
             notifyObservers();
         }
     }
@@ -84,7 +84,7 @@ public class Controller extends Observable implements IController {
             player = betPlayerList.poll();
             statusLine = "Spieler " + player.getPlayerName() + ", bitte Wette abgeben." +
                         " Budget: " + player.getbudget() +
-                        " \nStartwette betr�gt 100";
+                        " \nStartwette beträgt 100";
             status = GameStatus.DURING_BET;
             notifyObservers(GameStatus.DURING_BET);
         } else {
@@ -97,7 +97,7 @@ public class Controller extends Observable implements IController {
     public void setbetforround() {
         if(status == GameStatus.DURING_BET) {
             setTotalPlayerbet(this.displaybet);
-            statusLine  = "Ihre Wette f�r diese Runde betr�gt " + getTotalPlayerBet();
+            statusLine  = "Ihre Wette für diese Runde beträgt " + getTotalPlayerBet();
             displaybet = 100;
             notifyObservers(GameStatus.DURING_BET);
             playerbets();
@@ -111,7 +111,7 @@ public class Controller extends Observable implements IController {
                 notifyObservers(GameStatus.DURING_BET);
                 return true;
             } else {
-                statusLine = "Ihr Budget reicht nicht aus, um die Wette weiter zu erh�hen";
+                statusLine = "Ihr Budget reicht nicht aus, um die Wette weiter zu erhöhen";
                 notifyObservers(GameStatus.DURING_BET);
             }
         }
@@ -132,7 +132,7 @@ public class Controller extends Observable implements IController {
             p.actionhit();
             p.actionhit();
             if(p.getHandValue()[0] >= 9 && p.getHandValue()[0] <= 11) {
-                //double m�glich
+                //double möglich
             }
         }
         dealer.actionhit();
@@ -175,19 +175,19 @@ public class Controller extends Observable implements IController {
             }
 
             if (finalplayervalue == finaldealervalue) {
-                sb.append("Spieler: " + p.getPlayerName() + ": no change   ");
+                sb.append("Spieler: " + p.getPlayerName() + ": Unentschieden   ");
                 continue;
             } else if(finalplayervalue > 21) {
                 p.deletefrombudget(totalplayerbet);
-                sb.append("Spieler: " +p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
+                sb.append("Spieler: " +p.getPlayerName() + ": Verliert -" + totalplayerbet + " chips \t");
                 continue;
             } else if (finalplayervalue > finaldealervalue) {
                 p.addtobudget(totalplayerbet);
-                sb.append("Spieler: " +p.getPlayerName() + ": win + " + totalplayerbet + "\t");
+                sb.append("Spieler: " +p.getPlayerName() + ": Gewinnt + " + totalplayerbet + " chips \t");
                 continue;
             } else {
                 p.deletefrombudget(totalplayerbet);
-                sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
+                sb.append("Spieler: " + p.getPlayerName() + ": Verliert -" + totalplayerbet + " chips \t");
                 continue;
             }
         }
@@ -237,6 +237,11 @@ public class Controller extends Observable implements IController {
 			notifyObservers();
 			return;
 		} else {
+			for(Player p : playerList) {
+				if(p.getPlayerName().equals(name)) {
+					return;
+				}
+			}
 			playerList.add(new Player(name));
 			notifyObservers(GameStatus.NEW_PLAYER);
 		}
@@ -401,6 +406,10 @@ public class Controller extends Observable implements IController {
 					if(playername.equals(player.getPlayerName())) {
 						Blackjack.getInstance().getTUI().userinputselection(com);
 					}
+				}
+			} else if (com.equals("n")) {
+				if(status == GameStatus.NOT_STARTED || status == GameStatus.AUSWERTUNG) {
+					Blackjack.getInstance().getTUI().userinputselection(com);
 				}
 			} else {
 				Blackjack.getInstance().getTUI().userinputselection(com);
