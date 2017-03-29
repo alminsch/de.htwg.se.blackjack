@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package de.htwg.blackjack.controller.impl;
 
 import java.util.ArrayList;
@@ -406,10 +407,7 @@ public class Controller extends Observable implements IController {
 				Blackjack.getInstance().getTUI().userinputselection(com);
 			}
 		}
-		//if(command.contains("newplayer:")) {
-			//String player = command.split(":")[1];
-			//Blackjack.getInstance().getController().addnewPlayer(player);
-		//}
+
 		
 		List<Map> array = new ArrayList<Map>();
 
