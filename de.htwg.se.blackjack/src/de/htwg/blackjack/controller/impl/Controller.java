@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package de.htwg.blackjack.controller.impl;
 
 import java.util.ArrayList;
