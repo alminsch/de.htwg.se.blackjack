@@ -19,6 +19,7 @@ import de.htwg.blackjack.entities.impl.Dealer;
 import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
+import de.htwg.blackjack.persistence.IPlayersDAO;
 import de.htwg.blackjack.util.observer.Observable;
 import com.google.gson.*;
 
@@ -36,16 +37,23 @@ public class Controller extends Observable implements IController {
     private SingletonCardsInGame cardStack;
     private Dealer dealer;
     private GameStatus status;
+    private IPlayersDAO playersDAO;
 
     @Inject
-    public Controller() {
+    public Controller(IPlayersDAO playersDAO) {
         cardStack = SingletonCardsInGame.getInstance();
         cardStack.resetStapel();
+        //TODO:
+        // new Player: Option to load old player from db
+        // check: no player with same name
+        // delete Player from db
+        // Highscore
         playerListPlaying = new LinkedList<Player>();
         playerList = new LinkedList<Player>();
         dealer = new Dealer();
         displaybet = 100;
         status = GameStatus.NOT_STARTED;
+        this.playersDAO = playersDAO;
     }
 
     public void createnewgame() {
@@ -328,6 +336,18 @@ public class Controller extends Observable implements IController {
 
     public Dealer getDealer() {
         return dealer;
+    }
+
+    public void savePlayerToDB(Player player) {
+    	playersDAO.savePlayer(player);
+    }
+    
+    public Player getPlayerFromDB(String name) {
+    	return playersDAO.getPlayer(name);
+    }
+    
+    public void deletePlayerFromDB(Player player) {
+    	playersDAO.deletePlayer(player);
     }
     
     public String json() {

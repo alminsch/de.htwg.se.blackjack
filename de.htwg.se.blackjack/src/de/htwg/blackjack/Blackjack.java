@@ -22,9 +22,6 @@ public class Blackjack {
     private static Blackjack instance = null;
 
     private Blackjack() {
-    	controller = new Controller();
-    	tui = new TextUI(controller);
-
     	// Set up logging through log4j
         PropertyConfigurator.configure("log4j.properties");
 
@@ -39,7 +36,7 @@ public class Blackjack {
         //BlackjackFrame gui = injector.getInstance(BlackjackFrame.class);
         tui = injector.getInstance(TextUI.class);
 
-        //tui.printTUI();
+        tui.printTUI();
 
         // Create an initial game
         controller.createnewgame();
