@@ -2,3 +2,9 @@
 /target
 *.log
 *.classpath
+*.class
+
+*.prefs
+
+# db4o
+*.data
