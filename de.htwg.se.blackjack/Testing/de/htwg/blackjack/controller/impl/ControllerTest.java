@@ -10,15 +10,18 @@ import org.junit.Test;
 
 import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.entities.impl.Player;
+import de.htwg.blackjack.persistence.IPlayersDAO;
+import de.htwg.blackjack.persistence.db4o.db4oPlayersDAO;
 public class ControllerTest {
 	Queue<Player> playerlist = new LinkedList<Player>();
 
 	Player a = new Player("Test");
 	Controller c;
+	IPlayersDAO playersdao = new db4oPlayersDAO();
 
 	@Before
 	public void setUp() {
-		c = new Controller();
+		c = new Controller(playersdao);
 		c.addnewPlayer("Alex");
 		c.addnewPlayer("Benny");
 		c.getPlayingPlayerList().get(0).deletefrombudget(1500);
@@ -31,13 +34,13 @@ public class ControllerTest {
 		c.allgettwocards();
 		c.getDealer().getHandValue()[0] = 16;
 		c.getDealer().getHandValue()[1] = 16;
-		c.auswertung();
+		c.evaluateRound();
 		c.getDealerCards();
 	}
 
 	@Test
 	public void testStuff() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.startnewround();
 		d.playerbets();
@@ -49,7 +52,7 @@ public class ControllerTest {
 
 	@Test
 	public void teststartnewround() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.addnewPlayer("Alex");
 		d.getPlayingPlayerList().get(0).deletefrombudget(1400);
 		d.createnewgame();
@@ -59,7 +62,7 @@ public class ControllerTest {
 
 	@Test
 	public void testplayerbets() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
@@ -72,7 +75,7 @@ public class ControllerTest {
 
 	@Test
 	public void testauswertung1() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
@@ -80,7 +83,7 @@ public class ControllerTest {
 		d.getDealer().getHandValue()[1] = 18;
 		d.getPlayingPlayerList().get(0).getHandValue()[0] = 18;
 		d.getPlayingPlayerList().get(0).getHandValue()[1] = 18;
-		d.auswertung();
+		d.evaluateRound();
 		d.setGameStatus(GameStatus.DURING_TURN);
 		d.stand();
 		d.setGameStatus(GameStatus.DURING_TURN);
@@ -89,7 +92,7 @@ public class ControllerTest {
 
 	@Test
 	public void testauswertung2() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
@@ -97,12 +100,12 @@ public class ControllerTest {
 		d.getDealer().getHandValue()[1] = 18;
 		d.getPlayingPlayerList().get(0).getHandValue()[0] = 19;
 		d.getPlayingPlayerList().get(0).getHandValue()[1] = 19;
-		d.auswertung();
+		d.evaluateRound();
 	}
 
 	@Test
 	public void testauswertung3() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
@@ -110,12 +113,12 @@ public class ControllerTest {
 		d.getDealer().getHandValue()[1] = 16;
 		d.getPlayingPlayerList().get(0).getHandValue()[0] = 15;
 		d.getPlayingPlayerList().get(0).getHandValue()[1] = 15;
-		d.auswertung();
+		d.evaluateRound();
 	}
 
 	@Test
 	public void testplayerhit1() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
@@ -127,7 +130,7 @@ public class ControllerTest {
 
 	@Test
 	public void testplayerhit2() {
-		Controller d = new Controller();
+		Controller d = new Controller(playersdao);
 		d.createnewgame();
 		d.addnewPlayer("Alex");
 		d.startnewround();
@@ -159,7 +162,7 @@ public class ControllerTest {
 
 	@Test
 	public void testauswertung() {
-		c.auswertung();
+		c.evaluateRound();
 	}
 
 	@Test

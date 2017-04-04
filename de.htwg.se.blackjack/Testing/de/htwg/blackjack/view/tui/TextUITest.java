@@ -20,7 +20,6 @@ public class TextUITest {
 	@Before
 	public void setUp() throws Exception {
 		PropertyConfigurator.configure("log4j.properties");
-		controller1 = new Controller();
 		tui1 = new TextUI(controller1);
 		tui1.userinputselection("n");
 		assertEquals("Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann",controller1.getStatus());
