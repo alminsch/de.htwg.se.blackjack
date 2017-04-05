@@ -1,13 +1,19 @@
 package de.htwg.blackjack.view.gui;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,23 +30,51 @@ public class NewPlayer extends JDialog implements ActionListener {
     JButton npButton = new JButton("Spieler erstellen");
     JButton quitButton = new JButton("Abbrechen");
     private String name;
+    JLabel result;
+    String currentPattern;
 
     public NewPlayer(JFrame f) {
 
         this.setModal(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(400, 200));
+        this.setPreferredSize(new Dimension(800, 500));
         this.setTitle("Neuer Spieler");
 
+        String[] playerNames = {};
+        
         JPanel panel1 = new JPanel();
 
-        panel1.add(new JLabel("Name"));
-        panel1.add(NameTextField);
-        panel1.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        JLabel nameLabel1 = new JLabel("Enter your name or");
+        JLabel nameLabel2 = new JLabel("select one from the list:");
 
+        JComboBox patternList = new JComboBox(playerNames);
+        patternList.setEditable(true);
+        patternList.addActionListener(this);
+        
+        panel1.add(nameLabel1);
+        panel1.add(nameLabel2);
+        panel1.add(patternList);
+        //panel1.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+
+        
         JPanel panel2 = new JPanel();
-        panel2.add(npButton);
-        panel2.add(quitButton);
+        JLabel resultLabel = new JLabel("Player",
+                JLabel.LEADING);
+        
+        result = new JLabel(" ");
+        result.setForeground(Color.black);
+        result.setBorder(BorderFactory.createCompoundBorder(
+        		BorderFactory.createLineBorder(Color.black),
+        		BorderFactory.createEmptyBorder(5,5,5,5)
+        		));
+        panel2.add(resultLabel);
+        panel2.add(result);
+        
+        
+        
+        JPanel panel3 = new JPanel();
+        panel3.add(npButton);
+        panel3.add(quitButton);
         npButton.addActionListener(this);
         quitButton.addActionListener(this);
 
@@ -49,6 +83,7 @@ public class NewPlayer extends JDialog implements ActionListener {
         panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         panel.add(panel1);
         panel.add(panel2);
+        panel.add(panel3);
 
         this.add(panel);
         setResizable(false);

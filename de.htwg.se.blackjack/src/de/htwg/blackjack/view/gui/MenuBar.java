@@ -21,10 +21,11 @@ public class MenuBar extends JMenuBar {
     private JMenuItem newMenuItem, quitMenuItem;
 
     private JMenu pMenu;
-    private JMenuItem newPlayerItem;
+    private JMenuItem newPlayerItem, deletePlayerItem;
     IController controller;
     JFrame blackjackfr;
     NewPlayer np;
+    DeletePlayer dp;
 
     public MenuBar(final IController controller, JFrame bl ) {
         blackjackfr = bl;
@@ -69,7 +70,7 @@ public class MenuBar extends JMenuBar {
             public void actionPerformed(ActionEvent event) {
                 np.shownewplayerDialog();
                 if (np.getName() != "") {
-                    controller.addnewPlayer(np.getName());
+                    controller.addNewPlayer(np.getName());
                 }
             }
         });
@@ -77,6 +78,23 @@ public class MenuBar extends JMenuBar {
         newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
                 InputEvent.CTRL_DOWN_MASK));
         pMenu.add(newPlayerItem);
+        
+     // deletePlayerItem
+        deletePlayerItem = new JMenuItem("Neuer Spieler");
+        deletePlayerItem.addActionListener(new ActionListener() {
+        	@Override
+            public void actionPerformed(ActionEvent event) {
+                dp.shownewplayerDialog();
+                if (np.getName() != "") {
+                    //controller.addnewPlayer(dp.getName());
+                }
+            }
+        });
+        newPlayerItem.setMnemonic(KeyEvent.VK_D);
+        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
+                InputEvent.CTRL_DOWN_MASK));
+        pMenu.add(newPlayerItem);
+
 
         this.add(fileMenu);
         this.add(pMenu);

@@ -22,8 +22,8 @@ public class ControllerTest {
 	@Before
 	public void setUp() {
 		c = new Controller(playersdao);
-		c.addnewPlayer("Alex");
-		c.addnewPlayer("Benny");
+		c.addNewPlayer("Alex");
+		c.addNewPlayer("Benny");
 		c.getPlayingPlayerList().get(0).deletefrombudget(1500);
 		c.createnewgame();
 		c.startnewround();
@@ -45,15 +45,15 @@ public class ControllerTest {
 		d.startnewround();
 		d.playerbets();
 		d.setGameStatus(GameStatus.DURING_BET);
-		d.addnewPlayer("Test");
+		d.addNewPlayer("Test");
 		d.setGameStatus(GameStatus.DURING_TURN);
-		d.addnewPlayer("Test");
+		d.addNewPlayer("Test");
 	}
 
 	@Test
 	public void teststartnewround() {
 		Controller d = new Controller(playersdao);
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.getPlayingPlayerList().get(0).deletefrombudget(1400);
 		d.createnewgame();
 		d.startnewround();
@@ -64,7 +64,7 @@ public class ControllerTest {
 	public void testplayerbets() {
 		Controller d = new Controller(playersdao);
 		d.createnewgame();
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.startnewround();
 		d.increasebet();
 		d.decreasebet();
@@ -77,7 +77,7 @@ public class ControllerTest {
 	public void testauswertung1() {
 		Controller d = new Controller(playersdao);
 		d.createnewgame();
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.startnewround();
 		d.getDealer().getHandValue()[0] = 18;
 		d.getDealer().getHandValue()[1] = 18;
@@ -94,7 +94,7 @@ public class ControllerTest {
 	public void testauswertung2() {
 		Controller d = new Controller(playersdao);
 		d.createnewgame();
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.startnewround();
 		d.getDealer().getHandValue()[0] = 16;
 		d.getDealer().getHandValue()[1] = 18;
@@ -107,7 +107,7 @@ public class ControllerTest {
 	public void testauswertung3() {
 		Controller d = new Controller(playersdao);
 		d.createnewgame();
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.startnewround();
 		d.getDealer().getHandValue()[0] = 18;
 		d.getDealer().getHandValue()[1] = 16;
@@ -120,7 +120,7 @@ public class ControllerTest {
 	public void testplayerhit1() {
 		Controller d = new Controller(playersdao);
 		d.createnewgame();
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.startnewround();
 		d.getPlayingPlayerList().get(0).getHandValue()[0] = 1;
 		d.getPlayingPlayerList().get(0).getHandValue()[1] = 1;
@@ -132,7 +132,7 @@ public class ControllerTest {
 	public void testplayerhit2() {
 		Controller d = new Controller(playersdao);
 		d.createnewgame();
-		d.addnewPlayer("Alex");
+		d.addNewPlayer("Alex");
 		d.startnewround();
 		d.getPlayingPlayerList().get(0).getHandValue()[0] = 20;
 		d.getPlayingPlayerList().get(0).getHandValue()[1] = 20;
@@ -192,10 +192,10 @@ public class ControllerTest {
 
 	@Test
 	public void testaddnewplayer() {
-		c.addnewPlayer("Alex");
-		c.addnewPlayer("Ale");
-		c.addnewPlayer("Al");
-		c.addnewPlayer("A");
+		c.addNewPlayer("Alex");
+		c.addNewPlayer("Ale");
+		c.addNewPlayer("Al");
+		c.addNewPlayer("A");
 	}
 
 	@Test

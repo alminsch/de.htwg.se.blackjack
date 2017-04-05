@@ -23,7 +23,7 @@ public class TextUITest {
 		tui1 = new TextUI(controller1);
 		tui1.userinputselection("n");
 		assertEquals("Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann",controller1.getStatus());
-		controller1.addnewPlayer("Hans");
+		controller1.addNewPlayer("Hans");
 		controller1.startnewround();
 	}
 

@@ -230,17 +230,18 @@ public class Controller extends Observable implements IController {
         //not implemented
     }
 
-	public void addnewPlayer(String name) {
+	public void addNewPlayer(String name) {
 		if (playerList.size() >= 3) {
-			statusLine = "Reached max amount of players!";
+			statusLine = "Reached max. amount of players!";
 			notifyObservers();
-		} else if (getPlayerFromDB(name) != null) {
-			playerList.add(new Player(name));
-			notifyObservers(GameStatus.NEW_PLAYER);
-		} else {
-			statusLine = "Playername is already taken!";
-			notifyObservers();
+			return;
 		}
+		Player existingPlayer = getPlayerFromDB(name);
+		if (existingPlayer == null) {
+			existingPlayer = new Player(name);
+		}
+		playerList.add(existingPlayer);
+		notifyObservers(GameStatus.NEW_PLAYER);
 	}
 
     public boolean deletePlayer(Player player) {
@@ -262,7 +263,6 @@ public class Controller extends Observable implements IController {
     		}
     	}
     }
-
 
     public String getStatus() {
         return statusLine;

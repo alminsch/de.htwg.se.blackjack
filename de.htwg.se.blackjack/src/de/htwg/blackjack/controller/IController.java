@@ -21,7 +21,7 @@ public interface IController extends IObservable {
 
     String getStatus();
 
-    void addnewPlayer(String next);
+    void addNewPlayer(String next);
 
     void playerhit();
 

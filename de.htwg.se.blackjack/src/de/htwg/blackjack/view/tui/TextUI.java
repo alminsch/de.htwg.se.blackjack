@@ -40,7 +40,7 @@ public class TextUI implements IObserver{
         case"np":
             scanner = new Scanner(System.in);
              logger.info("Bitte Spielername angeben");
-            controller.addnewPlayer(scanner.next());
+            controller.addNewPlayer(scanner.next());
             break;
         case"h":
             controller.playerhit();
