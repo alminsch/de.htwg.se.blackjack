@@ -1,13 +1,8 @@
 package de.htwg.blackjack.view.gui;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -19,80 +14,115 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.entities.impl.Player;
 
 public class NewPlayer extends JDialog implements ActionListener {
 
     private static final long serialVersionUID = 5557823589405227981L;
 
-    JTextField NameTextField = new JTextField(10);
-
-    JButton npButton = new JButton("Spieler erstellen");
-    JButton quitButton = new JButton("Abbrechen");
+    final IController controller;
+    JTextField nameTextField = new JTextField(20);
+    JButton applyButton = new JButton("Add Player");
+    JButton quitButton = new JButton("Cancel");
+    JComboBox playerList; 
     private String name;
-    JLabel result;
-    String currentPattern;
 
-    public NewPlayer(JFrame f) {
-
-        this.setModal(true);
+    public NewPlayer(JFrame mainFrame, final IController controller) {
+    	this.setModal(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(800, 500));
-        this.setTitle("Neuer Spieler");
+        this.setPreferredSize(new Dimension(500, 200));
+        this.setTitle("New Player");
 
+        this.controller = controller;
         String[] playerNames = {};
         
-        JPanel panel1 = new JPanel();
-
-        JLabel nameLabel1 = new JLabel("Enter your name or");
+        // panel1
+        JPanel panel1 = new JPanel();      
+        JPanel panelL = new JPanel();
+        panelL.setLayout(new BoxLayout(panelL,BoxLayout.Y_AXIS));
+        JLabel nameLabel1 = new JLabel("Enter your name or ");
         JLabel nameLabel2 = new JLabel("select one from the list:");
+        panelL.add(nameLabel1);
+        panelL.add(nameLabel2);
 
-        JComboBox patternList = new JComboBox(playerNames);
-        patternList.setEditable(true);
-        patternList.addActionListener(this);
+        playerList = new JComboBox(playerNames);
+        playerList.setEditable(true);
+        playerList.addActionListener(new ActionListener() {
+        	@Override
+			public void actionPerformed(ActionEvent e) {
+        		JComboBox cb = (JComboBox)e.getSource();
+                String newSelection = (String)cb.getSelectedItem();
+                nameTextField.setText(newSelection);
+			}
+        });
         
-        panel1.add(nameLabel1);
-        panel1.add(nameLabel2);
-        panel1.add(patternList);
-        //panel1.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        panel1.add(panelL);
+        panel1.add(playerList);
+        panel1.setBorder(BorderFactory.createEmptyBorder(20,20,4,4));
 
-        
+        // panel2
         JPanel panel2 = new JPanel();
         JLabel resultLabel = new JLabel("Player",
-                JLabel.LEADING);
-        
-        result = new JLabel(" ");
-        result.setForeground(Color.black);
-        result.setBorder(BorderFactory.createCompoundBorder(
-        		BorderFactory.createLineBorder(Color.black),
-        		BorderFactory.createEmptyBorder(5,5,5,5)
-        		));
+                JLabel.LEADING);      
+       
         panel2.add(resultLabel);
-        panel2.add(result);
+        nameTextField.setEditable(false);
+        panel2.add(nameTextField);   
+        panel2.setBorder(BorderFactory.createEmptyBorder(20,20,4,4));
         
-        
-        
+        // panel3
         JPanel panel3 = new JPanel();
-        panel3.add(npButton);
+        
+        // delete all entities in DB
+        JButton deleteAll = new JButton("Delete All");
+        deleteAll.addActionListener(new ActionListener() {
+        	@Override
+        	public void actionPerformed(ActionEvent e) {
+        		controller.deleteAllPlayersFromDB();
+        		nameTextField.setText("");
+                name = "";
+                playerList.removeAllItems();
+        	}
+        });
+        panel3.add(deleteAll);
+        panel3.add(Box.createHorizontalStrut(100));
+        
+        panel3.add(applyButton);
+        panel3.add(Box.createHorizontalStrut(10));
         panel3.add(quitButton);
-        npButton.addActionListener(this);
+        applyButton.addActionListener(this);
         quitButton.addActionListener(this);
+        
 
+        // combine panels
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
         panel.add(panel1);
         panel.add(panel2);
+        panel.add(new JSeparator(SwingConstants.HORIZONTAL));
         panel.add(panel3);
 
         this.add(panel);
         setResizable(false);
         pack();
+        setLocationRelativeTo(mainFrame);
     }
 
-    public void shownewplayerDialog() {
-        NameTextField.setText("");
 
+    public void shownewplayerDialog() {
+        playerList.removeAllItems();
+        for(Player player : controller.getAllPlayersFromDB()) {
+        	playerList.addItem(player.getPlayerName()); 	
+        }
+        playerList.setSelectedIndex(-1);
+        nameTextField.setText("");
         name = "";
         setVisible(true);
     }
@@ -101,10 +131,10 @@ public class NewPlayer extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
-        if (source == npButton) {
-            this.name = NameTextField.getText();
+        if (source == applyButton) {
+            this.name = nameTextField.getText();
             if (name.equals("")) {
-                JOptionPane.showMessageDialog(this, "Bitte Name eingeben", "Warnung", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please enter name", "Warning", JOptionPane.WARNING_MESSAGE);
             } else { setVisible(false); }
         }
         if (source == quitButton) {
@@ -113,5 +143,4 @@ public class NewPlayer extends JDialog implements ActionListener {
     }
 
     public String getName() { return name; }
-
 }

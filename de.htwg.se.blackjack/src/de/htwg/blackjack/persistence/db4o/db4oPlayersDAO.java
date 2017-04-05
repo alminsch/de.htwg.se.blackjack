@@ -29,7 +29,7 @@ public class db4oPlayersDAO implements IPlayersDAO {
 			private static final long serialVersionUID = 1L;
 
 			public boolean match(Player player) {
-				return (player.getPlayerName() == name);
+				return (player.getPlayerName().equals(name));
 			}
 		});
 		
@@ -38,6 +38,11 @@ public class db4oPlayersDAO implements IPlayersDAO {
 			return player.get(0);
 		}
 		return null;
+	}
+	
+	@Override
+	public List<Player> getAllPlayers() {
+		return db.query(Player.class);
 	}
 	
 	@Override

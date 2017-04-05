@@ -56,7 +56,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
     // JMenuBar
 
     MenuBar mb;
-    NewPlayer np;
     PlayerBetInfoPanel bip;
     private BufferedImage img;
 
@@ -72,8 +71,6 @@ public class BlackjackFrame extends JFrame implements IObserver {
 
         this.controller = controller;
         controller.addObserver(this);
-
-        np = new NewPlayer(this);
 
         this.setTitle("Blackjack");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

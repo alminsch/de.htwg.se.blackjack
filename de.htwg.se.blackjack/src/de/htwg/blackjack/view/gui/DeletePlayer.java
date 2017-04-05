@@ -1,0 +1,119 @@
+package de.htwg.blackjack.view.gui;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class DeletePlayer extends JDialog implements ActionListener {
+
+    private static final long serialVersionUID = 5557823589405227981L;
+
+    JTextField nameTextField = new JTextField(10);
+
+    JButton applyButton = new JButton("Create Player");
+    JButton quitButton = new JButton("Cancel");
+    private String name;
+
+    public DeletePlayer(JFrame mainFrame) {
+        this.setModal(true);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setPreferredSize(new Dimension(800, 500));
+        this.setTitle("New Player");
+
+        String[] playerNames = {};
+        
+        JPanel panel1 = new JPanel();
+
+        JLabel nameLabel1 = new JLabel("Enter your name or");
+        JLabel nameLabel2 = new JLabel("select one from the list:");
+
+        JComboBox playerList = new JComboBox(playerNames);
+        playerList.setEditable(true);
+        playerList.addActionListener(new ActionListener() {
+        	@Override
+			public void actionPerformed(ActionEvent e) {
+        		JComboBox cb = (JComboBox)e.getSource();
+                String newSelection = (String)cb.getSelectedItem();
+                nameTextField.setText(newSelection);
+			}
+        });
+        
+        panel1.add(nameLabel1);
+        //panel1.add(nameLabel2);
+        panel1.add(playerList);
+        //panel1.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+
+        
+        JPanel panel2 = new JPanel();
+        JLabel resultLabel = new JLabel("Player",
+                JLabel.LEADING);      
+       
+        panel2.add(resultLabel);
+        panel2.add(nameTextField);             
+        
+        JPanel panel3 = new JPanel();
+        panel3.add(applyButton);
+        panel3.add(Box.createHorizontalStrut(10));
+        panel3.add(quitButton);
+        applyButton.addActionListener(this);
+        quitButton.addActionListener(this);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        //panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+        panel.add(panel1);
+        panel.add(panel2);
+        panel.add(new JSeparator(SwingConstants.HORIZONTAL));
+        panel.add(panel3);
+
+        this.add(panel);
+        setResizable(false);
+        pack();
+        setLocationRelativeTo(mainFrame);
+    }
+
+    public void shownewplayerDialog() {
+        nameTextField.setText("");
+        name = "";
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+
+        if (source == applyButton) {
+            this.name = nameTextField.getText();
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(this, "Please enter name", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else { setVisible(false); }
+        }
+        if (source == quitButton) {
+            setVisible(false);
+        }
+    }
+
+    public String getName() { return name; }
+
+}

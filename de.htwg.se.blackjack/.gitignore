@@ -8,3 +8,4 @@
 
 # db4o
 *.data
+/log4j.properties

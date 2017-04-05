@@ -24,16 +24,15 @@ public class MenuBar extends JMenuBar {
     private JMenuItem newPlayerItem, deletePlayerItem;
     IController controller;
     JFrame blackjackfr;
-    NewPlayer np;
-    DeletePlayer dp;
+    NewPlayer newPlayerDialog;
+    DeletePlayer deletePlayerDialog;
 
-    public MenuBar(final IController controller, JFrame bl ) {
-        blackjackfr = bl;
-        np = new NewPlayer(bl);
-        // fileMenu
+    public MenuBar(final IController controller, JFrame mainFrame ) {
+        newPlayerDialog = new NewPlayer(mainFrame, controller);
+        deletePlayerDialog = new DeletePlayer(mainFrame);
+
         fileMenu = new JMenu("Datei");
         fileMenu.setMnemonic(KeyEvent.VK_D);
-
         pMenu = new JMenu("Spieler Optionen");
 
         // newMenuItem
@@ -68,9 +67,9 @@ public class MenuBar extends JMenuBar {
         newPlayerItem.addActionListener(new ActionListener() {
         	@Override
             public void actionPerformed(ActionEvent event) {
-                np.shownewplayerDialog();
-                if (np.getName() != "") {
-                    controller.addNewPlayer(np.getName());
+                newPlayerDialog.shownewplayerDialog();
+                if (newPlayerDialog.getName() != "") { 
+                    controller.addNewPlayer(newPlayerDialog.getName());
                 }
             }
         });
@@ -78,23 +77,23 @@ public class MenuBar extends JMenuBar {
         newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
                 InputEvent.CTRL_DOWN_MASK));
         pMenu.add(newPlayerItem);
-        
-     // deletePlayerItem
+
+        // deletePlayerItem
         deletePlayerItem = new JMenuItem("Neuer Spieler");
         deletePlayerItem.addActionListener(new ActionListener() {
         	@Override
             public void actionPerformed(ActionEvent event) {
-                dp.shownewplayerDialog();
-                if (np.getName() != "") {
+                deletePlayerDialog.shownewplayerDialog();
+                if (deletePlayerDialog.getName() != "") {
                     //controller.addnewPlayer(dp.getName());
                 }
             }
         });
+
         newPlayerItem.setMnemonic(KeyEvent.VK_D);
         newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
                 InputEvent.CTRL_DOWN_MASK));
         pMenu.add(newPlayerItem);
-
 
         this.add(fileMenu);
         this.add(pMenu);

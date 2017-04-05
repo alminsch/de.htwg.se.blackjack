@@ -61,6 +61,9 @@ public interface IController extends IObservable {
 
     GameStatus getGameStatus();
     
+    List<Player> getAllPlayersFromDB();
+    
     String getJson(String command);
 
+    void deleteAllPlayersFromDB();
 }
