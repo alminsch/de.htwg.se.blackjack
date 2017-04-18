@@ -1,13 +1,8 @@
 package de.htwg.blackjack.view.gui;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -23,67 +18,67 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.entities.impl.Player;
+
 public class DeletePlayer extends JDialog implements ActionListener {
 
     private static final long serialVersionUID = 5557823589405227981L;
 
-    JTextField nameTextField = new JTextField(10);
-
-    JButton applyButton = new JButton("Create Player");
+    final IController controller;
+    String playerToDelete;
     JButton quitButton = new JButton("Cancel");
-    private String name;
+    JButton applyButton = new JButton("Delete");
+    JComboBox playerList; 
 
-    public DeletePlayer(JFrame mainFrame) {
-        this.setModal(true);
+    public DeletePlayer(JFrame mainFrame, final IController controller) {
+    	this.setModal(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(800, 500));
+        this.setPreferredSize(new Dimension(500, 200));
         this.setTitle("New Player");
 
+        this.controller = controller;
         String[] playerNames = {};
         
-        JPanel panel1 = new JPanel();
+        // panelL     
+        JPanel panelL = new JPanel();
+        panelL.setLayout(new BoxLayout(panelL,BoxLayout.Y_AXIS));
+        JLabel nameLabel = new JLabel("Select Player to Delete");
+        panelL.add(nameLabel);
 
-        JLabel nameLabel1 = new JLabel("Enter your name or");
-        JLabel nameLabel2 = new JLabel("select one from the list:");
-
-        JComboBox playerList = new JComboBox(playerNames);
-        playerList.setEditable(true);
+        playerList = new JComboBox(playerNames);
+        playerList.setEditable(false);
         playerList.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
         		JComboBox cb = (JComboBox)e.getSource();
-                String newSelection = (String)cb.getSelectedItem();
-                nameTextField.setText(newSelection);
+        		playerToDelete = (String)cb.getSelectedItem();
 			}
         });
         
-        panel1.add(nameLabel1);
-        //panel1.add(nameLabel2);
-        panel1.add(playerList);
-        //panel1.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
-
-        
-        JPanel panel2 = new JPanel();
-        JLabel resultLabel = new JLabel("Player",
-                JLabel.LEADING);      
-       
-        panel2.add(resultLabel);
-        panel2.add(nameTextField);             
-        
-        JPanel panel3 = new JPanel();
-        panel3.add(applyButton);
-        panel3.add(Box.createHorizontalStrut(10));
-        panel3.add(quitButton);
+        // delete player
         applyButton.addActionListener(this);
-        quitButton.addActionListener(this);
+        
+        // panel1
+        JPanel panel1 = new JPanel();  
+        panel1.add(panelL);
+        panel1.add(playerList);
+        panel1.add(applyButton);
+        
+        panel1.setBorder(BorderFactory.createEmptyBorder(20,20,4,4));
 
+        // panel3
+        JPanel panel3 = new JPanel();
+        panel3.add(quitButton);
+        quitButton.addActionListener(this);
+        
+
+        // combine panels
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-        //panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         panel.add(panel1);
-        panel.add(panel2);
         panel.add(new JSeparator(SwingConstants.HORIZONTAL));
         panel.add(panel3);
 
@@ -93,9 +88,14 @@ public class DeletePlayer extends JDialog implements ActionListener {
         setLocationRelativeTo(mainFrame);
     }
 
+
     public void shownewplayerDialog() {
-        nameTextField.setText("");
-        name = "";
+        playerList.removeAllItems();
+        for(Player player : controller.getAllPlayersFromDB()) {
+        	playerList.addItem(player.getPlayerName()); 	
+        }
+        playerList.setSelectedIndex(-1);
+        playerToDelete = "";
         setVisible(true);
     }
 
@@ -104,16 +104,16 @@ public class DeletePlayer extends JDialog implements ActionListener {
         Object source = e.getSource();
 
         if (source == applyButton) {
-            this.name = nameTextField.getText();
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(this, "Please enter name", "Warning", JOptionPane.WARNING_MESSAGE);
-            } else { setVisible(false); }
+        	if (playerToDelete.equals("")) {
+                JOptionPane.showInputDialog(this, "Please select Player to delete!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+            	controller.deletePlayerFromDB(controller.getPlayerFromDB(playerToDelete));
+            	playerList.removeItem(playerToDelete);
+                playerList.setSelectedIndex(-1);
+            }
         }
         if (source == quitButton) {
             setVisible(false);
         }
     }
-
-    public String getName() { return name; }
-
 }

@@ -66,4 +66,8 @@ public interface IController extends IObservable {
     String getJson(String command);
 
     void deleteAllPlayersFromDB();
+    
+    Player getPlayerFromDB(String name);
+    
+    void deletePlayerFromDB(Player player);
 }

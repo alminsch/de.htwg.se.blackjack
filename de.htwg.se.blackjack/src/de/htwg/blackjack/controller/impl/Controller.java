@@ -346,7 +346,7 @@ public class Controller extends Observable implements IController {
 		playersDAO.savePlayer(player);
 	}
 	
-	private Player getPlayerFromDB(String name) {
+	public Player getPlayerFromDB(String name) {
 		return playersDAO.getPlayer(name);
 	}
 
@@ -354,7 +354,7 @@ public class Controller extends Observable implements IController {
 		return playersDAO.getAllPlayers();
 	}
 
-	private void deletePlayerFromDB(Player player) {
+	public void deletePlayerFromDB(Player player) {
 		playersDAO.deletePlayer(player);
 	}
 

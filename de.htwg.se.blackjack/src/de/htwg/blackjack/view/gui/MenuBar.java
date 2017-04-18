@@ -29,7 +29,7 @@ public class MenuBar extends JMenuBar {
 
     public MenuBar(final IController controller, JFrame mainFrame ) {
         newPlayerDialog = new NewPlayer(mainFrame, controller);
-        deletePlayerDialog = new DeletePlayer(mainFrame);
+        deletePlayerDialog = new DeletePlayer(mainFrame, controller);
 
         fileMenu = new JMenu("Datei");
         fileMenu.setMnemonic(KeyEvent.VK_D);
@@ -63,7 +63,7 @@ public class MenuBar extends JMenuBar {
         fileMenu.add(new JSeparator());
 
         // newPlayerItem
-        newPlayerItem = new JMenuItem("Neuer Spieler");
+        newPlayerItem = new JMenuItem("New Player");
         newPlayerItem.addActionListener(new ActionListener() {
         	@Override
             public void actionPerformed(ActionEvent event) {
@@ -79,21 +79,18 @@ public class MenuBar extends JMenuBar {
         pMenu.add(newPlayerItem);
 
         // deletePlayerItem
-        deletePlayerItem = new JMenuItem("Neuer Spieler");
+        deletePlayerItem = new JMenuItem("Delete Player");
         deletePlayerItem.addActionListener(new ActionListener() {
         	@Override
             public void actionPerformed(ActionEvent event) {
-                deletePlayerDialog.shownewplayerDialog();
-                if (deletePlayerDialog.getName() != "") {
-                    //controller.addnewPlayer(dp.getName());
-                }
+        		deletePlayerDialog.shownewplayerDialog();
             }
         });
 
-        newPlayerItem.setMnemonic(KeyEvent.VK_D);
-        newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
+        deletePlayerItem.setMnemonic(KeyEvent.VK_D);
+        deletePlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
                 InputEvent.CTRL_DOWN_MASK));
-        pMenu.add(newPlayerItem);
+        pMenu.add(deletePlayerItem);
 
         this.add(fileMenu);
         this.add(pMenu);

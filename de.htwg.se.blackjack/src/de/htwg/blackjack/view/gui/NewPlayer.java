@@ -89,11 +89,9 @@ public class NewPlayer extends JDialog implements ActionListener {
                 playerList.removeAllItems();
         	}
         });
-        panel3.add(deleteAll);
-        panel3.add(Box.createHorizontalStrut(100));
         
         panel3.add(applyButton);
-        panel3.add(Box.createHorizontalStrut(10));
+        panel3.add(Box.createHorizontalStrut(50));
         panel3.add(quitButton);
         applyButton.addActionListener(this);
         quitButton.addActionListener(this);
