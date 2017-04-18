@@ -9,11 +9,11 @@ import com.db4o.query.Predicate;
 import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.persistence.IPlayersDAO;
 
-public class db4oPlayersDAO implements IPlayersDAO {
+public class Db4oPlayersDAO implements IPlayersDAO {
 
 	private ObjectContainer db;
 	
-	public db4oPlayersDAO() {
+	public Db4oPlayersDAO() {
 		db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "db4oplayer.data");
 	}
 	

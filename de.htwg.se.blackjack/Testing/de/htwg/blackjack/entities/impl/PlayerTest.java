@@ -32,7 +32,7 @@ public class PlayerTest {
     public void Testgetbudget() {
         player1.addtobudget(10);
         player1.deletefrombudget(10);
-        assertEquals(1500, player1.getbudget());
+        assertEquals(1500, player1.getBudget());
     }
 
     @Test

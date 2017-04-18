@@ -43,7 +43,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
         budget = new JLabel();
         budget.setBounds(150,180,200,50);
         budget.setFont(new Font("Arial", Font.CENTER_BASELINE, 20));
-        budget.setText("Budget: " + player.getbudget());
+        budget.setText("Budget: " + player.getBudget());
         this.add(budget);
     }
 
@@ -63,7 +63,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
         }
         String s = player.getHandValue()[0] + " / " + player.getHandValue()[1];
         playervalue.setText("Wert: "+ s);
-        budget.setText("Budget: " + player.getbudget());
+        budget.setText("Budget: " + player.getBudget());
     }
 
     public void update(GameStatus e) {

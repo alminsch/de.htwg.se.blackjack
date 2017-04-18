@@ -11,13 +11,13 @@ import org.junit.Test;
 import de.htwg.blackjack.entities.impl.GameStatus;
 import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.persistence.IPlayersDAO;
-import de.htwg.blackjack.persistence.db4o.db4oPlayersDAO;
+import de.htwg.blackjack.persistence.db4o.Db4oPlayersDAO;
 public class ControllerTest {
 	Queue<Player> playerlist = new LinkedList<Player>();
 
 	Player a = new Player("Test");
 	Controller c;
-	IPlayersDAO playersdao = new db4oPlayersDAO();
+	IPlayersDAO playersdao = new Db4oPlayersDAO();
 
 	@Before
 	public void setUp() {
@@ -157,7 +157,7 @@ public class ControllerTest {
 
 	@Test
 	public void testspielzug() {
-		c.spielzug();
+		c.round();
 	}
 
 	@Test

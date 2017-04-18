@@ -76,7 +76,7 @@ public class Controller extends Observable implements IController {
 	public void playerbets() {
 		if (!betPlayerList.isEmpty()) {
 			player = betPlayerList.poll();
-			statusLine = player.getPlayerName() + ", pls make a bet" + " Budget: " + player.getbudget()
+			statusLine = player.getPlayerName() + ", pls make a bet" + " Budget: " + player.getBudget()
 					+ " \nstarting bet is 100";
 			status = GameStatus.DURING_BET;
 			notifyObservers(GameStatus.DURING_BET);
@@ -99,7 +99,7 @@ public class Controller extends Observable implements IController {
 
 	public boolean increasebet() {
 		if (status == GameStatus.DURING_BET) {
-			if (player.getbudget() >= this.displaybet + 100) {
+			if (player.getBudget() >= this.displaybet + 100) {
 				this.displaybet += 100;
 				notifyObservers(GameStatus.DURING_BET);
 				return true;
@@ -130,10 +130,10 @@ public class Controller extends Observable implements IController {
 		}
 		dealer.actionhit();
 		this.betPlayerList = new LinkedList<Player>(playerListPlaying);
-		spielzug();
+		round();
 	}
 
-	public void spielzug() {
+	public void round() {
 		if (!betPlayerList.isEmpty()) {
 			player = betPlayerList.poll();
 			statusLine = player.getPlayerName() + ", it is your turn!";
@@ -206,7 +206,7 @@ public class Controller extends Observable implements IController {
 		if (status == GameStatus.DURING_TURN) {
 			statusLine = player.getPlayerName() + "  STAND";
 			notifyObservers();
-			spielzug();
+			round();
 		}
 	}
 
@@ -217,7 +217,7 @@ public class Controller extends Observable implements IController {
 			if (handvalue > 21) {
 				statusLine = player.getPlayerName() + "  BUSTED!";
 				notifyObservers(status);
-				spielzug();
+				round();
 			} else {
 				statusLine = player.getPlayerName() + "  HIT";
 				notifyObservers(status);
@@ -406,7 +406,7 @@ public class Controller extends Observable implements IController {
 		for (Player p : getPlayerList()) {
 			playerName.add(p.getPlayerName());
 			cardValue.add(p.getHandValue()[0] + "/" + p.getHandValue()[1]);
-			budget.add(Integer.toString(p.getbudget()));
+			budget.add(Integer.toString(p.getBudget()));
 			cardArray.add(p.getCardsInHand());
 			playerBet.add(Integer.toString(p.getplayerbet()));
 		}

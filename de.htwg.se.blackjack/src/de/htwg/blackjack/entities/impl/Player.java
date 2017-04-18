@@ -5,7 +5,7 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Player extends AbstractParticipant {
 
-    private int budget;
+    public int budget;
     private String playername;
     private int playerbet;
     boolean insurance;
@@ -46,8 +46,12 @@ public class Player extends AbstractParticipant {
         this.budget -= money;
     }
 
-    public int getbudget() {
+    public int getBudget() {
         return this.budget;
+    }
+    
+    public void setBudget(int budget) {
+        this.budget = budget;
     }
 
     public String getPlayerName() {

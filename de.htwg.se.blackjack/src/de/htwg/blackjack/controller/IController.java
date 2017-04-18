@@ -35,7 +35,7 @@ public interface IController extends IObservable {
 
     void allgettwocards();
 
-    void spielzug();
+    void round();
 
     void evaluateRound();
 
