@@ -18,7 +18,7 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 		Session session = HibernateUtil.getInstance().getCurrentSession();
 		session.beginTransaction();
 		PersistentPlayer player = (PersistentPlayer)session.get(PersistentPlayer.class, name);
-		return copyPlayer(player);
+		return persPlayerToPlayer(player);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 			session = HibernateUtil.getInstance().getCurrentSession();
 			tx = session.beginTransaction();
 			
-			PersistentPlayer pPlayer = copyPlayer(player);
+			PersistentPlayer pPlayer = playerToPersPlayer(player);
 			
 			session.saveOrUpdate(pPlayer);
 			
@@ -85,7 +85,7 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 			players = new ArrayList<Player>();
 			
 			for(PersistentPlayer pPlayer : persistenPlayerList) {
-				Player player = copyPlayer(pPlayer);
+				Player player = persPlayerToPlayer(pPlayer);
 				players.add(player);
 			}
 		} catch (HibernateException ex) {
@@ -96,7 +96,10 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 		return players;
 	}
 
-	private PersistentPlayer copyPlayer(Player player) {
+	private PersistentPlayer playerToPersPlayer(Player player) {
+		if (player == null) {
+			return null;
+		}
 		PersistentPlayer pPlayer = null;
 		if(containsPlayer(player)) {
 			Session session = HibernateUtil.getInstance().getCurrentSession();
@@ -108,21 +111,20 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 		pPlayer.setBudget(player.getBudget());
 		return pPlayer;
 	}
+
+	private Player persPlayerToPlayer(PersistentPlayer perPlayer) {
+		Player player = null;
+		if (perPlayer != null) {
+			player = new Player(perPlayer.getPlayerName());
+			player.setBudget(perPlayer.getBudget());
+		}
+		return player;
+	}
 	
 	private boolean containsPlayer(Player player) {
 		if (getPlayer(player.getPlayerName()) == null) {
 			return false;
 		}
 		return true;
-	}
-
-	private Player copyPlayer(PersistentPlayer perPlayer) {
-		Player player = null;
-		if (perPlayer != null) {
-			player = new Player(perPlayer.getPlayerName());
-			player.setBudget(perPlayer.getBudget());
-			//System.out.println("Budget of player in db:" + player.getBudget());
-		}
-		return player;
 	}
 }
