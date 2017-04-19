@@ -21,22 +21,20 @@ public class MenuBar extends JMenuBar {
     private JMenuItem newMenuItem, quitMenuItem;
 
     private JMenu pMenu;
-    private JMenuItem newPlayerItem, deletePlayerItem;
+    private JMenuItem newPlayerItem, deletePlayerItem, playerRankingItem;
     IController controller;
     JFrame blackjackfr;
     NewPlayer newPlayerDialog;
     DeletePlayer deletePlayerDialog;
+    PlayerRanking playerRankingDialog;
 
     public MenuBar(final IController controller, JFrame mainFrame ) {
         newPlayerDialog = new NewPlayer(mainFrame, controller);
         deletePlayerDialog = new DeletePlayer(mainFrame, controller);
-
-        fileMenu = new JMenu("Datei");
-        fileMenu.setMnemonic(KeyEvent.VK_D);
-        pMenu = new JMenu("Spieler Optionen");
-
+        playerRankingDialog = new PlayerRanking(mainFrame, controller);
+        
         // newMenuItem
-        newMenuItem = new JMenuItem("Neues Spiel");
+        newMenuItem = new JMenuItem("New Game");
         newMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -46,10 +44,9 @@ public class MenuBar extends JMenuBar {
         newMenuItem.setMnemonic(KeyEvent.VK_N);
         newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
                 InputEvent.CTRL_DOWN_MASK));
-        fileMenu.add(newMenuItem);
 
         // quitMenuItem
-        quitMenuItem = new JMenuItem("Beenden");
+        quitMenuItem = new JMenuItem("Quit Game");
         quitMenuItem.addActionListener(new ActionListener() {
         	@Override
             public void actionPerformed(ActionEvent event) {
@@ -59,8 +56,12 @@ public class MenuBar extends JMenuBar {
         quitMenuItem.setMnemonic(KeyEvent.VK_Q);
         quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
                 InputEvent.CTRL_DOWN_MASK));
-        fileMenu.add(quitMenuItem);
+        
+        // add to fileMenu
+        fileMenu = new JMenu("Datei");
+        fileMenu.add(newMenuItem);
         fileMenu.add(new JSeparator());
+        fileMenu.add(quitMenuItem);
 
         // newPlayerItem
         newPlayerItem = new JMenuItem("New Player");
@@ -76,7 +77,6 @@ public class MenuBar extends JMenuBar {
         newPlayerItem.setMnemonic(KeyEvent.VK_P);
         newPlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
                 InputEvent.CTRL_DOWN_MASK));
-        pMenu.add(newPlayerItem);
 
         // deletePlayerItem
         deletePlayerItem = new JMenuItem("Delete Player");
@@ -86,11 +86,26 @@ public class MenuBar extends JMenuBar {
         		deletePlayerDialog.shownewplayerDialog();
             }
         });
-
         deletePlayerItem.setMnemonic(KeyEvent.VK_D);
         deletePlayerItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
                 InputEvent.CTRL_DOWN_MASK));
+        
+        // playerRankingItem
+        playerRankingItem = new JMenuItem("Player Ranking");
+        playerRankingItem.addActionListener(new ActionListener() {
+        	@Override
+            public void actionPerformed(ActionEvent event) {
+        		playerRankingDialog.shownewplayerDialog();
+            }
+        });
+        
+        // add to pMenu
+        pMenu = new JMenu("Spieler Optionen");
+        pMenu.add(newPlayerItem);
         pMenu.add(deletePlayerItem);
+        pMenu.add(new JSeparator());
+        pMenu.add(playerRankingItem);
+        
 
         this.add(fileMenu);
         this.add(pMenu);

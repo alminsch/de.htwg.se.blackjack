@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,7 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import de.htwg.blackjack.controller.IController;
@@ -23,13 +21,12 @@ import de.htwg.blackjack.entities.impl.Player;
 
 public class DeletePlayer extends JDialog implements ActionListener {
 
-    private static final long serialVersionUID = 5557823589405227981L;
-
-    final IController controller;
+	private static final long serialVersionUID = -3600424586465989179L;
+	final IController controller;
     String playerToDelete;
     JButton quitButton = new JButton("Cancel");
     JButton applyButton = new JButton("Delete");
-    JComboBox playerList; 
+    JComboBox<String> playerList; 
 
     public DeletePlayer(JFrame mainFrame, final IController controller) {
     	this.setModal(true);
@@ -46,12 +43,13 @@ public class DeletePlayer extends JDialog implements ActionListener {
         JLabel nameLabel = new JLabel("Select Player to Delete");
         panelL.add(nameLabel);
 
-        playerList = new JComboBox(playerNames);
+        playerList = new JComboBox<String>(playerNames);
         playerList.setEditable(false);
         playerList.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
-        		JComboBox cb = (JComboBox)e.getSource();
+        		@SuppressWarnings("unchecked")
+				JComboBox<String> cb = (JComboBox<String>)e.getSource();
         		playerToDelete = (String)cb.getSelectedItem();
 			}
         });

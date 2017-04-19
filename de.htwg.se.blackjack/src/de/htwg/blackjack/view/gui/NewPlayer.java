@@ -29,7 +29,7 @@ public class NewPlayer extends JDialog implements ActionListener {
     JTextField nameTextField = new JTextField(20);
     JButton applyButton = new JButton("Add Player");
     JButton quitButton = new JButton("Cancel");
-    JComboBox playerList; 
+    JComboBox<String> playerList; 
     private String name;
 
     public NewPlayer(JFrame mainFrame, final IController controller) {
@@ -50,12 +50,13 @@ public class NewPlayer extends JDialog implements ActionListener {
         panelL.add(nameLabel1);
         panelL.add(nameLabel2);
 
-        playerList = new JComboBox(playerNames);
+        playerList = new JComboBox<String>(playerNames);
         playerList.setEditable(true);
         playerList.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
-        		JComboBox cb = (JComboBox)e.getSource();
+        		@SuppressWarnings("unchecked")
+				JComboBox<String> cb = (JComboBox<String>)e.getSource();
                 String newSelection = (String)cb.getSelectedItem();
                 nameTextField.setText(newSelection);
 			}
@@ -112,7 +113,6 @@ public class NewPlayer extends JDialog implements ActionListener {
         pack();
         setLocationRelativeTo(mainFrame);
     }
-
 
     public void shownewplayerDialog() {
         playerList.removeAllItems();
