@@ -104,8 +104,8 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 		} else {
 			pPlayer = new PersistentPlayer();
 			pPlayer.setPlayerName(player.getPlayerName());
-			pPlayer.setBudget(player.getBudget());
 		}
+		pPlayer.setBudget(player.getBudget());
 		return pPlayer;
 	}
 	
@@ -121,6 +121,7 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 		if (perPlayer != null) {
 			player = new Player(perPlayer.getPlayerName());
 			player.setBudget(perPlayer.getBudget());
+			//System.out.println("Budget of player in db:" + player.getBudget());
 		}
 		return player;
 	}
