@@ -103,13 +103,10 @@ public class PlayerRanking extends JDialog {
 	        }
 	    };
 	
-	    // create a list of map entries
 	    List<Map.Entry<String, Integer>> sortedList = new ArrayList<Map.Entry<String, Integer>>();
-	
-	    // add all players
+
 	    sortedList.addAll(mapToSort.entrySet());
-	
-	    // sort the collection
+
 	    Collections.sort(sortedList, byMapValues);
 	    return sortedList;
     }
