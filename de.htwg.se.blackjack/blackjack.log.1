@@ -1,0 +1,1056 @@
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 404 Object Not Found[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:22 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 41[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:22 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 41
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable (Unknown Status code)
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"error":"not_found","reason":"missing"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - Request should not be cached
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - parent entry: null
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: PUT /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "PUT /blackjack_albe_db/Test1 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Length: 36[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Type: application/json[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Expect: 100-continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> PUT /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Length: 36
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Type: application/json
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Expect: 100-continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "{"playerName":"Test1","budget":1500}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 100 Continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 201 Created[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Test1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:24 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 68[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Test1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:24 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 68
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"ok":true,"id":"Test1","rev":"1-9807b4f20484eb45fa8e63329e3bb3c0"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+New Blackjack Game created
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/_all_docs HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/_all_docs HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/_all_docs HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "ZUW2KX1QBG465R5SZ8Y6MHVI"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:27 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Transfer-Encoding: chunked
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "ZUW2KX1QBG465R5SZ8Y6MHVI"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:27 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "25[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"total_rows":2,"offset":0,"rows":[[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "51[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"Benny","key":"Benny","value":{"rev":"2-20c373973e6c736294475e044819e413"}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "54[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ",[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"Test1","key":"Test1","value":{"rev":"1-9807b4f20484eb45fa8e63329e3bb3c0"}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "4[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "]}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Benny]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Benny HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:27 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:27 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test1]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test1 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:27 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 95[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:27 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 95
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"_id":"Test1","_rev":"1-9807b4f20484eb45fa8e63329e3bb3c0","playerName":"Test1","budget":1500}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test2]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test2 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 404 Object Not Found[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:32 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 41[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:32 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 41
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable (Unknown Status code)
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"error":"not_found","reason":"missing"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test2]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test2 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 404 Object Not Found[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:32 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 41[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:32 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 41
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable (Unknown Status code)
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"error":"not_found","reason":"missing"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test2]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test2 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 404 Object Not Found[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:33 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 41[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 404 Object Not Found
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:33 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 41
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable (Unknown Status code)
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"error":"not_found","reason":"missing"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - Request should not be cached
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - parent entry: null
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: PUT /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "PUT /blackjack_albe_db/Test2 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Length: 36[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Type: application/json[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Expect: 100-continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> PUT /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Length: 36
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Type: application/json
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Expect: 100-continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 100 Continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "{"playerName":"Test2","budget":1500}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 201 Created[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Test2[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-8a6e59cc3343ad47c967b7ee6de8c64b"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:33 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 68[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Test2
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-8a6e59cc3343ad47c967b7ee6de8c64b"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:33 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 68
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"ok":true,"id":"Test2","rev":"1-8a6e59cc3343ad47c967b7ee6de8c64b"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+New Blackjack Game created
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny, pls make a bet Budget: 900 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny, pls make a bet Budget: 900 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny, pls make a bet Budget: 900 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny, pls make a bet Budget: 900 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny, pls make a bet Budget: 900 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Your bet is 500 this round!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Your bet is 1100 this round!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, pls make a bet Budget: 1500 
+starting bet is 100
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Your bet is 700 this round!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+All bets are done
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny, it is your turn!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny Handkarten: KARODREI HERZNEUN Wert:12
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny  HIT
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny Handkarten: KARODREI HERZNEUN HERZFUENF Wert:17
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny  STAND
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Benny Handkarten: KARODREI HERZNEUN HERZFUENF Wert:17
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1, it is your turn!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1 Handkarten: HERZBUBE KAROFUENF Wert:15
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1  STAND
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test1 Handkarten: HERZBUBE KAROFUENF Wert:15
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2, it is your turn!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2 Handkarten: PIKSECHS KARONEUN Wert:15
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2  BUSTED!
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Test2 Handkarten: PIKSECHS KARONEUN KREUZDAME Wert:25
+Dealer Handkarten: PIKZEHN
+INFO AWT-EventQueue-0 de.htwg.blackjack.view.tui - 
+Possible commands: q-quit, n-new game, np-newplayer, h-hit, s-stand, - decreasebet, + increasebet, sb-setbet
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Benny]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Benny HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Benny]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Benny HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Benny]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Benny HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "2-20c373973e6c736294475e044819e413"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "2-20c373973e6c736294475e044819e413"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - Request should not be cached
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - parent entry: [request date=Wed Apr 19 15:57:55 CEST 2017; response date=Wed Apr 19 15:57:55 CEST 2017; statusLine=HTTP/1.1 200 OK]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: PUT /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "PUT /blackjack_albe_db/Benny HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Length: 94[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Type: application/json[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Expect: 100-continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> PUT /blackjack_albe_db/Benny HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Length: 94
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Type: application/json
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Expect: 100-continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 100 Continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "{"playerName":"Benny","budget":1400,"_id":"Benny","_rev":"2-20c373973e6c736294475e044819e413"}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 201 Created[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Benny[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "3-3c0ed30ce921d18a2f69210b7b351a80"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 68[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Benny
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "3-3c0ed30ce921d18a2f69210b7b351a80"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 68
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"ok":true,"id":"Benny","rev":"3-3c0ed30ce921d18a2f69210b7b351a80"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test1]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test1 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test1]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test1 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test1]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test1 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-9807b4f20484eb45fa8e63329e3bb3c0"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - Request should not be cached
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - parent entry: [request date=Wed Apr 19 15:57:55 CEST 2017; response date=Wed Apr 19 15:57:55 CEST 2017; statusLine=HTTP/1.1 200 OK]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: PUT /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "PUT /blackjack_albe_db/Test1 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Length: 94[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Type: application/json[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Expect: 100-continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> PUT /blackjack_albe_db/Test1 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Length: 94
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Type: application/json
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Expect: 100-continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 100 Continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "{"playerName":"Test1","budget":2600,"_id":"Test1","_rev":"1-9807b4f20484eb45fa8e63329e3bb3c0"}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 201 Created[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Test1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "2-988ba78b3ae33a168d4ce1435c8641ad"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 68[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Location: http://lenny2.in.htwg-konstanz.de:5984/blackjack_albe_db/Test1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "2-988ba78b3ae33a168d4ce1435c8641ad"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 68
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"ok":true,"id":"Test1","rev":"2-988ba78b3ae33a168d4ce1435c8641ad"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test2]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test2 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-8a6e59cc3343ad47c967b7ee6de8c64b"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 95[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-8a6e59cc3343ad47c967b7ee6de8c64b"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 95
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"_id":"Test2","_rev":"1-8a6e59cc3343ad47c967b7ee6de8c64b","playerName":"Test2","budget":1500}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test2]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /blackjack_albe_db/Test2 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "If-None-Match: "1-8a6e59cc3343ad47c967b7ee6de8c64b"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Cache-Control: max-age=0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /blackjack_albe_db/Test2 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> If-None-Match: "1-8a6e59cc3343ad47c967b7ee6de8c64b"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Cache-Control: max-age=0
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 304 Not Modified[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-8a6e59cc3343ad47c967b7ee6de8c64b"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Wed, 19 Apr 2017 13:57:53 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 304 Not Modified
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-8a6e59cc3343ad47c967b7ee6de8c64b"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Wed, 19 Apr 2017 13:57:53 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache hit [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /blackjack_albe_db/Test2]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachedResponseSuitabilityChecker - Cache entry was not fresh enough
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Revalidating the cache entry
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
