@@ -15,9 +15,10 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import de.htwg.blackjack.controller.IController;
 
 public class AkkaHttp extends AllDirectives{
-	
+	IController controller;
 	public static void main(String[] args) throws IOException {
 		ActorSystem system = ActorSystem.create("routes");
 		
@@ -36,6 +37,7 @@ public class AkkaHttp extends AllDirectives{
 		binding
 	      .thenCompose(ServerBinding::unbind) // trigger unbinding from the port
 	      .thenAccept(unbound -> system.terminate()); // and shutdown when done
+		
 	}
 	
 	private Route createRoute() {
