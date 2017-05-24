@@ -12,6 +12,7 @@ import com.google.inject.Injector;
 import de.htwg.blackjack.controller.IController;
 import de.htwg.blackjack.controller.impl.Controller;
 import de.htwg.blackjack.view.gui.BlackjackFrame;
+import de.htwg.blackjack.view.http.AkkaHttp;
 import de.htwg.blackjack.view.tui.TextUI;
 
 public class Blackjack {
@@ -32,11 +33,17 @@ public class Blackjack {
         // Guice
         controller = injector.getInstance(IController.class);
 
-        //@SuppressWarnings("unused")
+        //GUI
+       // @SuppressWarnings("unused")
         BlackjackFrame gui = injector.getInstance(BlackjackFrame.class);
+        
+        // TUI
         tui = injector.getInstance(TextUI.class);
-
         tui.printTUI();
+        
+        // Akka http
+        @SuppressWarnings("unused")
+		AkkaHttp akkaHttp = injector.getInstance(AkkaHttp.class);
 
         // Create an initial game
         controller.createnewgame();

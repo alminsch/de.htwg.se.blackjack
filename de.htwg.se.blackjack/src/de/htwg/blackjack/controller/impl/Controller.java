@@ -31,7 +31,7 @@ public class Controller extends Observable implements IController {
 	private Queue<Player> betPlayerList;
 	private int displaybet;
 	private String statusLine = "Welcome to Blackjack!";
-	Player player;
+	private Player player;
 	private SingletonCardsInGame cardStack;
 	private Dealer dealer;
 	private GameStatus status;
@@ -41,11 +41,6 @@ public class Controller extends Observable implements IController {
 	public Controller(IPlayersDAO playersDAO) {
 		cardStack = SingletonCardsInGame.getInstance();
 		cardStack.resetStapel();
-		// TODO:
-		// new Player: Option to load old player from db
-		// check: no player with same name
-		// delete Player from db
-		// Highscore
 		playerListPlaying = new LinkedList<Player>();
 		playerList = new LinkedList<Player>();
 		dealer = new Dealer();
@@ -370,21 +365,24 @@ public class Controller extends Observable implements IController {
 			savePlayerToDB(player);
 		}
 	}
+	
+	public String getJson() {
+		
+// TODO: auﬂerhalb Aufrufen nicht im getJson
+//		String[] stringCommand = command.split(":");
+//		String com = stringCommand[0];
+//		String playername = stringCommand[1];
 
-	public String getJson(String command) {
-		String playername = command.split(":")[1];
-		String com = command.split(":")[0];
-		if (!com.equals("null")) {
-			if (com.equals("h") || com.equals("s") || com.equals("+") || com.equals("-") || com.equals("sb")) {
-				if (status != GameStatus.NOT_STARTED) {
-					if (playername.equals(player.getPlayerName())) {
-						Blackjack.getInstance().getTUI().userinputselection(com);
-					}
-				}
-			} else {
-				Blackjack.getInstance().getTUI().userinputselection(com);
-			}
-		}
+//		if (!com.equals("null")) {
+//			if (com.equals("h") || com.equals("s") || com.equals("+") || com.equals("-") || com.equals("sb")) {
+//				if (status != GameStatus.NOT_STARTED && playername.equals(player.getPlayerName())) {
+//					Blackjack.getInstance().getTUI().userinputselection(com);
+//					
+//				}
+//			} else {
+//				Blackjack.getInstance().getTUI().userinputselection(com);
+//			}
+//		}
 
 		List<Map> array = new ArrayList<Map>();
 
