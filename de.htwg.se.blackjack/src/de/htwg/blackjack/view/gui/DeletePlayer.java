@@ -90,7 +90,7 @@ public class DeletePlayer extends JDialog implements ActionListener {
     public void shownewplayerDialog() {
         playerList.removeAllItems();
         for(Player player : controller.getAllPlayersFromDB()) {
-        	playerList.addItem(player.getPlayerName()); 	
+        	playerList.addItem(player.getName()); 	
         }
         playerList.setSelectedIndex(-1);
         playerToDelete = "";

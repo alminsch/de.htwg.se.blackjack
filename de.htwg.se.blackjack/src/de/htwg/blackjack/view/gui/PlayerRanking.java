@@ -75,7 +75,7 @@ public class PlayerRanking extends JDialog {
         int idx = 1;
         Map<String, Integer> mapToSort = new HashMap<String, Integer>();
         for (Player player : controller.getAllPlayersFromDB()) {
-        	mapToSort.put(player.getPlayerName(), player.getBudget());
+        	mapToSort.put(player.getName(), player.getBudget());
         }
         List<Map.Entry<String, Integer>> sortedList = sortList(mapToSort);
         

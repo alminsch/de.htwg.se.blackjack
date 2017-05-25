@@ -37,7 +37,7 @@ public class PlayerSlot extends JLayeredPane implements IObserver {
         playername = new JLabel();
         playername.setBounds(150,150,200,50);
         playername.setFont(new Font("Arial", Font.CENTER_BASELINE, 23));
-        playername.setText("Spieler " +i+ ": " + player.getPlayerName());
+        playername.setText("Spieler " +i+ ": " + player.getName());
         playername.setForeground(color);
         this.add(playername);
         budget = new JLabel();

@@ -44,7 +44,7 @@ public class DealerPanel extends JLayeredPane implements IObserver{
             x = x+25;
             idx++;
         }
-        int cvalue = controller.getCardValue(controller.getDealer());
+        int cvalue = controller.getDealer().getCardValue();
         dealervalue.setText("Wert: "+ cvalue);
     }
 
