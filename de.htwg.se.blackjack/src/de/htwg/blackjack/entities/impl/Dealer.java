@@ -4,6 +4,7 @@ import de.htwg.blackjack.entities.AbstractParticipant;
 
 public class Dealer extends AbstractParticipant {
 
+	private String name = "Dealer";
     public Dealer() {
         super();
     }
@@ -24,5 +25,10 @@ public class Dealer extends AbstractParticipant {
         }
         return result + "Wert:" + sel;
     }
+
+	@Override
+	public String getName() {
+		return name;
+	}
 
 }

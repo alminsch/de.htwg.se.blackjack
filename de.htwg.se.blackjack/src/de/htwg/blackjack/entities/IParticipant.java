@@ -11,5 +11,9 @@ public interface IParticipant {
     List<Card> getCardsInHand();
 
     Card actionhit();
+    
+    String getName();
+    
+    int getCardValue();
 
 }

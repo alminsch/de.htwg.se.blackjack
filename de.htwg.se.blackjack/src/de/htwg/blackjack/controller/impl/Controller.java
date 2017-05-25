@@ -13,6 +13,7 @@ import com.google.inject.Singleton;
 
 import de.htwg.blackjack.Blackjack;
 import de.htwg.blackjack.controller.IController;
+import de.htwg.blackjack.controller.actors.EvaluateGameWithActors;
 import de.htwg.blackjack.entities.AbstractParticipant;
 import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.Dealer;
@@ -33,6 +34,7 @@ public class Controller extends Observable implements IController {
 	private String statusLine = "Welcome to Blackjack!";
 	private Player player;
 	private SingletonCardsInGame cardStack;
+	private EvaluateGameWithActors eGwActors;
 	private Dealer dealer;
 	private GameStatus status;
 	private IPlayersDAO playersDAO;
@@ -40,6 +42,7 @@ public class Controller extends Observable implements IController {
 	@Inject
 	public Controller(IPlayersDAO playersDAO) {
 		cardStack = SingletonCardsInGame.getInstance();
+		eGwActors = EvaluateGameWithActors.getInstance();
 		cardStack.resetStapel();
 		playerListPlaying = new LinkedList<Player>();
 		playerList = new LinkedList<Player>();
@@ -71,7 +74,7 @@ public class Controller extends Observable implements IController {
 	public void playerbets() {
 		if (!betPlayerList.isEmpty()) {
 			player = betPlayerList.poll();
-			statusLine = player.getPlayerName() + ", pls make a bet" + " Budget: " + player.getBudget()
+			statusLine = player.getName() + ", pls make a bet" + " Budget: " + player.getBudget()
 					+ " \nstarting bet is 100";
 			status = GameStatus.DURING_BET;
 			notifyObservers(GameStatus.DURING_BET);
@@ -131,7 +134,7 @@ public class Controller extends Observable implements IController {
 	public void round() {
 		if (!betPlayerList.isEmpty()) {
 			player = betPlayerList.poll();
-			statusLine = player.getPlayerName() + ", it is your turn!";
+			statusLine = player.getName() + ", it is your turn!";
 			status = GameStatus.DURING_TURN;
 			notifyObservers(GameStatus.DURING_TURN);
 		} else {
@@ -140,46 +143,54 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void evaluateRound() {
-		StringBuilder sb = new StringBuilder();
-		int finaldealervalue;
-
-		while (dealer.getHandValue()[0] < 17 && dealer.getHandValue()[1] < 17) {
-			dealer.actionhit();
-		}
-
-		finaldealervalue = getCardValue(dealer);
-
-		if (finaldealervalue > 21) {
-			finaldealervalue = 0;
-		}
-
-		for (Player p : playerListPlaying) {
-			int totalplayerbet = p.getplayerbet();
-			int finalplayervalue;
-			if (p.getHandValue()[1] <= 21) {
-				finalplayervalue = p.getHandValue()[1];
-			} else {
-				finalplayervalue = p.getHandValue()[0];
-			}
-
-			if (finalplayervalue == finaldealervalue) {
-				sb.append("Spieler: " + p.getPlayerName() + ": no change   ");
-				continue;
-			} else if (finalplayervalue > 21) {
-				p.deletefrombudget(totalplayerbet);
-				sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
-				continue;
-			} else if (finalplayervalue > finaldealervalue) {
-				p.addtobudget(totalplayerbet);
-				sb.append("Spieler: " + p.getPlayerName() + ": win + " + totalplayerbet + "\t");
-				continue;
-			} else {
-				p.deletefrombudget(totalplayerbet);
-				sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
-				continue;
-			}
-		}
-		statusLine = "round ended: " + sb.toString();
+//		StringBuilder sb = new StringBuilder();
+//		int finaldealervalue;
+//
+//		while (dealer.getHandValue()[0] < 17 && dealer.getHandValue()[1] < 17) {
+//			dealer.actionhit();
+//		}
+//
+//		finaldealervalue = getCardValue(dealer);
+//
+//		if (finaldealervalue > 21) {
+//			finaldealervalue = 0;
+//		}
+//
+//		for (Player p : playerListPlaying) {
+//			
+//			// neue Aktoren für jeden Spieler, die ihr jeweiliges Spielerergebnis an den print aktor schicken
+//			
+//			int totalplayerbet = p.getplayerbet();
+//			int finalplayervalue;
+//			if (p.getHandValue()[1] <= 21) {
+//				finalplayervalue = p.getHandValue()[1];
+//			} else {
+//				finalplayervalue = p.getHandValue()[0];
+//			}
+//
+//			if (finalplayervalue == finaldealervalue) {
+//				sb.append("Spieler: " + p.getPlayerName() + ": no change   ");
+//				continue;
+//			} else if (finalplayervalue > 21) {
+//				p.deletefrombudget(totalplayerbet);
+//				sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
+//				continue;
+//			} else if (finalplayervalue > finaldealervalue) {
+//				p.addtobudget(totalplayerbet);
+//				sb.append("Spieler: " + p.getPlayerName() + ": win + " + totalplayerbet + "\t");
+//				continue;
+//			} else {
+//				p.deletefrombudget(totalplayerbet);
+//				sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
+//				continue;
+//			}
+//			
+//			// aktor print und speichere ergebnis
+//		}
+//		statusLine = "round ended: " + sb.toString();
+		
+//		eGwActors.evaluateRound(playerListPlaying);
+		this.statusLine = eGwActors.getStatusLine();
 		resetGame();
 		updateAllPlayersInDB();
 		status = GameStatus.AUSWERTUNG;
@@ -199,7 +210,7 @@ public class Controller extends Observable implements IController {
 
 	public void stand() {
 		if (status == GameStatus.DURING_TURN) {
-			statusLine = player.getPlayerName() + "  STAND";
+			statusLine = player.getName() + "  STAND";
 			notifyObservers();
 			round();
 		}
@@ -210,11 +221,11 @@ public class Controller extends Observable implements IController {
 			player.actionhit();
 			int handvalue = player.getHandValue()[0];
 			if (handvalue > 21) {
-				statusLine = player.getPlayerName() + "  BUSTED!";
+				statusLine = player.getName() + "  BUSTED!";
 				notifyObservers(status);
 				round();
 			} else {
-				statusLine = player.getPlayerName() + "  HIT";
+				statusLine = player.getName() + "  HIT";
 				notifyObservers(status);
 			}
 		}
@@ -252,7 +263,7 @@ public class Controller extends Observable implements IController {
 
 	public void removePlayer(String playername) {
 		for (Player p : playerList) {
-			if (p.getPlayerName().equals(playername)) {
+			if (p.getName().equals(playername)) {
 				playerList.remove(p);
 				if (betPlayerList != null) {
 					betPlayerList.remove(p);
@@ -262,7 +273,7 @@ public class Controller extends Observable implements IController {
 		}
 	}
 
-	public String getStatus() {
+	public String getStatusLine() {
 		return statusLine;
 	}
 
@@ -292,7 +303,7 @@ public class Controller extends Observable implements IController {
 
 	private boolean isPlayerInPlayerList(String playerName) {
 		for(Player player : playerList) {
-			if (player.getPlayerName().equals(playerName)) {
+			if (player.getName().equals(playerName)) {
 				return true;
 			}
 		}
@@ -317,14 +328,6 @@ public class Controller extends Observable implements IController {
 
 	public List<Player> getPlayerList() {
 		return new LinkedList<Player>(playerList);
-	}
-
-	public int getCardValue(AbstractParticipant p) {
-		if (p.getHandValue()[1] <= 21) {
-			return p.getHandValue()[1];
-		} else {
-			return p.getHandValue()[0];
-		}
 	}
 
 	private void resetPlayerBets() {
@@ -402,7 +405,7 @@ public class Controller extends Observable implements IController {
 		List<List> dealerlist = new ArrayList<List>();
 
 		for (Player p : getPlayerList()) {
-			playerName.add(p.getPlayerName());
+			playerName.add(p.getName());
 			cardValue.add(p.getHandValue()[0] + "/" + p.getHandValue()[1]);
 			budget.add(Integer.toString(p.getBudget()));
 			cardArray.add(p.getCardsInHand());
@@ -425,7 +428,7 @@ public class Controller extends Observable implements IController {
 		dealer.put("dealer", dealerlist);
 
 		// statusLine
-		statusLine.put("statusline", Arrays.asList(getStatus(), getGameStatus().toString()));
+		statusLine.put("statusline", Arrays.asList(getStatusLine(), getGameStatus().toString()));
 
 		// Bet
 		betDisplay.put("bet", Arrays.asList(getDisplayBet(), getTotalPlayerBet()));

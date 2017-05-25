@@ -19,7 +19,7 @@ public interface IController extends IObservable {
 
     void startnewround();
 
-    String getStatus();
+    String getStatusLine();
 
     void addNewPlayer(String next);
 
@@ -54,8 +54,6 @@ public interface IController extends IObservable {
     List<Player> getPlayingPlayerList();
     
     List<Player> getPlayerList();
-
-    int getCardValue(AbstractParticipant p);
 
     Dealer getDealer();
 

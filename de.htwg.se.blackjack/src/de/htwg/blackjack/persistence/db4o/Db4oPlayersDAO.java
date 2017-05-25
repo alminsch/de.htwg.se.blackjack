@@ -29,7 +29,7 @@ public class Db4oPlayersDAO implements IPlayersDAO {
 			private static final long serialVersionUID = 1L;
 
 			public boolean match(Player player) {
-				return (player.getPlayerName().equals(name));
+				return (player.getName().equals(name));
 			}
 		});
 		

@@ -22,7 +22,7 @@ public class TextUITest {
 		PropertyConfigurator.configure("log4j.properties");
 		tui1 = new TextUI(controller1);
 		tui1.userinputselection("n");
-		assertEquals("Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann",controller1.getStatus());
+		assertEquals("Es müssen Spieler erstellt werden, bevor das Spiel gestartet werden kann",controller1.getStatusLine());
 		controller1.addNewPlayer("Hans");
 		controller1.startnewround();
 	}
@@ -37,20 +37,20 @@ public class TextUITest {
 	public void test() {
 
 		tui1.userinputselection("+");
-		assertEquals("Wette:  200",controller1.getStatus());
+		assertEquals("Wette:  200",controller1.getStatusLine());
 
 		tui1.userinputselection("-");
-		assertEquals("Wette:  100",controller1.getStatus());
+		assertEquals("Wette:  100",controller1.getStatusLine());
 
 		tui1.userinputselection("sb");
-		assertEquals("Spieler Hans, ist an der Reihe",controller1.getStatus());
+		assertEquals("Spieler Hans, ist an der Reihe",controller1.getStatusLine());
 
 		tui1.userinputselection("np");
-		System.out.println(controller1.getStatus());
-		assertEquals("Spieler können nur zu Beginn einer neuen Runde erstellt werden",controller1.getStatus());
+		System.out.println(controller1.getStatusLine());
+		assertEquals("Spieler können nur zu Beginn einer neuen Runde erstellt werden",controller1.getStatusLine());
 
 		tui1.userinputselection("h");
-		assertEquals("Hans  HIT",controller1.getStatus());
+		assertEquals("Hans  HIT",controller1.getStatusLine());
 
 		tui1.userinputselection("s");
 	}

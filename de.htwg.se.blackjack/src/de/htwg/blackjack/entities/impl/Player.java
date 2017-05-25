@@ -54,7 +54,7 @@ public class Player extends AbstractParticipant {
         this.budget = budget;
     }
 
-    public String getPlayerName() {
+    public String getName() {
         return this.playername;
     }
 

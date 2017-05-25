@@ -53,7 +53,7 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 			session = HibernateUtil.getInstance().getCurrentSession();
 			tx = session.beginTransaction();
 			
-			PersistentPlayer pPlayer = (PersistentPlayer) session.get(PersistentPlayer.class, player.getPlayerName());
+			PersistentPlayer pPlayer = (PersistentPlayer) session.get(PersistentPlayer.class, player.getName());
 			session.delete(pPlayer);
 			
 			tx.commit();
@@ -103,10 +103,10 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 		PersistentPlayer pPlayer = null;
 		if(containsPlayer(player)) {
 			Session session = HibernateUtil.getInstance().getCurrentSession();
-			pPlayer = (PersistentPlayer) session.get(PersistentPlayer.class, player.getPlayerName());
+			pPlayer = (PersistentPlayer) session.get(PersistentPlayer.class, player.getName());
 		} else {
 			pPlayer = new PersistentPlayer();
-			pPlayer.setPlayerName(player.getPlayerName());
+			pPlayer.setPlayerName(player.getName());
 		}
 		pPlayer.setBudget(player.getBudget());
 		return pPlayer;
@@ -122,7 +122,7 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 	}
 	
 	private boolean containsPlayer(Player player) {
-		if (getPlayer(player.getPlayerName()) == null) {
+		if (getPlayer(player.getName()) == null) {
 			return false;
 		}
 		return true;

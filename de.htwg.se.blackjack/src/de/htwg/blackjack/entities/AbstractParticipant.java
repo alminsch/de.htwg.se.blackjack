@@ -59,4 +59,12 @@ public abstract class AbstractParticipant implements IParticipant {
         }
         return c;
     }
+    
+    public int getCardValue() {
+		if (this.getHandValue()[1] <= 21) {
+			return this.getHandValue()[1];
+		} else {
+			return this.getHandValue()[0];
+		}
+	}
 }

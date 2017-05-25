@@ -63,6 +63,7 @@ public class Blackjack {
     	boolean go = true;
         scanner = new Scanner(System.in);
         while (go) {
+        	System.out.println("input");
             go = tui.userinputselection(scanner.next());
         }
     }

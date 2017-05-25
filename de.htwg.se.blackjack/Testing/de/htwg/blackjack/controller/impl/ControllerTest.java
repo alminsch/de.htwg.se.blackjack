@@ -205,7 +205,7 @@ public class ControllerTest {
 
 	@Test
 	public void testgetStatus() {
-		c.getStatus();
+		c.getStatusLine();
 	}
 
 	@Test

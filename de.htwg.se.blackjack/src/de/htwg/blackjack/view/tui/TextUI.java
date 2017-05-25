@@ -63,7 +63,7 @@ public class TextUI implements IObserver{
     }
 
     public void printTUI() {
-        logger.info(NEWLINE + controller.getStatus());
+        logger.info(NEWLINE + controller.getStatusLine());
         if(controller.getGameStatus() == GameStatus.DURING_TURN) {
              logger.info(NEWLINE + controller.getCards());
         }
@@ -73,7 +73,7 @@ public class TextUI implements IObserver{
     
     public String getTUI() {
     	StringBuilder sb = new StringBuilder();
-    	sb.append(NEWLINE + controller.getStatus());
+    	sb.append(NEWLINE + controller.getStatusLine());
     	if(controller.getGameStatus() == GameStatus.DURING_TURN) {
     		sb.append(NEWLINE + controller.getCards());
     	}

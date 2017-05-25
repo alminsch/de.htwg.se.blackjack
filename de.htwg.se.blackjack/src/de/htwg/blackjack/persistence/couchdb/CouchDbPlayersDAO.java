@@ -43,7 +43,7 @@ public class CouchDbPlayersDAO implements IPlayersDAO {
 		if (containsPlayer(player)) {
 			db.update(playerToPersPlayer(player));
 		} else {
-			db.create(player.getPlayerName(), playerToPersPlayer(player));
+			db.create(player.getName(), playerToPersPlayer(player));
 			// TODO: evtl.stattdessen db.create(player.getPlayerName(),
 			// playerToPersPlayer(player));
 		}
@@ -77,10 +77,10 @@ public class CouchDbPlayersDAO implements IPlayersDAO {
 		}
 		PersistentPlayer pPlayer = null;
 		if (containsPlayer(player)) {
-			pPlayer = (PersistentPlayer) db.find(PersistentPlayer.class, player.getPlayerName());
+			pPlayer = (PersistentPlayer) db.find(PersistentPlayer.class, player.getName());
 		} else {
 			pPlayer = new PersistentPlayer();
-			pPlayer.setPlayerName(player.getPlayerName());
+			pPlayer.setPlayerName(player.getName());
 		}
 		pPlayer.setBudget(player.getBudget());
 		return pPlayer;
@@ -96,7 +96,7 @@ public class CouchDbPlayersDAO implements IPlayersDAO {
 	}
 
 	private boolean containsPlayer(Player player) {
-		if (getPlayer(player.getPlayerName()) == null) {
+		if (getPlayer(player.getName()) == null) {
 			return false;
 		}
 		return true;
