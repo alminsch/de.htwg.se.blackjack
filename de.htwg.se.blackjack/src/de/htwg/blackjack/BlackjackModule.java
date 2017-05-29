@@ -11,7 +11,7 @@ public class BlackjackModule extends AbstractModule {
     protected void configure() {
 
         bind(IController.class).to(de.htwg.blackjack.controller.impl.Controller.class);
-        bind(IPlayersDAO.class).to(de.htwg.blackjack.persistence.couchdb.CouchDbPlayersDAO.class);
+        bind(IPlayersDAO.class).to(de.htwg.blackjack.persistence.db4o.Db4oPlayersDAO.class);
     }
     
 }

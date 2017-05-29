@@ -1,21 +1,23 @@
 package de.htwg.blackjack.controller.actors;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.actor.Props;
-import de.htwg.blackjack.controller.actors.DealerActor.FinalDealerValue;
-import de.htwg.blackjack.entities.IParticipant;
-import de.htwg.blackjack.entities.impl.Dealer;
+import de.htwg.blackjack.controller.actors.ControllerActor.FinalDealerValue;
 import de.htwg.blackjack.entities.impl.Player;
 
 public class PlayerActor extends AbstractActor {
-	private Player player;
+	private final Player player;
+	private final ActorRef controllerActor;
 	
-	static public Props props(Player player) {
-		return Props.create(PlayerActor.class, () -> new PlayerActor(player));
+	
+	static public Props props(Player player, ActorRef controllerActor) {
+		return Props.create(PlayerActor.class, () -> new PlayerActor(player, controllerActor));
 	}
 	
-	public PlayerActor(Player player) {
+	public PlayerActor(Player player, ActorRef controllerActor) {
 		this.player = player;
+		this.controllerActor = controllerActor;
 	}
 	
 	static public class PlayerResult {
@@ -37,17 +39,17 @@ public class PlayerActor extends AbstractActor {
 		int finalplayervalue = player.getCardValue();
 		String playerResultString;
 		if (finalplayervalue == fdv.finalDealerValue) {
-			playerResultString = "Spieler: " + player.getName() + ": no change   ";
+			playerResultString = "Player " + player.getName() + ": no change";
 		} else if (finalplayervalue > 21) {
 			player.deletefrombudget(totalplayerbet);
-			playerResultString = "Spieler: " + player.getName() + ": lost -" + totalplayerbet;
+			playerResultString = "Player " + player.getName() + ": lost -" + totalplayerbet;
 		} else if (finalplayervalue > fdv.finalDealerValue) {
 			player.addtobudget(totalplayerbet);
-			playerResultString = "Spieler: " + player.getName() + ": win + " + totalplayerbet;
+			playerResultString = "Player " + player.getName() + ": win +" + totalplayerbet;
 		} else {
 			player.deletefrombudget(totalplayerbet);
-			playerResultString = "Spieler: " + player.getName() + ": lost -" + totalplayerbet;
+			playerResultString = "Player " + player.getName() + ": lost -" + totalplayerbet;
 		}
-		getSender().tell(new PlayerResult(playerResultString), getSelf());
+		controllerActor.tell(new PlayerResult(playerResultString), getSelf());
 	}
 }

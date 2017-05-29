@@ -2,7 +2,6 @@ package de.htwg.blackjack.controller;
 
 import java.util.List;
 
-import de.htwg.blackjack.entities.AbstractParticipant;
 import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.Dealer;
 import de.htwg.blackjack.entities.impl.GameStatus;
@@ -11,61 +10,63 @@ import de.htwg.blackjack.util.observer.IObservable;
 
 public interface IController extends IObservable {
 
-    boolean increasebet();
+	boolean increasebet();
 
-    boolean decreasebet();
+	boolean decreasebet();
 
-    void setbetforround();
+	void setbetforround();
 
-    void startnewround();
+	void startnewround();
 
-    String getStatusLine();
+	String getStatusLine();
 
-    void addNewPlayer(String next);
+	void addNewPlayer(String next);
 
-    void playerhit();
+	void playerhit();
 
-    void stand();
+	void stand();
 
-    void doublebet();
+	void doublebet();
 
-    void createnewgame();
+	void createnewgame();
 
-    void playerbets();
+	void playerbets();
 
-    void allgettwocards();
+	void allgettwocards();
 
-    void round();
+	void round();
 
-    void evaluateRound();
+	void evaluateRound();
 
-    boolean deletePlayer(Player player);
-    
-    void removePlayer(String playername);
+	boolean deletePlayer(Player player);
 
-    String getCards();
+	void removePlayer(String playername);
 
-    int getTotalPlayerBet();
+	String getCards();
 
-    int getDisplayBet();
+	int getTotalPlayerBet();
 
-    List<Card> getDealerCards();
+	int getDisplayBet();
 
-    List<Player> getPlayingPlayerList();
-    
-    List<Player> getPlayerList();
+	List<Card> getDealerCards();
 
-    Dealer getDealer();
+	List<Player> getPlayingPlayerList();
 
-    GameStatus getGameStatus();
-    
-    List<Player> getAllPlayersFromDB();
-    
-    String getJson();
+	List<Player> getPlayerList();
 
-    void deleteAllPlayersFromDB();
-    
-    Player getPlayerFromDB(String name);
-    
-    void deletePlayerFromDB(Player player);
+	Dealer getDealer();
+
+	GameStatus getGameStatus();
+
+	List<Player> getAllPlayersFromDB();
+
+	String getJson();
+
+	void deleteAllPlayersFromDB();
+
+	Player getPlayerFromDB(String name);
+
+	void deletePlayerFromDB(Player player);
+
+	void endOfRound();
 }

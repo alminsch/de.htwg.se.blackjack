@@ -8,13 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
-import de.htwg.blackjack.Blackjack;
 import de.htwg.blackjack.controller.IController;
 import de.htwg.blackjack.controller.actors.EvaluateGameWithActors;
-import de.htwg.blackjack.entities.AbstractParticipant;
 import de.htwg.blackjack.entities.impl.Card;
 import de.htwg.blackjack.entities.impl.Dealer;
 import de.htwg.blackjack.entities.impl.GameStatus;
@@ -22,7 +21,6 @@ import de.htwg.blackjack.entities.impl.Player;
 import de.htwg.blackjack.entities.impl.SingletonCardsInGame;
 import de.htwg.blackjack.persistence.IPlayersDAO;
 import de.htwg.blackjack.util.observer.Observable;
-import com.google.gson.*;
 
 @Singleton
 public class Controller extends Observable implements IController {
@@ -58,6 +56,7 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void startnewround() {
+		resetGame();
 		playerListPlaying = new LinkedList<Player>(playerList);
 		betPlayerList = new LinkedList<Player>(playerListPlaying);
 
@@ -143,55 +142,11 @@ public class Controller extends Observable implements IController {
 	}
 
 	public void evaluateRound() {
-//		StringBuilder sb = new StringBuilder();
-//		int finaldealervalue;
-//
-//		while (dealer.getHandValue()[0] < 17 && dealer.getHandValue()[1] < 17) {
-//			dealer.actionhit();
-//		}
-//
-//		finaldealervalue = getCardValue(dealer);
-//
-//		if (finaldealervalue > 21) {
-//			finaldealervalue = 0;
-//		}
-//
-//		for (Player p : playerListPlaying) {
-//			
-//			// neue Aktoren für jeden Spieler, die ihr jeweiliges Spielerergebnis an den print aktor schicken
-//			
-//			int totalplayerbet = p.getplayerbet();
-//			int finalplayervalue;
-//			if (p.getHandValue()[1] <= 21) {
-//				finalplayervalue = p.getHandValue()[1];
-//			} else {
-//				finalplayervalue = p.getHandValue()[0];
-//			}
-//
-//			if (finalplayervalue == finaldealervalue) {
-//				sb.append("Spieler: " + p.getPlayerName() + ": no change   ");
-//				continue;
-//			} else if (finalplayervalue > 21) {
-//				p.deletefrombudget(totalplayerbet);
-//				sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
-//				continue;
-//			} else if (finalplayervalue > finaldealervalue) {
-//				p.addtobudget(totalplayerbet);
-//				sb.append("Spieler: " + p.getPlayerName() + ": win + " + totalplayerbet + "\t");
-//				continue;
-//			} else {
-//				p.deletefrombudget(totalplayerbet);
-//				sb.append("Spieler: " + p.getPlayerName() + ": lost -" + totalplayerbet + "\t");
-//				continue;
-//			}
-//			
-//			// aktor print und speichere ergebnis
-//		}
-//		statusLine = "round ended: " + sb.toString();
-		
-//		eGwActors.evaluateRound(playerListPlaying);
+		eGwActors.evaluateRound(this);
+	}
+	
+	public void endOfRound() {
 		this.statusLine = eGwActors.getStatusLine();
-		resetGame();
 		updateAllPlayersInDB();
 		status = GameStatus.AUSWERTUNG;
 		notifyObservers(GameStatus.AUSWERTUNG);
@@ -369,6 +324,10 @@ public class Controller extends Observable implements IController {
 		}
 	}
 	
+	public void setStatusLine(String statusLine) {
+		this.statusLine = statusLine;
+	}
+	
 	public String getJson() {
 		
 // TODO: außerhalb Aufrufen nicht im getJson
@@ -394,7 +353,7 @@ public class Controller extends Observable implements IController {
 		Map<String, Object> dealer = new HashMap<String, Object>();
 		Map<String, Object> statusLine = new HashMap<String, Object>();
 		Map<String, Object> betDisplay = new HashMap<String, Object>();
-
+		
 		List<List> playerlist = new ArrayList<List>();
 		List<String> playerName = new ArrayList<String>();
 		List<String> cardValue = new ArrayList<String>();

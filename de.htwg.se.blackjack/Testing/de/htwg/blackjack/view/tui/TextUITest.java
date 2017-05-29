@@ -46,7 +46,6 @@ public class TextUITest {
 		assertEquals("Spieler Hans, ist an der Reihe",controller1.getStatusLine());
 
 		tui1.userinputselection("np");
-		System.out.println(controller1.getStatusLine());
 		assertEquals("Spieler können nur zu Beginn einer neuen Runde erstellt werden",controller1.getStatusLine());
 
 		tui1.userinputselection("h");
