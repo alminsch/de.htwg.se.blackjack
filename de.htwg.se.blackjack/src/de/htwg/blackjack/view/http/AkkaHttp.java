@@ -1,7 +1,9 @@
+
 package de.htwg.blackjack.view.http;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 
 import com.google.inject.Inject;
@@ -47,13 +49,31 @@ public class AkkaHttp extends AllDirectives{
 	      .thenAccept(unbound -> system.terminate());
 	}
 	
+	@SuppressWarnings("unchecked")
 	private Route createRoute() {
 	    return route(
 	        path("blackjack", () ->
 	            get(() ->
 	                complete(controller.getJson()))),
-		    path(PathMatchers.segment("blackjack").slash(PathMatchers.segment(Pattern.compile("\\D+"))), value ->
-		    	get(() ->		    		
-		    		complete(Blackjack.getInstance().getTUI().userinputselection(value) + controller.getJson()))));
-	  }	
+	        
+	        path(PathMatchers.segment("blackjack")
+	        		.slash("newPlayer")
+	        		.slash(PathMatchers.segment(Pattern.compile("\\D+"))), new Function() {
+			        	@Override
+			        	public Object apply(Object value) {
+			        		Blackjack.getInstance().getController().addNewPlayer((String)value);
+			        		return get(() ->	    		
+			        			complete(controller.getJson()));
+			        	}
+			        }),
+		    path(PathMatchers.segment("blackjack").slash(PathMatchers.segment(Pattern.compile("\\D+"))), new Function() {
+				@Override
+				public Object apply(Object value) {
+						Blackjack.getInstance().getTUI().userinputselection((String)value);
+						return get(() ->	    		
+		        			complete(controller.getJson()));
+				}
+		    })
+	    );
+	}
 }
