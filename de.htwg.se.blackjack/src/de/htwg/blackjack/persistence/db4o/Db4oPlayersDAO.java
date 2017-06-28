@@ -34,7 +34,6 @@ public class Db4oPlayersDAO implements IPlayersDAO {
 		});
 		
 		if (player.size() > 0) {
-			// should not occur
 			return player.get(0);
 		}
 		return null;

@@ -47,8 +47,6 @@ public class EvaluateGameWithActors {
 		for (Player player : controller.getPlayingPlayerList()) {
 			actorPlayerRef.add(system.actorOf(PlayerActor.props(player, actorControllerRef)));
 		}
-
-		System.out.println("-0-");
 		actorControllerRef.tell(new RefContainer(actorPlayerRef, actorDealerRef), ActorRef.noSender());
 	}
 	

@@ -34,7 +34,7 @@ public class PlayerRanking extends JDialog {
     	this.setModal(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(640, 480));
-        this.setTitle("New Player");
+        this.setTitle("Player Ranking");
 
         this.controller = controller;
         

@@ -318,7 +318,6 @@ public class Controller extends Observable implements IController {
 	}
 
 	private void updateAllPlayersInDB() {
-		// player gets added several times, no object update
 		for (Player player : playerList) {
 			savePlayerToDB(player);
 		}

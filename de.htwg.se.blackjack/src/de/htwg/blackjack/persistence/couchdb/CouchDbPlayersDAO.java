@@ -44,8 +44,6 @@ public class CouchDbPlayersDAO implements IPlayersDAO {
 			db.update(playerToPersPlayer(player));
 		} else {
 			db.create(player.getName(), playerToPersPlayer(player));
-			// TODO: evtl.stattdessen db.create(player.getPlayerName(),
-			// playerToPersPlayer(player));
 		}
 	}
 

@@ -35,7 +35,7 @@ public class NewPlayer extends JDialog implements ActionListener {
     public NewPlayer(JFrame mainFrame, final IController controller) {
     	this.setModal(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(500, 200));
+        this.setPreferredSize(new Dimension(500, 250));
         this.setTitle("New Player");
 
         this.controller = controller;

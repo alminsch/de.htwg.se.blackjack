@@ -65,11 +65,6 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 	}
 
 	@Override
-	public void closeDb() {
-		// NOP
-	}
-
-	@Override
 	public List<Player> getAllPlayers() {
 		Transaction tx = null;
 		Session session = null;
@@ -126,5 +121,10 @@ public class HibernatePlayersDAO implements IPlayersDAO {
 			return false;
 		}
 		return true;
+	}
+	
+	@Override
+	public void closeDb() {
+		// NOP
 	}
 }
